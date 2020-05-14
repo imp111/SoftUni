@@ -1,0 +1,6 @@
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\bin\Debug\_01.Train.exe.config
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\bin\Debug\_01.Train.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\bin\Debug\_01.Train.pdb
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\obj\Debug\01. Train.csprojAssemblyReference.cache
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\obj\Debug\_01.Train.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\01. Train\obj\Debug\_01.Train.pdb

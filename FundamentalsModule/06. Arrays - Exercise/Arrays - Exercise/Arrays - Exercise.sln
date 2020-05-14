@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Train", "01. Train\01. Train.csproj", "{A6D16948-2D36-489D-9A15-C95BC7CADF17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Common Elements", "02. Common Elements\02. Common Elements.csproj", "{33DE921A-487B-442C-8B86-5B05BBEC4DB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6D16948-2D36-489D-9A15-C95BC7CADF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D16948-2D36-489D-9A15-C95BC7CADF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D16948-2D36-489D-9A15-C95BC7CADF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D16948-2D36-489D-9A15-C95BC7CADF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DE921A-487B-442C-8B86-5B05BBEC4DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DE921A-487B-442C-8B86-5B05BBEC4DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DE921A-487B-442C-8B86-5B05BBEC4DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DE921A-487B-442C-8B86-5B05BBEC4DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9838E3F6-1106-445E-836F-4BDFA805111D}
+	EndGlobalSection
+EndGlobal
