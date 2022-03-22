@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StacksAndQueues - Exercise")]
+[assembly: AssemblyTitle("02. StacksAndQueues - Exercise")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("StacksAndQueues - Exercise")]
+[assembly: AssemblyProduct("02. StacksAndQueues - Exercise")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0ce4d039-8ee3-4d1b-93a9-f4c382359171")]
+[assembly: Guid("3620c093-7752-404e-ba69-956f99f589d6")]
 
 // Version information for an assembly consists of the following four values:
 //

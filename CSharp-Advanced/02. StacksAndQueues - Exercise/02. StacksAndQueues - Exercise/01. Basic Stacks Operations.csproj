@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CE4D039-8EE3-4D1B-93A9-F4C382359171}</ProjectGuid>
+    <ProjectGuid>{3620C093-7752-404E-BA69-956F99F589D6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StacksAndQueues___Exercise</RootNamespace>
-    <AssemblyName>StacksAndQueues - Exercise</AssemblyName>
+    <RootNamespace>_02.StacksAndQueues___Exercise</RootNamespace>
+    <AssemblyName>_02.StacksAndQueues___Exercise</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
