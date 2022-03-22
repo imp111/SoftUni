@@ -1,0 +1,7 @@
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\bin\Debug\_04.Students.exe.config
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\bin\Debug\_04.Students.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\bin\Debug\_04.Students.pdb
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\obj\Debug\04. Students.csprojAssemblyReference.cache
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\obj\Debug\04. Students.csproj.CoreCompileInputs.cache
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\obj\Debug\_04.Students.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\04. Students\obj\Debug\_04.Students.pdb

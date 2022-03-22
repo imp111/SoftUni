@@ -1,0 +1,6 @@
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\bin\Debug\Advanced-CSharp.exe.config
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\bin\Debug\Advanced-CSharp.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\bin\Debug\Advanced-CSharp.pdb
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\obj\Debug\01. Reverse Strings.csprojAssemblyReference.cache
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\obj\Debug\Advanced-CSharp.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\Advanced-CSharp\obj\Debug\Advanced-CSharp.pdb

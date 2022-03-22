@@ -1,0 +1,6 @@
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\bin\Debug\_09.Kamino_Factory.exe.config
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\bin\Debug\_09.Kamino_Factory.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\bin\Debug\_09.Kamino_Factory.pdb
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\obj\Debug\09. Kamino Factory.csprojAssemblyReference.cache
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\obj\Debug\_09.Kamino_Factory.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\09. Kamino Factory\obj\Debug\_09.Kamino_Factory.pdb

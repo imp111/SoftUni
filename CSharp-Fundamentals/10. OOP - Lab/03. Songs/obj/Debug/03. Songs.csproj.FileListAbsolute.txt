@@ -1,0 +1,6 @@
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\bin\Debug\_03.Songs.exe.config
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\bin\Debug\_03.Songs.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\bin\Debug\_03.Songs.pdb
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\obj\Debug\03. Songs.csproj.CoreCompileInputs.cache
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\obj\Debug\_03.Songs.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\03. Songs\obj\Debug\_03.Songs.pdb

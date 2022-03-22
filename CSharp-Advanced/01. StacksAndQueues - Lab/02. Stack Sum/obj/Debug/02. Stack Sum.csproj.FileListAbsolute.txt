@@ -1,0 +1,5 @@
+C:\Users\alexs\source\repos\Advanced-CSharp\02. Stack Sum\bin\Debug\_02.Stack_Sum.exe.config
+C:\Users\alexs\source\repos\Advanced-CSharp\02. Stack Sum\bin\Debug\_02.Stack_Sum.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\02. Stack Sum\bin\Debug\_02.Stack_Sum.pdb
+C:\Users\alexs\source\repos\Advanced-CSharp\02. Stack Sum\obj\Debug\_02.Stack_Sum.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\02. Stack Sum\obj\Debug\_02.Stack_Sum.pdb

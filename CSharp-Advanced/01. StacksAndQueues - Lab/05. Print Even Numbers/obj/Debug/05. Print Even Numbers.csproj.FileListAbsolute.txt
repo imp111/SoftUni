@@ -1,0 +1,6 @@
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\bin\Debug\_05.Print_Even_Numbers.exe.config
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\bin\Debug\_05.Print_Even_Numbers.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\bin\Debug\_05.Print_Even_Numbers.pdb
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\obj\Debug\_05.Print_Even_Numbers.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\obj\Debug\_05.Print_Even_Numbers.pdb
+C:\Users\alexs\source\repos\Advanced-CSharp\05. Print Even Numbers\obj\Debug\05. Print Even Numbers.csprojAssemblyReference.cache

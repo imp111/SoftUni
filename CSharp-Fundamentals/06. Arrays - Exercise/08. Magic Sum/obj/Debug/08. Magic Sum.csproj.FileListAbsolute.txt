@@ -1,0 +1,6 @@
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\bin\Debug\_08.Magic_Sum.exe.config
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\bin\Debug\_08.Magic_Sum.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\bin\Debug\_08.Magic_Sum.pdb
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\obj\Debug\08. Magic Sum.csprojAssemblyReference.cache
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\obj\Debug\_08.Magic_Sum.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\08. Magic Sum\obj\Debug\_08.Magic_Sum.pdb

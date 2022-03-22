@@ -1,0 +1,7 @@
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\bin\Debug\_01.Randomize_Words.exe.config
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\bin\Debug\_01.Randomize_Words.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\bin\Debug\_01.Randomize_Words.pdb
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\obj\Debug\01. Randomize Words.csprojAssemblyReference.cache
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\obj\Debug\01. Randomize Words.csproj.CoreCompileInputs.cache
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\obj\Debug\_01.Randomize_Words.exe
+D:\Github\SoftUni repo\Fundamentals Module\10. OOP - Lab\01. Randomize Words\obj\Debug\_01.Randomize_Words.pdb

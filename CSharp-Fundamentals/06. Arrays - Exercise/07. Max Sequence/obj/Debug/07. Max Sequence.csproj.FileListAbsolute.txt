@@ -1,0 +1,6 @@
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\bin\Debug\_07.Max_Sequence.exe.config
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\bin\Debug\_07.Max_Sequence.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\bin\Debug\_07.Max_Sequence.pdb
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\obj\Debug\07. Max Sequence.csprojAssemblyReference.cache
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\obj\Debug\_07.Max_Sequence.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\07. Max Sequence\obj\Debug\_07.Max_Sequence.pdb

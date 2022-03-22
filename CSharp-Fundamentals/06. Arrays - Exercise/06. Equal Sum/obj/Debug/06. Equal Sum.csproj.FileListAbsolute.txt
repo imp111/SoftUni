@@ -1,0 +1,6 @@
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\bin\Debug\_06.Equal_Sum.exe.config
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\bin\Debug\_06.Equal_Sum.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\bin\Debug\_06.Equal_Sum.pdb
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\obj\Debug\06. Equal Sum.csprojAssemblyReference.cache
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\obj\Debug\_06.Equal_Sum.exe
+D:\Fundamentals Module\06. Arrays - Exercise\Arrays - Exercise\06. Equal Sum\obj\Debug\_06.Equal_Sum.pdb

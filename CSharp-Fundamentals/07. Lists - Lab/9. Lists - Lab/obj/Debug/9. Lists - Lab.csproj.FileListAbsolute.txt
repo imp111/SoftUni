@@ -1,0 +1,7 @@
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\bin\Debug\_9.Lists___Lab.exe.config
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\bin\Debug\_9.Lists___Lab.exe
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\bin\Debug\_9.Lists___Lab.pdb
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\obj\Debug\9. Lists - Lab.csprojAssemblyReference.cache
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\obj\Debug\9. Lists - Lab.csproj.CoreCompileInputs.cache
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\obj\Debug\_9.Lists___Lab.exe
+D:\SoftUni\Fundamentals Module\9. Lists - Lab\9. Lists - Lab\obj\Debug\_9.Lists___Lab.pdb

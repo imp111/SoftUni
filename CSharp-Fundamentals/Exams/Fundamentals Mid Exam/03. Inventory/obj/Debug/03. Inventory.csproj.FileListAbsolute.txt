@@ -1,0 +1,6 @@
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\bin\Debug\_03.Inventory.exe.config
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\bin\Debug\_03.Inventory.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\bin\Debug\_03.Inventory.pdb
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\obj\Debug\03. Inventory.csprojAssemblyReference.cache
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\obj\Debug\_03.Inventory.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\03. Inventory\obj\Debug\_03.Inventory.pdb

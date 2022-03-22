@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Binary Digits Count", "ConsoleApp1\01. Binary Digits Count.csproj", "{FD751CFE-2003-4466-BF1D-079C16F8907B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. First Bit", "02. First Bit\02. First Bit.csproj", "{9076EC33-FC68-4010-AF21-633A07692DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. P-th Bit", "03. P-th bit\03. P-th Bit.csproj", "{E8B6229D-96AF-4647-91CA-74ECC74564E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Bit Destroyer", "04. Bit Destroyer\04. Bit Destroyer.csproj", "{DCBBA725-76D2-4622-B205-92D904E07EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Odd Times", "05. Odd Times\05. Odd Times.csproj", "{0C1E96EC-D4A0-4B4A-9824-5DFE91D986A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Tri-Bit Switch", "06. Tri-Bit Switch\06. Tri-Bit Switch.csproj", "{20F141AF-52FC-408C-9DAD-7F9924121AE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD751CFE-2003-4466-BF1D-079C16F8907B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD751CFE-2003-4466-BF1D-079C16F8907B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD751CFE-2003-4466-BF1D-079C16F8907B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD751CFE-2003-4466-BF1D-079C16F8907B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9076EC33-FC68-4010-AF21-633A07692DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9076EC33-FC68-4010-AF21-633A07692DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9076EC33-FC68-4010-AF21-633A07692DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9076EC33-FC68-4010-AF21-633A07692DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B6229D-96AF-4647-91CA-74ECC74564E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B6229D-96AF-4647-91CA-74ECC74564E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B6229D-96AF-4647-91CA-74ECC74564E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B6229D-96AF-4647-91CA-74ECC74564E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBBA725-76D2-4622-B205-92D904E07EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBBA725-76D2-4622-B205-92D904E07EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBBA725-76D2-4622-B205-92D904E07EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBBA725-76D2-4622-B205-92D904E07EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1E96EC-D4A0-4B4A-9824-5DFE91D986A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1E96EC-D4A0-4B4A-9824-5DFE91D986A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1E96EC-D4A0-4B4A-9824-5DFE91D986A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1E96EC-D4A0-4B4A-9824-5DFE91D986A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F141AF-52FC-408C-9DAD-7F9924121AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F141AF-52FC-408C-9DAD-7F9924121AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F141AF-52FC-408C-9DAD-7F9924121AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F141AF-52FC-408C-9DAD-7F9924121AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D591E25-385E-453E-9CBB-3813C95E0607}
+	EndGlobalSection
+EndGlobal

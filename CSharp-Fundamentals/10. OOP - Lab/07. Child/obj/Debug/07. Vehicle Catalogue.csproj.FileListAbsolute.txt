@@ -1,0 +1,6 @@
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\bin\Debug\_07.Child.exe.config
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\bin\Debug\_07.Child.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\bin\Debug\_07.Child.pdb
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\obj\Debug\07. Vehicle Catalogue.csprojAssemblyReference.cache
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\obj\Debug\_07.Child.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\10. OOP - Lab\07. Child\obj\Debug\_07.Child.pdb

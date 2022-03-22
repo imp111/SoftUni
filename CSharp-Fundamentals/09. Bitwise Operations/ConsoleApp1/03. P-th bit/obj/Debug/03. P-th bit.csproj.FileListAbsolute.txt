@@ -1,0 +1,6 @@
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\bin\Debug\_03.P_th_bit.exe.config
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\bin\Debug\_03.P_th_bit.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\bin\Debug\_03.P_th_bit.pdb
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\obj\Debug\03. P-th bit.csprojAssemblyReference.cache
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\obj\Debug\_03.P_th_bit.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\03. P-th bit\obj\Debug\_03.P_th_bit.pdb

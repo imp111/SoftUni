@@ -1,0 +1,5 @@
+C:\Users\alexs\source\repos\Advanced-CSharp\06. Supermarket\bin\Debug\_06.Supermarket.exe.config
+C:\Users\alexs\source\repos\Advanced-CSharp\06. Supermarket\bin\Debug\_06.Supermarket.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\06. Supermarket\bin\Debug\_06.Supermarket.pdb
+C:\Users\alexs\source\repos\Advanced-CSharp\06. Supermarket\obj\Debug\_06.Supermarket.exe
+C:\Users\alexs\source\repos\Advanced-CSharp\06. Supermarket\obj\Debug\_06.Supermarket.pdb

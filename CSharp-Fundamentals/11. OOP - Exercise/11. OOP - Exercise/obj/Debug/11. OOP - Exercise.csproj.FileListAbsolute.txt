@@ -1,0 +1,6 @@
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\bin\Debug\_11.OOP___Exercise.exe.config
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\bin\Debug\_11.OOP___Exercise.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\bin\Debug\_11.OOP___Exercise.pdb
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\obj\Debug\11. OOP - Exercise.csprojAssemblyReference.cache
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\obj\Debug\_11.OOP___Exercise.exe
+D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\11. OOP - Exercise\obj\Debug\_11.OOP___Exercise.pdb
