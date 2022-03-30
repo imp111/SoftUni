@@ -11,6 +11,12 @@ namespace _04.Fast_Food
         private static void Main(string[] args)
         {
             int quantityFood = int.Parse(Console.ReadLine());
+
+            if (quantityFood > 1000 || quantityFood < 0)
+            {
+                System.Environment.Exit(0);
+            }
+
             Queue<int> queue = new Queue<int>();
 
             int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
@@ -22,14 +28,14 @@ namespace _04.Fast_Food
 
             Console.WriteLine(queue.Max());
 
+            int buffer = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                int buffer = 0;
-                buffer = queue.Dequeue();
+                buffer = queue.Peek();
 
-                if (quantityFood < buffer)
+                if (quantityFood >= buffer)
                 {
-                    quantityFood -= buffer;
+                    quantityFood -= queue.Dequeue();
                 }
                 else
                 {
@@ -37,13 +43,20 @@ namespace _04.Fast_Food
                 }
             }
 
-            if (quantityFood > 0)
+            if (quantityFood >= 0 && queue.Count == 0)
             {
                 Console.WriteLine("Orders complete");
             }
             else
             {
-                Console.WriteLine($"Orders left: {quantityFood}");
+                buffer = queue.Count;
+                Console.Write("Orders left: ");
+                for (int i = 0; i < buffer; i++)
+                {
+                    Console.Write($"{queue.Dequeue()} ");
+                }
+
+                Console.WriteLine();
             }
         }
     }
