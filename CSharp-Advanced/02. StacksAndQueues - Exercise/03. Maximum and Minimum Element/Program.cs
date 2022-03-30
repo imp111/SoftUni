@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _03.Maximum_and_Minimum_Element
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
             Stack<int> stack = new Stack<int>();
@@ -25,11 +25,7 @@ namespace _03.Maximum_and_Minimum_Element
                 int first = input[0];
                 int? second = null;
 
-                if (input.Length < 2)
-                {
-                    continue;
-                }
-                else
+                if (input.Length > 1)
                 {
                     second = input[1];
                 }
@@ -38,7 +34,7 @@ namespace _03.Maximum_and_Minimum_Element
                 {
                     case 1:
                         stack.Push(Convert.ToInt32(second));
-                        break; 
+                        break;
 
                     case 2:
                         if (stack.Count == 0)
@@ -72,16 +68,28 @@ namespace _03.Maximum_and_Minimum_Element
                             Console.WriteLine(stack.Min());
                         }
                         break;
-                    
+
                     default:
                         break;
                 }
             }
 
-            for (int i = 0; i < stack.Count; i++)
+            int stackCount = stack.Count;
+            for (int i = 0; i < stackCount; i++)
             {
-                Console.WriteLine(stack.Pop());
+                Console.Write($"{stack.Pop()}");
+
+                if (i == stackCount - 1)
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.Write(", ");
+                }
             }
+
+            Console.WriteLine();
         }
     }
 }
