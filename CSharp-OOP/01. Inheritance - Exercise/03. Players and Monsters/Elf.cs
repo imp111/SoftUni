@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _03.Players_and_Monsters
 {
-    internal class Program
+    internal class Elf : Hero
     {
-        static void Main(string[] args)
+        public Elf(string username, int level): base(username, level)
         {
         }
     }
