@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6EB91632-C7B0-48C2-928A-462680C2517F}</ProjectGuid>
+    <ProjectGuid>{AC0D7485-645A-4555-8F55-0E6E4193806A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_03.Players_and_Monsters</RootNamespace>
-    <AssemblyName>_03.Players_and_Monsters</AssemblyName>
+    <RootNamespace>_04.Need_for_Speed</RootNamespace>
+    <AssemblyName>_04.Need_for_Speed</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BladeKnight.cs" />
-    <Compile Include="DarkKnight.cs" />
-    <Compile Include="DarkWizard.cs" />
-    <Compile Include="Elf.cs" />
-    <Compile Include="Hero.cs" />
-    <Compile Include="Knight.cs" />
-    <Compile Include="MuseElf.cs" />
-    <Compile Include="SoulMaster.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="Motorcycle.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wizard.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

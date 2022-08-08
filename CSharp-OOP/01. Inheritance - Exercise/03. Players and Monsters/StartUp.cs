@@ -10,6 +10,11 @@ namespace _03.Players_and_Monsters
     {
         static void Main(string[] args)
         {
+            string username = Console.ReadLine();
+            int level = int.Parse(Console.ReadLine());
+
+            DarkKnight knight1 = new DarkKnight(username, level);
+            Console.WriteLine(knight1);
         }
     }
 }
