@@ -1,2 +1,2 @@
 # SoftUni
-SoftUni Development Route
+SoftUni Web Development Route
