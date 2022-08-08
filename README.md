@@ -1,2 +1,2 @@
 # SoftUni
-SoftUni C# Development Route
+SoftUni Web Development Route
