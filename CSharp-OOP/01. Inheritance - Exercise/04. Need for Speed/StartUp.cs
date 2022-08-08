@@ -10,6 +10,10 @@ namespace _04.Need_for_Speed
     {
         static void Main(string[] args)
         {
+            SportCar ferarri = new SportCar(600, 100);
+            RaceMotorcycle yamaha = new RaceMotorcycle(600, 100);
+            ferarri.Drive(360);
+            yamaha.Drive(360);
         }
     }
 }

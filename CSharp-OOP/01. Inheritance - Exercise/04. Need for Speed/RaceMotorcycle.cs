@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _04.Need_for_Speed
 {
-    internal class Car : Vehicle
+    internal class RaceMotorcycle : Motorcycle
     {
-        public Car(int horsePower, double fuel) : base(horsePower, fuel)
+        public RaceMotorcycle(int horsePower, double fuel) : base(horsePower, fuel)
         {
-            FuelConsumption = 3;
+            FuelConsumption = 8;
         }
     }
-}   
+}

@@ -22,7 +22,10 @@ namespace _04.Need_for_Speed
 
         public virtual void Drive(double kilometers)
         {
-            Fuel -= kilometers;
+            double difference = kilometers / 100;
+            Fuel -= difference * FuelConsumption;
+            
+            Console.WriteLine($"Leftover fuel: {Fuel}");
         }
     }
 }
