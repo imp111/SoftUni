@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Encapsulation - Exercise", "02. Encapsulation - Exercise\02. Encapsulation - Exercise.csproj", "{AFE7ECB2-F027-4B46-A407-0CBE62A33377}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Class Box Data", "02. Encapsulation - Exercise\01. Class Box Data.csproj", "{AFE7ECB2-F027-4B46-A407-0CBE62A33377}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{81EE41FD-573B-49D9-A2D3-31622CE809D2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Animal Farm", "02. Animal Farm\02. Animal Farm.csproj", "{E3F6E165-0F9F-4BC7-9804-2E99364C839E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{AFE7ECB2-F027-4B46-A407-0CBE62A33377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE7ECB2-F027-4B46-A407-0CBE62A33377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE7ECB2-F027-4B46-A407-0CBE62A33377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F6E165-0F9F-4BC7-9804-2E99364C839E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F6E165-0F9F-4BC7-9804-2E99364C839E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F6E165-0F9F-4BC7-9804-2E99364C839E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F6E165-0F9F-4BC7-9804-2E99364C839E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
