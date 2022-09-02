@@ -3,16 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Class Box Data", "02. Encapsulation - Exercise\01. Class Box Data.csproj", "{AFE7ECB2-F027-4B46-A407-0CBE62A33377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Class Box Data", "02. Encapsulation - Exercise\01. Class Box Data.csproj", "{AFE7ECB2-F027-4B46-A407-0CBE62A33377}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{81EE41FD-573B-49D9-A2D3-31622CE809D2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Animal Farm", "02. Animal Farm\02. Animal Farm.csproj", "{E3F6E165-0F9F-4BC7-9804-2E99364C839E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Animal Farm", "02. Animal Farm\02. Animal Farm.csproj", "{E3F6E165-0F9F-4BC7-9804-2E99364C839E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Shopping spree", "03. Shopping spree\03. Shopping spree.csproj", "{2562139F-DB41-42A4-A670-748125B4F8DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Shopping spree", "03. Shopping spree\03. Shopping spree.csproj", "{2562139F-DB41-42A4-A670-748125B4F8DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Pizza Calories", "04. Pizza Calories\04. Pizza Calories.csproj", "{71289EA9-E7CE-4DA0-BADF-F276DE8FD14B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{2562139F-DB41-42A4-A670-748125B4F8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2562139F-DB41-42A4-A670-748125B4F8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2562139F-DB41-42A4-A670-748125B4F8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71289EA9-E7CE-4DA0-BADF-F276DE8FD14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71289EA9-E7CE-4DA0-BADF-F276DE8FD14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71289EA9-E7CE-4DA0-BADF-F276DE8FD14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71289EA9-E7CE-4DA0-BADF-F276DE8FD14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
