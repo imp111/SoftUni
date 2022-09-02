@@ -25,6 +25,11 @@ namespace _03._Shopping_spree
             }
             set
             {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new Exception("Name cannot be empty");
+                }
+
                 product = value;
             }
         }

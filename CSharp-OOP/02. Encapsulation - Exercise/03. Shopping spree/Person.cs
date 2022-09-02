@@ -10,37 +10,37 @@ namespace _03._Shopping_spree
     {
         private string name;
         private double money;
-        private List<Product> bag = new List<Product>();
+        private List<Product> bag;
 
-        public Person(string name, double money, List<Product> bag)
+        public Person(string name, double money)
         {
             Name = name;
             Money = money;
-            Bag = bag;
+            this.bag = new List<Product>();
         }
 
-        public void PurchaseProduct(string product, double cost)
+        public void AddToBag(Product product)
         {
-            if (money >= cost)
+            this.bag.Add(product);
+        }
+
+        public List<Product> SeeBag()
+        {
+            return bag;
+        }
+
+        public bool PurchaseProduct(Product product)
+        {
+            if (money >= product.Cost)
             {
-                money -= cost;
-                Console.WriteLine($"{name} bought {product}");
+                money -= product.Cost;
+                Console.WriteLine($"{name} bought {product.ProductName}");
+                return true;
             }
             else
             {
-                Console.WriteLine($"{name} can't afford {product}");
-            }
-        }
-
-        public List<Product> Bag
-        {
-            get
-            {
-                return bag;
-            }
-            set
-            {
-                bag = value;
+                Console.WriteLine($"{name} can't afford {product.ProductName}");
+                return false;
             }
         }
 
@@ -52,7 +52,7 @@ namespace _03._Shopping_spree
             }
             set
             {
-                if (value == string.Empty)
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
                     throw new Exception("Name cannot be empty");
                 }
