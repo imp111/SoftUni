@@ -12,6 +12,7 @@ namespace _04._Pizza_Calories
         private string toppingName;
         private double weight;
         private double modifier;
+        private double toppinCalories;
 
         public Topping(string type, string toppingName, double weight)
         {
@@ -19,7 +20,7 @@ namespace _04._Pizza_Calories
             ToppingName = toppingName;
             Weight = weight;
         }
-        public void CountCalories()
+        public double CountCalories()
         {
             switch (toppingName.ToLower())
             {
@@ -39,7 +40,8 @@ namespace _04._Pizza_Calories
                     break;
             }
 
-            Console.WriteLine($"{2 * (Weight * modifier):F2}");
+            toppinCalories = 2 * (Weight * modifier);
+            return toppinCalories;
         }
 
         public string Type

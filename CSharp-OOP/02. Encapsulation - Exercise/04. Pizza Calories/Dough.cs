@@ -14,6 +14,7 @@ namespace _04._Pizza_Calories
         private double weight;
         private double flourModifier;
         private double techniqueModifier;
+        private double doughCalories;
 
         public Dough(string type, string flour, string technique, double weight)
         {
@@ -23,7 +24,7 @@ namespace _04._Pizza_Calories
             Weight = weight;
         }
 
-        public void CalorieCount()
+        public double CalorieCount()
         {
             switch (flour.ToLower())
             {
@@ -52,7 +53,8 @@ namespace _04._Pizza_Calories
                     break;
             }
 
-            Console.WriteLine($"{(2 * Weight) * flourModifier * techniqueModifier:F2} total calories.");
+            doughCalories = (2 * Weight) * flourModifier * techniqueModifier;
+            return doughCalories;
         }
 
         public string Type
