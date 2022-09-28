@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using _02._Multiple_Implementation;
+
+string name = Console.ReadLine();
+int age = int.Parse(Console.ReadLine());
+string id = Console.ReadLine();
+string birthdate = Console.ReadLine();
+
+IIdentifiable identifiable = new Citizen(name, age, id, birthdate);
+IBirthable birthable = new Citizen(name, age, id, birthdate);
+
+Console.WriteLine(identifiable.Id);
+Console.WriteLine(birthable.Birthdate);
