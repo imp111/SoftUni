@@ -46,10 +46,9 @@ namespace _03._Telephony
             }
         }
 
-        public Smartphone(string number, string url)
+        public Smartphone(string number)
         {
             Number = number;
-            Url = url;
         }
 
         public void Calling(string number)
