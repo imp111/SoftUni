@@ -9,56 +9,39 @@ namespace _03._Telephony
 {
     internal class Smartphone : ISmart
     {
-        private string number;
-        private string url;
-
-        public string Number
+        public Smartphone()
         {
-            get
-            {
-                return number;
-            }
-            set
-            {
-                if (value.Length != 10 || value.All(char.IsLetter))
-                {
-                    throw new Exception("Invalid number!");
-                }
-
-                number = value;
-            }
+            
         }
 
-        public string Url
+        public string Calling(string number)
         {
-            get
+            if (!number.All(Char.IsDigit))
             {
-                return url;
+                return "Invalid number!";
             }
-            set
+
+            return $"Calling... {number}";
+        }
+
+        public string Browse(string url)
+        {
+            if (url.Any(Char.IsDigit))
             {
-                if (value.All(char.IsDigit))
-                {
-                    throw new Exception("Invalid url!");
-                }
-
-                url = value;
+                return "Invalid URL!";
             }
+
+            return $"Browsing: {url}";
         }
 
-        public Smartphone(string number)
+        public string Dialling(string number)
         {
-            Number = number;
-        }
+            if (!number.All(Char.IsDigit))
+            {
+                return "Invalid number!";
+            }
 
-        public void Calling(string number)
-        {
-            Console.WriteLine($"Calling... {Number}");
-        }
-
-        public void Browse(string url)
-        {
-            Console.WriteLine($"Browsing: {Url}!");
+            return $"Dialling: {number}!";
         }
     }
 }

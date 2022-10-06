@@ -8,9 +8,8 @@ namespace _03._Telephony.Interfaces
 {
     internal interface ISmart
     {
-        string Number { get; }
-        string Url { get; }
-        void Calling(string number);
-        void Browse(string url);
+        string Calling(string number);
+        string Browse(string url);
+        string Dialling(string number);
     }
 }
