@@ -1,3 +1,5 @@
+package PointInRecrangle;
+
 public class Printer {
     public static void Print(int numberOfIterations, Rectangle rectangle) {
         for (int i = 0; i < numberOfIterations; i++) {

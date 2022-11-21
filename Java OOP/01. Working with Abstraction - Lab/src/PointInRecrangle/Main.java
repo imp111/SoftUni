@@ -1,3 +1,5 @@
+package PointInRecrangle;
+
 public class Main {
     public static void main(String[] args) {
         int[] rectanglePointReader = Reader.RectangleReader();

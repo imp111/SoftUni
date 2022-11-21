@@ -1,3 +1,5 @@
+package PointInRecrangle;
+
 public class Rectangle {
     private static Integer bottomLeftX;
     private static Integer bottomLeftY;
