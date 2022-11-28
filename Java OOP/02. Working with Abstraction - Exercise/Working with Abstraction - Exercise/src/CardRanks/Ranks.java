@@ -20,7 +20,7 @@ public class Ranks {
 
         private Integer rank;
 
-        Rank(Integer suit) {
+        Rank(Integer rank) {
             this.rank = rank;
         }
 
@@ -30,7 +30,7 @@ public class Ranks {
     }
 
     public void PrintSuits() {
-        System.out.println("Card CardSuit.Suits:");
+        System.out.println("CardsWIthPower.Card CardSuit.Suits:");
 
         for (var item : Rank.values()) {
             System.out.printf("Ordinal value: %d; Name value: %s\n", item.getRank(), item);

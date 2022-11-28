@@ -20,7 +20,7 @@ public class Suits {
     }
 
     public void PrintSuits() {
-        System.out.println("Card CardSuit.Suits:");
+        System.out.println("CardsWIthPower.Card CardSuit.Suits:");
 
         for (var item : Suit.values()) {
             System.out.printf("Ordinal value: %d; Name value: %s\n", item.getSuit(), item);
