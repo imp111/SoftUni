@@ -4,7 +4,10 @@ import java.util.Scanner;
 public class Input {
     public static String[] ReadInput() {
         return (String[]) Arrays.stream(new Scanner(System.in)
-                .nextLine().split(" ")).toArray(String[]::new);
+                .nextLine()
+                .toUpperCase()
+                .split("\\s+"))
+                .toArray(String[]::new);
     }
 
     public static Integer ReadNumberOfOperations() {
