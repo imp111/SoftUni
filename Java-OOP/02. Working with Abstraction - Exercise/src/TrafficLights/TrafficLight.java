@@ -1,3 +1,5 @@
+package TrafficLights;
+
 public class TrafficLight {
     private Colors color;
     public Colors getColor() {

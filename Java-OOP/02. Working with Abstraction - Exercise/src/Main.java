@@ -1,13 +1,53 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] input = Input.ReadInput();
-        Integer n = Input.ReadNumberOfOperations();
-        List<TrafficLight> lightsList = new ArrayList<>();
+        int[] dimestions = Input.dimensionsReader();
+        int x = dimestions[0];
+        int y = dimestions[1];
 
-        Output.AddLightsToList(input, lightsList);
-        Output.PrintLightsList(n, lightsList);
+        int[][] matrix = new int[x][y];
+        int value = 0;
+
+        Input.assignValuesToMatrix(matrix, value, x, y);
+        String command = Input.readString();
+
+        long sum = 0;
+
+        while (!command.equalsIgnoreCase("let the force be with you"))
+        {
+            int[] ivoS = Input.readStringToArray(command);
+            int[] evil = Input.dimensionsReader();
+            int xE = evil[0];
+            int yE = evil[1];
+
+            while (xE >= 0 && yE >= 0)
+            {
+                if (xE >= 0 && xE < matrix.length && yE >= 0 && yE < matrix[0].length)
+                {
+                    matrix[xE][yE] = 0;
+                }
+                xE--;
+                yE--;
+            }
+
+            int xI = ivoS[0];
+            int yI = ivoS[1];
+
+            while (xI >= 0 && yI < matrix[1].length)
+            {
+                if (xI >= 0 && xI < matrix.length && yI >= 0 && yI < matrix[0].length)
+                {
+                    sum += matrix[xI][yI];
+                }
+
+                yI++;
+                xI--;
+            }
+
+            command = Input.readString();
+        }
+        System.out.println(sum);
     }
 }
