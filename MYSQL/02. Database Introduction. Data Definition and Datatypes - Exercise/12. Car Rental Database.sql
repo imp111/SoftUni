@@ -1,16 +1,29 @@
-CREATE SCHEMA `Movies`;
-CREATE TABLE `directors`(
+CREATE SCHEMA car_rental;
+/*
+categories (id, category, daily_rate, weekly_rate, monthly_rate, weekend_rate)
+cars (id, plate_number, make, model, car_year, category_id, doors, picture, car_condition, available)
+employees (id, first_name, last_name, title, notes)
+customers (id, driver_licence_number, full_name, address, city, zip_code, notes)
+rental_orders (id, employee_id, customer_id, car_id, car_condition, tank_level, kilometrage_start, kilometrage_end, total_kilometrage, start_date, end_date, total_days, rate_applied, tax_rate, order_status, notes)
+
+Set most appropriate data types for each column. Set primary key to each table. 
+Populate each table with 3 records. Make sure the columns that are present in 2 tables would be of the same data type. 
+Consider which fields are always required and which are optional. 
+Submit your CREATE TABLE and INSERT statements as Run queries & check DB
+*/
+CREATE TABLE `categories`(
 	`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `director_name` VARCHAR(30) NOT NULL,
-    `notes` TEXT
+    `category` VARCHAR(30) NOT NULL,
+    `daily_rate` TEXT,
+    `weekly_rate` TEXT,
+    `monthly_rate` TEXT,
+    `weekend_rate` TEXT
 );
-INSERT INTO `directors` (`id`, `director_name`, `notes`)
+INSERT INTO `categories` (`id`, `category`, `daily_rate`, `weekly_rate`, `monthly_rate`, `weekend_rate`)
 VALUES
-('1', 'Georgi', NULL),
-('2', 'Doni', NULL),
-('3', 'Foni', NULL),
-('4', 'Elon', NULL),
-('5', 'Alex', NULL);
+('1', 'Georgi', NULL, '1', 'Georgi', NULL),
+('1', 'Georgi', NULL, '1', 'Georgi', NULL),
+('1', 'Georgi', NULL, '1', 'Georgi', NULL);
 
 CREATE TABLE `genres`(
 	`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -65,5 +78,3 @@ VALUES
 ('3', 'Mutant Ninja Turtles', 3, NULL, '140', 3, 4, null, null),
 ('4', 'Constantine', 4, NULL, '145', 4, 5, null, null),
 ('5', 'Avengers: End Game', 5, NULL, '150', 5, 1, null, null);
-
-SELECT * FROM movies;
