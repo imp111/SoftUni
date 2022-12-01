@@ -1,0 +1,4 @@
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD CONSTRAINT PK_users
+PRIMARY KEY(`id`, `username`);
