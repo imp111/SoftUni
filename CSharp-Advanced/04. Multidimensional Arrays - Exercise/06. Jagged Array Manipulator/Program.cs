@@ -56,7 +56,7 @@ static void AddCommandsToMatrix(int[][] matrix)
                     }
 
                     break;
-                case "substract":
+                case "subtract":
                     if (row >= 0 && row < matrix.Length && column >= 0 && column < matrix[row].Length)
                     {
                         matrix[row][column] -= value;
@@ -99,5 +99,3 @@ static void AnalyzeMatrix(int[][] matrix)
         }
     }
 }
-
-
