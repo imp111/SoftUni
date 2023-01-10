@@ -10,7 +10,8 @@ namespace _04.Generating_Vectors
     {
         static void Main(string[] args)
         {
-            int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
 
             GenerateVector(array, 0);
         }
@@ -19,7 +20,7 @@ namespace _04.Generating_Vectors
         {
             if (index == array.Length)
             {
-                Console.WriteLine(string.Join(" ", array));
+                Console.WriteLine(string.Join("", array));
             }
             else
             {
