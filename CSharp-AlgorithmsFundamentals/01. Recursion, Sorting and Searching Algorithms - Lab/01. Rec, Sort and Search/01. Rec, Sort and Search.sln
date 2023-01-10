@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Rec, Sort and Search", "01. Rec, Sort and Search.csproj", "{D6F4DFFC-BB42-40E0-955E-0615E1C432D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Recursive Factorial", "..\02. Recursive Factorial\02. Recursive Factorial.csproj", "{88335B61-DD7E-43F6-8526-B375B917E6CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D6F4DFFC-BB42-40E0-955E-0615E1C432D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6F4DFFC-BB42-40E0-955E-0615E1C432D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6F4DFFC-BB42-40E0-955E-0615E1C432D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88335B61-DD7E-43F6-8526-B375B917E6CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88335B61-DD7E-43F6-8526-B375B917E6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88335B61-DD7E-43F6-8526-B375B917E6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88335B61-DD7E-43F6-8526-B375B917E6CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
