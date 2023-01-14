@@ -1,6 +1,0 @@
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\bin\Debug\_04.Matching_Brakets.exe.config
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\bin\Debug\_04.Matching_Brakets.exe
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\bin\Debug\_04.Matching_Brakets.pdb
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\obj\Debug\04. Matching Brakets.csprojAssemblyReference.cache
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\obj\Debug\_04.Matching_Brakets.exe
-C:\Users\alexs\source\repos\Advanced-CSharp\04. Matching Brakets\obj\Debug\_04.Matching_Brakets.pdb

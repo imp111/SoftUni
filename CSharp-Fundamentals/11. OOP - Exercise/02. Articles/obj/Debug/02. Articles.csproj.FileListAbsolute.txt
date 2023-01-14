@@ -1,6 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\bin\Debug\_02.Articles.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\bin\Debug\_02.Articles.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\bin\Debug\_02.Articles.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\obj\Debug\_02.Articles.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\obj\Debug\_02.Articles.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\02. Articles\obj\Debug\02. Articles.csprojAssemblyReference.cache

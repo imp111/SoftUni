@@ -1,5 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\06. Tri-Bit Switch\bin\Debug\_06.Tri_Bit_Switch.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\06. Tri-Bit Switch\bin\Debug\_06.Tri_Bit_Switch.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\06. Tri-Bit Switch\bin\Debug\_06.Tri_Bit_Switch.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\06. Tri-Bit Switch\obj\Debug\_06.Tri_Bit_Switch.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\09. Bitwise Operations\ConsoleApp1\06. Tri-Bit Switch\obj\Debug\_06.Tri_Bit_Switch.pdb

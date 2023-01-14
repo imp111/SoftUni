@@ -1,6 +1,0 @@
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\bin\Debug\_03.Legendary_Farming.exe.config
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\bin\Debug\_03.Legendary_Farming.exe
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\bin\Debug\_03.Legendary_Farming.pdb
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\obj\Debug\04. Orders.csprojAssemblyReference.cache
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\obj\Debug\_03.Legendary_Farming.exe
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\03. Legendary Farming\obj\Debug\_03.Legendary_Farming.pdb

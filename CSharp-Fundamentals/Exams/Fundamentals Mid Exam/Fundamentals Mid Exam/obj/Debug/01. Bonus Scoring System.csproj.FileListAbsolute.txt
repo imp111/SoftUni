@@ -1,6 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\obj\Debug\01. Bonus Scoring System.csprojAssemblyReference.cache
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\bin\Debug\Fundamentals Mid Exam.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\bin\Debug\Fundamentals Mid Exam.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\bin\Debug\Fundamentals Mid Exam.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\obj\Debug\Fundamentals Mid Exam.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\Fundamentals Mid Exam\obj\Debug\Fundamentals Mid Exam.pdb

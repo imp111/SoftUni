@@ -1,6 +1,0 @@
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\bin\Debug\test.exe.config
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\bin\Debug\test.exe
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\bin\Debug\test.pdb
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\obj\Debug\test.csprojAssemblyReference.cache
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\obj\Debug\test.exe
-C:\Users\alexs\source\repos\13. Associative Arrays - Exercise\test\obj\Debug\test.pdb

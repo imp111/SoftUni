@@ -1,6 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\bin\Debug\_02.Mu_Online.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\bin\Debug\_02.Mu_Online.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\bin\Debug\_02.Mu_Online.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\obj\Debug\02. Mu Online.csprojAssemblyReference.cache
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\obj\Debug\_02.Mu_Online.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\Exams\Fundamentals Mid Exam\02. Mu Online\obj\Debug\_02.Mu_Online.pdb

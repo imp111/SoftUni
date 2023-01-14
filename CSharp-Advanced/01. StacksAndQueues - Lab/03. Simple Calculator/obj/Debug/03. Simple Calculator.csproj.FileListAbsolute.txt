@@ -1,6 +1,0 @@
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\bin\Debug\_03.Simple_Calculator.exe.config
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\bin\Debug\_03.Simple_Calculator.exe
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\bin\Debug\_03.Simple_Calculator.pdb
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\obj\Debug\03. Simple Calculator.csprojAssemblyReference.cache
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\obj\Debug\_03.Simple_Calculator.exe
-C:\Users\alexs\source\repos\Advanced-CSharp\03. Simple Calculator\obj\Debug\_03.Simple_Calculator.pdb

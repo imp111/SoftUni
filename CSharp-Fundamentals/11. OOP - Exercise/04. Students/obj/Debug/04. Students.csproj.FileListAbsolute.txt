@@ -1,5 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\04. Students\bin\Debug\_04.Students.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\04. Students\bin\Debug\_04.Students.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\04. Students\bin\Debug\_04.Students.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\04. Students\obj\Debug\_04.Students.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\04. Students\obj\Debug\_04.Students.pdb

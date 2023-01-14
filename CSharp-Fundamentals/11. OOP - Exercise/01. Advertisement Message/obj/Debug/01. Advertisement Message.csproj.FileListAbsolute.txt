@@ -1,6 +1,0 @@
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\bin\Debug\_01.Advertisement_Message.exe.config
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\bin\Debug\_01.Advertisement_Message.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\bin\Debug\_01.Advertisement_Message.pdb
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\obj\Debug\01. Advertisement Message.csprojAssemblyReference.cache
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\obj\Debug\_01.Advertisement_Message.exe
-D:\Projects\Github-SoftUni-Fundamentals\Fundamentals-Module\11. OOP - Exercise\01. Advertisement Message\obj\Debug\_01.Advertisement_Message.pdb
