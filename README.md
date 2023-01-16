@@ -1,5 +1,5 @@
 # Software University Web Development Route
-This repo contains all of my exercises and homeworks from C# courses at SoftUni.
+This repository contains all of my exercises and homeworks from C# courses at SoftUni.
 
 ### :white_check_mark: Algorithms-Fundamentals-with-CSharp :heavy_check_mark:
 01. Recursion and Backtracking - Lab
