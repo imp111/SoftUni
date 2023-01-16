@@ -1,101 +1,187 @@
 # Software University Web Development Route
+This repo contains all of my exercises and homeworks from C# courses at SoftUni.
 
-A beauty bookings web application for hair, nails, spa etc. appointments.  :calendar: :nail_care:
+## :white_check_mark: Algorithms-Advanced-with-CSharp-January-2021 - [Certificated](https://softuni.bg/Certificates/Details/100910/08765ec3) :heavy_check_mark:
+01. Dijkstra and MST - Lab
+02. Graphs Bellman-Ford, Longest Path in (DAG) - Lab	
+03. Graphs Bellman-Ford Longest Path in DAG - Exercise
+04. Graphs Strongly Connected Components, Max Flow - Lab
+05. Graphs Strongly Connected Components, Max Flow - Exercise
+06. Dynamic Programming Advanced - Lab		
+07. Dynamic Programming Advanced - Exercise
+08. Exam Preparation
 
-:dart:  My project for the ASP.NET Core course at SoftUni. (April 2020) 
+### :white_check_mark: Algorithms-Fundamentals-with-CSharp-November-2020 - [Certificated](https://softuni.bg/certificates/details/95979/59ff42cc) :heavy_check_mark:
+01. Recursion and Backtracking - Lab
+02. Combinatorial Problems - Lab
+03. Recursion and Combinatorial Problems - Exercise
+04. Searching, Sorting and Greedy Algorithms - Lab
+05. Graph Theory, Traversal and Shortest Paths - Lab
+06. Graph Theory, Traversal and Shortest Paths - Exercise
+07. Introduction to Dynamic Programming - Lab
+08. Introduction to Dynamic Programming - Exercise
+09. Exam Preparation
 
-## :information_source: How It Works
+## :white_check_mark: Data-Structures-Advanced-with-CSharp-October-2020 - [Certificated](https://softuni.bg/Certificates/Details/92116/8f5d17d8) :heavy_check_mark:
+01. B-Trees-2-3-Trees-and-AVL-Trees-Lab
+02. B-Trees-2-3-Trees-and-AVL-Trees-Exercise
+03. Red-Black-Trees-and-AA-Trees-Lab
+04. Red-Black-Trees-and-AA-Trees-Exercise
+05. Hash-Tables-Sets-and-Dictionaries-Lab
+06. Hash-Tables-Sets-and-Dictionaries-Exercise
+07. Data-Structures-Augmentation-Lab
+08. Exam-Preparation
 
-- Guest visitors: 
-  - browse categories of beauty services;
-  - view salons with their services;
-  - read blog posts.
-- Logged Users:
-  - book appointments using interactive datepicker; 
-  - can cancel appointments; 
-  - can rate salons for which they had confirmed past appointments.  
-- Salon Manager (user role):
-  - confirms/declines users' appointments for particular salon; 
-  - controls what services are available for booking in the salon.
-- Admin:
-  - creates/deletes blog posts, categories, salons and services; 
-  - can review the appointments history.
+### :white_check_mark: Data-Structures-Fundamentals-with-CSharp-September-2020 - [Certificated](https://softuni.bg/Certificates/Details/88856/5a8f42ea) :heavy_check_mark:
+01. Linear Data Structures - Lab
+02. Linear Data Structures - Exercise
+03. Trees Representation and Traversal (BFS and DFS) - Lab
+04. Trees Representation and Traversal (BFS and DFS) - Exercise
+05. Heaps and Binary Trees - Lab
+06. Heaps and Binary Trees - Exercise
+07. Exam Preparation
 
-## :hammer_and_pick: Built With
+## :white_check_mark: ASP.NET-Core-February-2020 - [Certificated](https://softuni.bg/certificates/details/81048/10c49cf3) :heavy_check_mark:
+- #### :trophy: My project for completing this course -> [BeautyBooking](https://github.com/marinakolova/BeautyBooking)
+- ASP.NET CORE INTRODUCTION
+- RAZOR VIEWS
+- APPLICATION FLOW, FILTERS & MIDDLEWARE
+- WORKING WITH DATA
+- WORKSHOP
+- WEB API
+- SECURITY & IDENTITY
+- WORKSHOP
+- TESTING
+- PROJECT ARCHITECTURE
+- ADVANCED TOPICS
+- WORKSHOP
+- SIGNALR
+- AZURE, DEPLOYMENT & CI
+- BLAZOR
 
-- ASP.NET Core 3.1
-- Entity Framework (EF) Core 3.1
-- Microsoft SQL Server Express
-- ASP.NET Identity System
-- MVC Areas with Multiple Layouts
-- Razor Pages, Sections, Partial Views
-- View Components
-- Repository Pattern
-- Auto Мapping
-- Dependency Injection
-- Status Code Pages Middleware
-- Exception Handling Middleware
-- Sorting, Filtering, and Paging with EF Core
-- Data Validation, both Client-side and Server-side
-- Data Validation in the Models and Input View Models
-- Custom Validation Attributes
-- Responsive Design
-- CloudinaryDotNet
-- Bootstrap
-- jQuery
+## :white_check_mark: CSharp-Web-Basics-January-2020 - [Certificated](https://softuni.bg/certificates/details/77261/87f71be5) :heavy_check_mark:
+- Web Server - HTTP Protocol
+- Web Server - Asynchronous Processing
+- Web Server - State Management
+- Workshop
+- MVC Introduction
+- MVC Advanced - View Engine
+- Workshop
+- MVC Advanced - IOC and Data Binding
+- Workshop
 
-## :gear: Application Configurations
+## :white_check_mark: Entity-Framework-Core-October-2019 - [Certificated](https://softuni.bg/certificates/details/74319/0495aa3e) :heavy_check_mark:
+01. EXERCISE: FETCHING RESULTSETS WITH ADO.NET
+02. EXERCISE: ORM FUNDAMENTALS
+03. Entity Framework Introduction
+04. Code-First
+05. Entity Relations
+06. Advanced Querying
+07. EXERCISE: C# AUTO MAPPING OBJECTS
+08. JavaScript Object Notation - JSON
+09. Extensible Markup Language - XML
+10. EXERCISE: DESIGN PATTERNS
+11. EXERCISE: BEST PRACTICES AND ARCHITECTURE
+12. WORKSHOP - ASP.NET CORE
 
-### 1. The Connection string 
-is in `appsettings.json`. If you don't use SQLEXPRESS, you should replace `Server=.\\SQLEXPRESS;` with `Server=.;`
+## :white_check_mark: MS-SQL-September-2019 - [Certificated](https://softuni.bg/certificates/details/71134/32ddd8ec) :heavy_check_mark:
+01. Data Definition and Datatypes
+02. Basic CRUD
+03. Built-in Functions
+04. Data Aggregation
+05. Table Relations
+06. Joins, Subqueries, CTE and Indices
+07. Database Programmability and Transactions
+08. Additional Exercises
+09. Exam Preparation 1
+10. Exam Preparation 2
 
-### 2. Database Migrations 
-would be applied when you run the application, since the `ASPNETCORE-ENVIRONMENT` is set to `Development`. If you change it, you should apply the migrations yourself.
+## :white_check_mark: CSharp-OOP-June-2019 - [Certificated](https://softuni.bg/certificates/details/69824/75cc9608) :heavy_check_mark:
+01. Working with Abstraction - Lab
+02. Working with Abstraction - Exercise
+03. Inheritance - Lab
+04. Inheritance - Exercise
+05. Encapsulation - Lab
+06. Encapsulation - Exercise
+07. Interfaces and Abstraction - Lab
+08. Interfaces and Abstraction - Exercise
+09. Polymorphism - Lab
+10. Polymorphism - Exercise
+11. SOLID - Lab
+12. SOLID - Exercise
+13. Reflection and Attributes - Lab
+14. Reflection and Attributes - Exercise
+15. EXCEPTIONS AND ERROR HANDLING
+16. WORKSHOP - Custom Unit Testing Framework
+17. WORKSHOP - Snake
+18. UNIT TESTING - Lab
+19. UNIT TESTING - Exercise
+20. TEST DRIVEN DEVELOPMENT - Lab
+21. TEST DRIVEN DEVELOPMENT - Exercise
 
-### 3. Seeding sample data
-would happen once you run the application, including Test Accounts:
-  - User: user@user.com / password: 123456
-  - Salon Manager: manager@manager.com / password: 123456
-  - Admin: admin@admin.com / password: 123456
- 
-### 4. Cloudinary Setup - optionally
-#### Running without it:
-You won't get an error for missing Cloudinary Credentials - it is handled by using predefined (already uploaded) image, when Cloudinary configuration is missing. So when you are creating content in admin panel, it will be added but not with the image you have chosen.
-#### If you want to actually upload images, you should:
-1. Add Cloudinary Credentials in `appsettings.json` in the format:
-```json
-  "Cloudinary": {
-    "CloudName": "",
-    "ApiKey": "",
-    "ApiSecret": "",
-    "EnvironmentVariable": ""
-  }
-```
-2. Update the Cloudinary Setup part of `Startup.cs`'s `ConfigureServices` method as follows:
-```csharp
-            // Cloudinary Setup
-            Cloudinary cloudinary = new Cloudinary(new Account(
-                this.configuration["Cloudinary:CloudName"],
-                this.configuration["Cloudinary:ApiKey"],
-                this.configuration["Cloudinary:ApiSecret"]));
-            services.AddSingleton(cloudinary);
-```
+## :white_check_mark: CSharp-Advanced-May-2019 - [Certificated](https://softuni.bg/certificates/details/67748/13677cd4) :heavy_check_mark:
+01. Stacks and Queues - Lab
+02. Stacks and Queues - Exercise
+03. Multidimensional Arrays - Lab
+04. Multidimensional Arrays - Exercise
+05. Sets and Dictionaries Advanced - Lab
+06. Sets and Dictionaries Advanced - Exercise
+07. STREAMS, FILES AND DIRECTORIES - Lab
+08. STREAMS, FILES AND DIRECTORIES - Exercise
+09. Functional Programming - Lab
+10. Functional Programming - Exercises
+11. Defining Classes - Lab
+12. Defining Classes - Exercise
+13. WORKSHOP - Lab
+14. WORKSHOP - Exercise
+15. Generics - Lab
+16. Generics - Exercises
+17. Iterators and Comparators - Lab
+18. Iterators and Comparators - Exercise
 
-## :framed_picture: Screenshot - Home Page
+## :white_check_mark: Technology-Fundamentals-with-CSharp-January-2019 - [Certificated](https://softuni.bg/certificates/details/65409/7c436378) :heavy_check_mark:
+01. Intro And Basic Syntax - Lab
+02. Intro And Basic Syntax - Exercise
+03. Intro And Basic Syntax - More Exercise
+04. Data Types And Variables - Lab
+05. Data Types And Variables - Exercise
+06. Data Types And Variables - More Exercises
+07. Arrays - Lab
+08. Arrays - Exercise
+09. Arrays - More Exercise
+10. Methods - Lab
+11. Methods - Exercise
+12. Methods - More Exercise
+13. Lists - Lab
+14. Lists - Exercise
+15. Lists - More Exercise
+16. Objects And Classes - Lab
+17. Objects And Classes - Exercise
+18. Objects And Classes - More Exercise
+19. Associative Arrays - Lab
+20. Associative Arrays - Exercise
+21. Associative Arrays - More Exercise
+22. Text Processing And Regular Expressions - Lab
+23. Text Processing And Regular Expressions - Exercise
+24. Text Processing And Regular Expressions - More Exercise
+25. Basic Web - Lab - Phonebook
+26. Basic Web - Exercise - CalculatorApp
+27. Basic CRUD - Lab - ToDoList
+28. Basic CRUD - Exercise - TeisterMask
+29. Web Project - SoftUniTwitter
+30. Web Project - Exercise - Forum
 
-![BeautyBooking-HomePage](https://res.cloudinary.com/beauty-booking/image/upload/v1588865868/SCREENSHOTS/1-home_orn9ng.png)
-
-## :framed_picture: Screenshot - Make An Appointment Page
-
-![BeautyBooking-MakeAnAppointment](https://res.cloudinary.com/beauty-booking/image/upload/v1588865868/SCREENSHOTS/4-make-an-appointment_zclidt.png)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-#### Using [ASP.NET-MVC-Template](https://github.com/NikolayIT/ASP.NET-MVC-Template) developed by:
-- [Nikolay Kostov](https://github.com/NikolayIT)
-- [Vladislav Karamfilov](https://github.com/vladislav-karamfilov)
-- [Stoyan Shopov](https://github.com/StoyanShopov)
+## :white_check_mark: Programming-Basics-with-CSharp-November-2018 - [Certificated](https://softuni.bg/certificates/details/61814/0453324e) :heavy_check_mark:
+01. First Steps In Coding
+02. Simple Operations And Calculations - Lab
+03. Simple Operations And Calculations - Exercise
+04. Conditional Statements - Lab
+05. Conditional Statements - Exercise
+06. Nested Conditional Statements - Lab
+07. Nested Conditional Statements - Exercise
+08. While Loop - Lab
+09. While Loop - Exercise
+10. For Loop - Lab
+11. For Loop - Exercise
+12. Nested Loops - Lab
+13. Nested Loops - Exercise
