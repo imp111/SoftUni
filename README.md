@@ -22,7 +22,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 - Workshop
 - MVC Advanced - IOC and Data Binding
 - Workshop
-
+<!---
 ## :white_check_mark: Entity-Framework-Core :heavy_check_mark:
 01. EXERCISE: FETCHING RESULTSETS WITH ADO.NET
 02. EXERCISE: ORM FUNDAMENTALS
@@ -36,6 +36,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 10. EXERCISE: DESIGN PATTERNS
 11. EXERCISE: BEST PRACTICES AND ARCHITECTURE
 12. WORKSHOP - ASP.NET CORE
+--->
 
 ## :white_check_mark: MS-SQL :heavy_check_mark:
 01. Data Definition and Datatypes
