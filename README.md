@@ -1,6 +1,7 @@
 # Software University Web Development Route
 This repository contains all of my exercises and homeworks from C# courses at SoftUni.
 
+<!---
 ### :white_check_mark: Algorithms-Fundamentals-with-CSharp :heavy_check_mark:
 01. Recursion and Backtracking - Lab
 02. Combinatorial Problems - Lab
@@ -11,7 +12,8 @@ This repository contains all of my exercises and homeworks from C# courses at So
 07. Introduction to Dynamic Programming - Lab
 08. Introduction to Dynamic Programming - Exercise
 09. Exam Preparation
-
+--->
+<!---
 ## :white_check_mark: CSharp-Web-Basics :heavy_check_mark:
 - Web Server - HTTP Protocol
 - Web Server - Asynchronous Processing
@@ -22,6 +24,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 - Workshop
 - MVC Advanced - IOC and Data Binding
 - Workshop
+--->
 <!---
 ## :white_check_mark: Entity-Framework-Core :heavy_check_mark:
 01. EXERCISE: FETCHING RESULTSETS WITH ADO.NET
