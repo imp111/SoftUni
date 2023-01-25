@@ -1,0 +1,80 @@
+Create Database (Schema) - 
+CREATE SCHEMA `nameOfDataBase`;
+
+Create Table with 3 columns with id being the primary key of the table - 
+CREATE TABLE `gamebar`.`employees` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+CREATE Table with 3 columns and foreign key and primary key - 
+  CREATE TABLE `gamebar`.`products` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `category_id` INT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `my_frKey_idx` (`category_id` ASC) VISIBLE,
+  CONSTRAINT `my_frKey`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `gamebar`.`categories` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+Insert data to table - INSERT INTO `schema`.`table` (`name of col 1`, `name of col 2`, `name of col 3`) VALUES ('value of col 1', 'value of col 2', 'value of col 3');
+INSERT INTO `gamebar`.`employees` (`id`, `first_name`, `last_name`) VALUES ('1', 'Test1', 'Test1');
+INSERT INTO `gamebar`.`employees` (`id`, `first_name`, `last_name`) VALUES ('2', 'Test2', 'Test2');
+INSERT INTO `gamebar`.`employees` (`id`, `first_name`, `last_name`) VALUES ('3', 'Test3', 'Test3');
+
+Delete row from table - DELETE FROM `schema`.`table` WHERE (`id` = 'number of row you want to delete');
+DELETE FROM `gamebar`.`employees` WHERE (`id` = '2');
+
+Delete table of schema - right click Drop table and Drop Schema
+
+Rename column in table - RENAME COLUMN `oldName` TO `newName`;
+ALTER TABLE minions.towns
+RENAME COLUMN `town_id` TO `id`;
+
+Add column to table - ADD `column name` `type`
+ALTER TABLE minions.towns
+ADD town_id` INT;
+
+Add foreign key to already created table - 
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+UPDATE `highest_paid_employees` 
+SET `salary`= `salary` + 5000
+WHERE `department_id` = 1;
+
+SQL Functions:
+
+String
+	- SUBSTRING(String, Position, Length) : Length - kolko simvola da reznem, Position - startova poziciq ot koqto zapochvame da rejem
+	- REPLACE(String, Pattern, Replacement)
+	- LTRIM(String) - left trim (trimva nqkakvi simvoli ot lqvo)
+	- RTRIM(String) - right trim (trimva nqkakvi simvoli ot dqsno)
+	- CHAR_LENGTH(STRING) - count number of chars
+	- LENGTH - get number of used bytes
+	- LEFT(String, Count) - left rejem nqkakuv broi charove
+	- RIGHT(String, Count) - right rejem nqkakuv broi charove
+	- LOCATE(Pattern, String)
+Math
+	- CONV(Value, from_base, to_base) - convert numbers between different number bases
+	- ROUND(Value, Precision) - precision - broi chisla sled desetichnata zapetaq
+	- FLOOR(Value)
+	- CEILING(Value)
+Date and Time
+	- EXTRACT(Part FROM Date)
+	- TIMESTAMPDIFF(FirstDate, SecondDate)
+	- YEAR(Date)
+	- MONTH(Date)
+	- DAY(Date)
+	- DATE_ADD(Date to add, Interval, )
+Other
+	- HAVING
+	- WHERE
+	- GROUP BY
+	- ORDER BY
+	- IN
+	- BETWEEN
