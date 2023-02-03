@@ -1,0 +1,59 @@
+Associative Arrays - array indexed by keys -> value pair (not with 0, 1, 2, ..., n)
+	
+	- Dictionary
+		Dictionary<Key, Value> - keys are unique
+		var fruits = new Dictionary<string, double>();
+		fruits["bananna"] = 2.20;
+
+	- SortedDictionary
+		SortedDictionary<Key, Value> - keeps its keys sorted (uses a balanced search tree)
+		var fuits = new SortedDictionary<string, double>();
+		fruits["kiwi"] = 4.50;
+
+	- Built in Methods for Dictionaries
+		- Add(Key, Value)
+		- Remove(Key, Value)
+		- ContainsKey(key)
+		- ContainsValue(value)
+
+		var airplanes = new Dictionary<string, int>();
+		airplanes.Add("Boeing 737", 130);	// add item to dictionary
+		airplanes.Remove("Boeing 737");		// remove item from dictionary
+		if (airplanes.ContainsKey("Boeing 737") || airplanes.ContainsValue(130))
+		{
+			Console.WriteLine("The plane exists");
+		}
+	
+	- Multi-Dictionaries - dictionaries holding key and a list of values
+		var grades = new Dictionary<string, List<int>>();
+		grades["Peter"] = new List<int>() {6, 6, 5, 5, 4, 4};
+		Console.WriteLine(string.Join(" ", grades["Peter"]));
+
+	- Nested-Dictionaries - dictionary may hold another dictionary as value
+		var country = new Dictionary<string, Dictionary<string, int>>();
+	
+	- Sets - keeps unique elements, fast performance, allows add/remove/search elements
+		- HashSet<T> - keeps a set of elements in hash table, elements are in no order, similar to List<T> but difference implementation
+		List<T> 					   vs 			HashSet<T> 
+		Fast "add"								Fast "add"
+		Slow "search"								Fast "search"
+		Slow "remove" (searches through each element)				Fast "remove" (thanks to hash-table)
+		Duplicates are allowed							Does not allows duplicates
+		Insertion order is guaranteed						Does not guarantee the insertion order
+
+		HashSet<string> set = new HashSet<string>();
+		set.Add("Peter");
+		set.Add("Gosho");
+		set.Add("Peter"); // not allowed
+		Console.WriteLine(string.Join(", ", set)); // we can use the usual methods - add, remove, contains(key), count
+
+		- SortedSet<T> - elements are ordered incrementally (alphabetically)
+			var sortedSet = new SortedSet<string>();
+			sortedSet.Add("Peter");
+			sortedSet.Add("Asha");
+			Console.WriteLine(string.Join(" ", sortedSet)); // output: Asha, Peter
+		
+		
+		
+
+	
