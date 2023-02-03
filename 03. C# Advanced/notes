@@ -22,6 +22,48 @@ Queues (FIFO - First In, First Out)
 		- ToArray()	- save all the values of the queue to array
 		- Contains()	- check if element exists in the queue
 		- Count()	- return the count of element in the stack
+Summary:
+	- Stack<T> - LIFO data structure
+	- Queue<T> - FIFO data structure
+	- Using built in methods for stacks and queues
+
+
+Lecture 2: Multidimensional Array:
+Multidimensional Arrays (1D, 2D, 3D, ..., nD) - array is a systematic arrangement of similar objects, multidimensional array have more than one dimension (2D are most used - matrix)
+	type[] name - 1D array
+	type[,] name - 2D array
+	type[,,] name - 3D array
+
+	int[,] matrix = new int[,];
+
+	2D Array (Matrix):
+
+	     0	 1   2			     Columns	
+	   -------------	   ----------------------------
+	0  | 1 | 2 | 3 |	R  | [0, 0] | [0, 1] | [0, 2] |
+	1  | 4 | 5 | 6 |	O  | [1, 0] | [1, 1] | [1, 2] |
+	2  | 7 | 8 | 9 |	W  | [2, 0] | [2, 1] | [2, 2] |
+	   -------------	S  ----------------------------
+
+Jagged Arrays (Array of Arrays) - multidimensional arrays, but each element has different size. Each of the arrays has different length
+	type[][] name - jagged array
+
+	int[][] jagged = new int[3][];
+	jagged[0] = new int[3];
+	jagged[1] = new int[2];
+	jagged[2] = new int[4];
+
+	- Accessing Element
+		int num = jagged[0][1]; // assign to integer num, a element from the jagged array with row - 0 and col - 1
+
+Summary:
+	- Multidimensional arrays
+		- Have more than one dimension
+		- Two-dimensional arrays are like tables with rows and columns
+
+	- Jagged Arrays
+		- Arrays of arrays
+		- Each element is an array itself
 
 Lecture 3: Sets and Dictionaires:
 Associative Arrays - array indexed by keys -> value pair (not with 0, 1, 2, ..., n)
