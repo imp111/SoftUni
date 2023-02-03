@@ -1,3 +1,29 @@
+Lecture 1: Stacks and Queues:
+Stacks (LIFO - Last In, First Out)
+	- Stack<T>
+		Stack<string> stack = new Stack<string>();
+
+	- Stack Methods
+		- Push()	- add element to the top of the stack
+		- Pop()		- remove element from the top of the stack
+		- Peek()	- return the top element without removing it
+		- ToArray()	- save all the values of the stack to array
+		- Contains()	- check if element exists in the stack
+		- Count()	- return the count of elements in the stack
+
+Queues (FIFO - First In, First Out)
+	- Queue<T>
+		Queue<string> queue = new Queue<string>();
+
+	- Queue Methods
+		- Enqueue()	- add element to the back of the queue
+		- Dequeue()	- remove element from the front of the queue
+		- Peek()	- return the first element of the queue without removing it
+		- ToArray()	- save all the values of the queue to array
+		- Contains()	- check if element exists in the queue
+		- Count()	- return the count of element in the stack
+
+Lecture 3: Sets and Dictionaires:
 Associative Arrays - array indexed by keys -> value pair (not with 0, 1, 2, ..., n)
 	
 	- Dictionary
@@ -52,8 +78,12 @@ Associative Arrays - array indexed by keys -> value pair (not with 0, 1, 2, ...,
 			sortedSet.Add("Peter");
 			sortedSet.Add("Asha");
 			Console.WriteLine(string.Join(" ", sortedSet)); // output: Asha, Peter
-		
-		
-		
+
+Summary:
+	- Multi-dictionaries allow keeping a collection as a dictionary value
+	- Nested dictionaries allow keeping a dictionary as a dictionary value
+	- Sets allow keeping unique values in unspecified order
+		- No duplicates
+		- Fast add, remove and search functions
 
 	
