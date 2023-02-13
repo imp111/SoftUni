@@ -1,6 +1,11 @@
-# [MySQL](https://softuni.bg/trainings/3422/mysql-may-2021))
+# [MySQL](https://softuni.bg/trainings/3422/mysql-may-2021)
 
 - Module 1 – Data Definition and Datatypes: | [Lab](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL/01.%20Databases%20Introduction.%20Data%20Definition%20and%20Datatypes%20-%20Lab) | [Exercise](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL/02.%20Database%20Introduction.%20Data%20Definition%20and%20Datatypes%20-%20Exercise) |
+ - Structured Query Language
+ - Basic SQL Queries
+ - Data Types in MySQL Server
+ - Data Management
+ - Table Customization
 
 - Module 2 – Basic CRUD: | [Lab](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL/03.%20Basic%20CRUD%20-%20Lab) | [Exercise](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL/04.%20Basic%20CRUD%20-%20Exercise) |
  
