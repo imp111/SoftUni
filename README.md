@@ -11,7 +11,6 @@ This repository contains all of my exercises and homeworks from C# courses at So
 06. Graph Theory, Traversal and Shortest Paths - Exercise
 07. Introduction to Dynamic Programming - Lab
 08. Introduction to Dynamic Programming - Exercise
-09. Exam Preparation
 --->
 <!---
 ## :white_check_mark: CSharp-Web-Basics :heavy_check_mark:
@@ -41,7 +40,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 12. WORKSHOP - ASP.NET CORE
 --->
 
-## :white_check_mark: MS-SQL :heavy_check_mark:
+## :white_check_mark: [MS-SQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
 01. Data Definition and Datatypes
 02. Basic CRUD
 03. Built-in Functions
@@ -50,10 +49,8 @@ This repository contains all of my exercises and homeworks from C# courses at So
 06. Joins, Subqueries, CTE and Indices
 07. Database Programmability and Transactions
 08. Additional Exercises
-09. Exam Preparation 1
-10. Exam Preparation 2
 
-## :white_check_mark: CSharp-OOP :heavy_check_mark:
+## :white_check_mark: [CSharp-OOP](https://github.com/imp111/SoftUni/tree/main/02.%20C%23%20OOP)
 01. Working with Abstraction - Lab
 02. Working with Abstraction - Exercise
 03. Inheritance - Lab
@@ -76,7 +73,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 20. TEST DRIVEN DEVELOPMENT - Lab
 21. TEST DRIVEN DEVELOPMENT - Exercise
 
-## :white_check_mark: CSharp-Advanced :heavy_check_mark:
+## :white_check_mark: [CSharp-Advanced](https://github.com/imp111/SoftUni/tree/main/03.%20C%23%20Advanced)
 01. Stacks and Queues - Lab
 02. Stacks and Queues - Exercise
 03. Multidimensional Arrays - Lab
@@ -96,7 +93,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 17. Iterators and Comparators - Lab
 18. Iterators and Comparators - Exercise
 
-## :white_check_mark: Fundamentals-with-CSharp :heavy_check_mark:
+## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
 01. Intro And Basic Syntax - Lab
 02. Intro And Basic Syntax - Exercise
 03. Intro And Basic Syntax - More Exercise
