@@ -40,7 +40,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 12. WORKSHOP - ASP.NET CORE
 --->
 
-## :white_check_mark: [MS-SQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
+## :white_check_mark: [MySQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
 01. Data Definition and Datatypes
 02. Basic CRUD
 03. Built-in Functions
