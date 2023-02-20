@@ -38,7 +38,7 @@
   - Interactive Demo
   - Self-study Exercises
 07. PowerShell
-  - Introduction to PowerShell
-  - Create and run scripts
-  - Interactive demo
-  - Self-study exercises
+    - Introduction to PowerShell
+    - Create and run scripts
+    - Interactive demo
+    - Self-study exercises
