@@ -124,3 +124,12 @@ This repository contains all of my exercises and homeworks from C# courses at So
 28. Basic CRUD - Exercise - TeisterMask
 29. Web Project - SoftUniTwitter
 30. Web Project - Exercise - Forum
+
+## :white_check_mark: [Windows System Administration](https://softuni.bg/trainings/3798/windows-system-administration-june-2022)
+01. Introduction to Windows Server
+02. Basic Services and Components
+03. Fundamentals of Active Directory
+04. Advanced Services
+05. Additional Techniques in Active Directory
+06. System Monitoring and Maintenance
+07. PowerShell
