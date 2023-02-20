@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _05.Generating_Combinations
 {
@@ -11,26 +9,20 @@ namespace _05.Generating_Combinations
     {
         static void Main(string[] args)
         {
-            int[] set = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-            int generateNumber = int.Parse(Console.ReadLine());
-            int[] vector = new int[generateNumber];
-            GenCombs(set, vector, 0, -1);
+            int steps = Convert.ToInt32(Console.ReadLine().Trim());
+
+            string path = Console.ReadLine();
+
+            int result = Program.countingValleys(steps, path);
+
+            Console.WriteLine(result);
+
         }
 
-        public static void GenCombs(int[] set, int[] vector, int index, int border) 
+        public static int countingValleys(int steps, string path)
         {
-            if (index >= vector.Length)
-            {
-                Console.WriteLine(string.Join(" ", vector));
-            }
-            else
-            {
-                for (int i = border + 1; i < set.Length; i++)
-                {
-                    vector[index] = set[i];
-                    GenCombs(set, vector, index + 1, i);
-                }
-            }
+            return 0;
         }
+
     }
 }
