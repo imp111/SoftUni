@@ -1,0 +1,20 @@
+02. Networking Basics:
+
+Types to connect a virtual machine to a network (Internet, LAN, etc.)
+- External Connection (VirtualBox - Bridged, VMware - Bridged, Hyper-V - External Switch) which allows communication between:
+	- VM to VM (the VM can communicate with other VMs)
+	- VM to Host (the VM can communicate with the PC which hosts the VM)
+	- VM to LAN (the VM can communicate with other devices in the physical local area network)
+
+- Shared connection with NAT (Network Address Translating) (Shared connection with NATing allows for the VMs in the LAN to communicate with other devices through Internet - allow communication with the outside world) (Hyper-V - Internal Switch*, VirtualBox - NAT Network, VMWare - NAT) which allows communication between:
+	- VM to VM
+	- VM to Host
+	- VM to LAN* (the * shows that Port Forwarding is needed)
+
+- Shared connection (in this connection we don't have NATing, so the access to the outside world is not possible) (Hyper-V - Internal Switch, VirtualBox - Host-only Adapter, VMware - Host Only): 
+	- VM to VM
+	- VM to Host 
+
+- Isolated connection (communication only between VMs) (Hyper-V - Private Switch, VirtualBox - Internal Network, VMware - Host Only*):
+	- VM to VM
+
