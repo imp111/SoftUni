@@ -336,7 +336,76 @@ Working with Abstract Classes
 
 		public abstract void Build();
 
+	
+	Example
 
+	public interface ICar 
+	{
+		string Model { get; }
+		string Color { get; }
+		void Start();
+		void Stop();
+	}
+
+	public interface IElectricCar
+	{
+		int Batteries { get; }
+	}
+
+	public interface InternalCombustionEngine
+	{
+		int Fuel { get; }
+	}
+
+	public class Tesla : ICar, IElectricCar
+	{
+		public string Model { get; private set; }
+		public string Color { get; private set; }
+		public int Batteries { get; private set; }
+		public Tesla(string model, string color, int batteries)
+		{
+			Model = model;
+			Color = color;
+			Batteries = batteries;
+		}
+
+		public void Start()
+		{
+			Console.Writeline($"Battery Percentage: {Batteries}");
+			Console.WriteLine($"The car model: {Model} with color: {Color} started!");
+		}
+
+		public void Stop()
+		{
+			Console.WriteLine($"Battery Percentage: {Batteries}");
+			Console.WriteLine($"The car model: {Model} with color: {Color} stopped!");
+		}
+	}
+
+	public class Seat : ICar, InternalCombustionEngine
+	{
+		public string Model { get; private set; }
+		public string Color { get; private set; }
+		public int Fuel { get; private set; }
+		public Seat(string model, string color, int fuel)
+		{
+			Model = model;
+			Color = color;
+			Fuel = fuel;
+		}
+
+		public void Start()
+		{
+			Console.Writeline($"Fuel Percentage: {Fuel}");
+			Console.WriteLine($"The car model: {Model} with color: {Color} started!");
+		}
+
+		public void Stop()
+		{
+			Console.WriteLine($"Fuel Percentage: {Fuel}");
+			Console.WriteLine($"The car model: {Model} with color: {Color} stopped!");
+		}
+	}
 
 Interfaces vs Abstract Classes
 
