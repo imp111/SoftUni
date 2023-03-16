@@ -2,11 +2,11 @@ Lecture 1: Inheritance (Extending Classes):
 
 Hierarchy
 
---------- Superclass (Parent, Base Class) 
+	Superclass (Parent, Base Class) 
 		
 		- The class giving its members to its child class
 
---------- Subclass (Child, Derived Class) 
+	Subclass (Child, Derived Class) 
 		
 		- The class taking members from its base class
 
@@ -15,23 +15,23 @@ Hierarchy
 
 Reusing constructors
 
--------	Constructors are not inherited, so they have to be reused by the child classes using the base keyword.
+	Constructors are not inherited, so they have to be reused by the child classes using the base keyword.
 
-	Student : Person
-	public Student(string name, School school) : base(name)
-	{
-		...
-	}
+		Student : Person
+		public Student(string name, School school) : base(name)
+		{
+			...
+		}
 
--------	Derived class instance contains instance of its base class.
+	Derived class instance contains instance of its base class.
 
-	In C#, there is not multiple inheritance, one class can inherit only one class, while one class can be inherited by a lot of classes.
-	The only way to achieve multiple inheritance is by Interfaces.
+		In C#, there is not multiple inheritance, one class can inherit only one class, while one class can be inherited by a lot of classes.
+		The only way to achieve multiple inheritance is by Interfaces.
 
 
 Access to Base Class Members
 	
--------	Using the base keyword, we can access members of the base class.
+	Using the base keyword, we can access members of the base class.
 
 	- base.MethodName
 	- base.Property
@@ -40,15 +40,15 @@ Access to Base Class Members
 
 Reusing Classes (Reusing Code at Class Lever)
 	
--------	Inheritance and Access Modifiers 
+	Inheritance and Access Modifiers 
+		
 		- Public and Protected members can be accessed by the Derived Classes
 		- Internal members are accessed in the same assembly
 		- Private members are inherited, but not visible in the Derived Classes
 
--------	Shadowing Variables - Derived classes can hide superclass variables
+	Shadowing Variables - Derived classes can hide superclass variables
 	
 	class Person { protected int weight; }
-
 	class Patient : Person
 	{
 		protected float weight; 	- hides int weight
@@ -59,10 +59,9 @@ Reusing Classes (Reusing Code at Class Lever)
 	}
 
 
--------	Accessing Shadowed Variables
+	Accessing Shadowed Variables
 	
 	class Person { protected int weight; }
-
 	class Patient : Person
 	{
 		protected float weight; 	- Local Variable
@@ -75,31 +74,29 @@ Reusing Classes (Reusing Code at Class Lever)
 	}
 	
 	
--------	Virtual Methods - defines a method that can be overriden (virtual, overidde keywords)
+	Virtual Methods - defines a method that can be overriden (virtual, overidde keywords)
 
-	public class Animal { public virtual void Eat() {...} }
+		public class Animal { public virtual void Eat() {...} }
+		public class Dog : Animal { public override void Eat() {...} }
 
-	public class Dog : Animal { public override void Eat() {...} }
 
-------- Sealed Modifier (sealed keyword) - the sealed modifier prevents other classes from inheriting from it
+	Sealed Modifier (sealed keyword) - the sealed modifier prevents other classes from inheriting from it
 	
-	Sealed can be used on a method or a property in a Base Class
-
-	It enables you to allow classes to derive from your class
-
-	Prevents the overriding of specific virtual methods and properties
+		- Sealed can be used on a method or a property in a Base Class
+		- It enables you to allow classes to derive from your class
+		- Prevents the overriding of specific virtual methods and properties
 
 
 	
 Types of Class Reuse (Extension (Inheritance) and Composition)
 
---------- Extension (Inheritance) (IS-A relation)
+	Extension (Inheritance) (IS-A relation)
 	
 		- Duplicate code is error prone
 		- Reuse classes through extention (inheritance)
 		- Sometimes the only way
 
---------- Composition (HAS-A relation)
+	Composition (HAS-A relation)
 
 		- using classes to define classes
 
@@ -257,9 +254,106 @@ Summary
 	- Mutable and Immutable objects
 
 
+Lecture 3: Interfaces and Abstraction (Interfaces vs Abstract Classes, Abstraction vs Encapsulation):
+
+Abstraction (Achieving Abstraction)
+	
+	Abstraction - preserving information, relevant in a given context, and forgetting information that is irrelevant in that context
+
+		- It means ignoring irrelevant features, properties, or methods and emphasizing the ones relevant to the context of the project we develop
+		- Abstraction helps managing complexity
+		- Abstraction also lets you focus on what the object does instead of how it does it
+
+	The main ways to achieve abstractions are
+		- Interfaces
+			public interface IAnimal {}
+
+		- Abstract classes
+			public abstract class Mammal {}
+
+		class Person : Mammal, IAnimal {}
+
+
+	Abstraction vs Encapsulation
+	
+		- Abstraction									- Encapsulation
+		- Process of hiding the implementation details 					- Used to hide the code and data inside a single unit
+		and showing only fucntionality to the user					to protect the data from the outside world
+		- Achieved with interfaces and abstract classes					- Achieved with access modifiers (private, public, protected)
+	
+
+Working with Interfaces
+	
+	public interface IPrintable	// interface - the keyword that specified to the compiler that we are using interface, IPrintable - name starts with I (this is the convention)
+	{
+		void Print();
+	}
+	
+	The Interface is afterwards inherited by a class, and in that class is then written the implementation of the interface (the code for the Print() method, etc.)
+
+	public class Document : IPrintable
+	{
+		public void Print()
+		{
+			Console.WriteLine("Printing");
+		}
+	}
+
+	Interfaces
+		- Contains signatures of methods, properties, events or indexers (only the types and names, they should all have public access modifiers)
+		- A class can inherit one or more base interfaces, and interfaces can inherit interfaces
+		- When a base type list contains a base class and interfaces, the base class must come first in the list
+		- A class that implements an interface can explicitly implement memebers of that interface
+			- An explicitly implemented member cannot be accessed through a class instace, but only through the interface
+
+	
+	Multiple Implementation
+		- Relationship between classes and interfaces
+			Class -> 	extends 	-> Class
+			Class -> 	implements 	-> Interface
+			Interface ->	extends		-> Interface
+
+		- Multiple implementation and inheritance
+			Class -> 	implements	-> Interface
+							-> Interface
+
+			Interface ->	extends		-> Interface
+							-> Interface
+
+
+Working with Abstract Classes
+	
+	Abstract Classes
+	- Cannot be instantiated
+	- May contain abstract methods and accessors
+	- Must provide implementation for all inherited interface members
+	- Implementing an interface might map the interface methods onto abstract methods
+	
+	Abstract Methods
+	- An abstract method is implicitly a virtual method
+	- Abstract method declarations are only permitted in abstract classes
+	- An abstract method declaration provides no actual implementation
+
+		public abstract void Build();
 
 
 
+Interfaces vs Abstract Classes
+
+	- Interface										- Abstract Class
+	- A class may implement	several interfaces						- May inherit only one abstract class
+	- Cannot have access modifiers,	everything is assumed as public				- Can provide implementation and/or just the signature that have to be overridden
+	- Cannot provide any code, just the signature						- Can contain access modifiers for the fields, function, properties
+	- Fields and constants can't be defined							- Fields and constants can be defined
+	- If we add a new method we have to track down all the implementations			- If we add a new method we have the option of providing default implementation
+	of the interface and define implementation for the new method 				and therefore all the existing code might work properly
+
+
+Summary
+	- Abstraction
+	- How do we achieve abstraction
+	- Interfaces
+	- Abstract classes
 
 
 
