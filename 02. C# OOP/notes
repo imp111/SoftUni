@@ -425,17 +425,198 @@ Summary
 	- Abstract classes
 
 
+Lecture 4: Polymorphism (Polymorphism, Override and Overload Methods):
+
+	Polymorphism (Poly - many, morphe - forms) 
+		- This is something similar to a word having several different meanings depending on the context
+		- Polymorphism is often referred to as the third pillar of OOP, after encapsulation and inheritance
+
+	Polymorphism is the ability of an object to take many forms 
+		
+		public interface IAnimal {}
+		public abstract class Mammal {}
+		public class Person : Mammal, IAnimal {}
+
+		Person IS-A Person
+		Person IS-AN Object
+		Person IS-AN Animal
+		Person IS-A Mammal
 
 
+	Variable Type and Data Type
+
+		- Variable Type is the compile-time type of the variable
+		- Data Type is the actual runtime type of the variable
+
+		- If you need an object method, you need to cast it or override it
+
+		public class Person : Mammal, IAnimal {}
+		object objPerson = new Person();
+		IAnimal person = new Person();
+		Mammal mammal = new Person();
+		Person person = new Person();
 
 
+	Keyword "is"
+		
+		- Runtime check if an object is an instance of a specific class
+		
+		public class Person : Mammal, IAnimal {}
+		IAnimal person = new Person();
+		Mammal personOne = new Person();
+		Person personTwo = new Person();
+		if (person is Person)	// check object type of person
+		{
+			((Person)person).getSalary();	// cast to object type and use its methods
+		}
+
+	Keyword "is" Type Pattern
+
+		- Type pattern - tests whether an expression ca nbe converted to a specified type and casts it to a variable of that type
+
+		public class Person : Mammal, IAnimal {}
+		IAnimal person = new Person();
+		Mammal personOne = new Person();
+		Person personTwo = new Person();
+		if (personOne is Person person)		// check object is of type person and casts it 
+		{
+			person.getSalary();		// uses its methods
+		}
+
+	Keyword "is" Constant Pattern
+
+		- When performing pattern matching with the constant pattern, "is" tests whether an expression equal a specified constant
+
+		- Checking for null can be performed using the constant pattern
+
+		int i = 0;
+		int min = 0, max = 10;
+		while (true)
+		{
+			Console.WriteLine($"i is {i}");
+			i++;
+
+			if (i is max or min) break;
+		}
+
+	Keyword "is" var Pattern
+
+		- A pattern match with the var pattern always succeeds
+
+			Enumerable.Range(0, 100).Where(x => x % 10 is var r && r >= 1 && r <= 3)
+
+		- The value of expr is always assigned to a local variable named varname
+		- varname is a variable of the same type as expr
+		- Note that if expr is null, the is expression still is true and assigns null to varname
 
 
+	Keyword "as"
+		
+		- You can use the "as" operator to perform certain types of converions between compatible reference types
+
+		public class Person : Mammal, IAnimal {}
+
+		IAnimal person = new Person();
+		Mammal personOne = new Person();
+		Person personTwo;
+		
+		personTwo = personOne as Person;	// Convert Mammal to Person
+
+		if (personTwo is Person)	// Check if conversion is successful
+		{
+			Console.WriteLine("successful conversion");
+		}
 
 
+	Types of Polymorphism
+
+		-  Compile-time 
+			
+			- Also known as Static Polymorphism
+			- Argument lists could differ in
+				- Number of parameters			int Sum(int a, int b);
+				- Data type of parameters		double Sum(double a, double b, double c);
+				- Order of parameters			int Sum(double c, double a, double c);
+
+			int Sum(int a, int b, int c);
+			double Sum(double a, double b); // method overloading
+			
+			
+			Rules for Overloading a Method
+				- Name should be the same
+				- Signature must be different
+					- Number of arguments
+					- Data type of arguments
+					- Order of arguments
+				- Return type is not a part of its signature
+				- Overloading can take place in the same class or in its sub-classes
+				- Constructors can be overloaded
 
 
+		- Runtime
+			
+			Has two distinct apsects
+			- At run time, objects of a derived class may be treated as objects of a base class in places,
+			such as method parameters and collections or arrays
+				- When this occurs, the object's declared type is no longer identical to its run-time type
+			- Base classes may define and implement virtual methods
+				- Derived classes can override
+				- They provide their own definition and implementation
+			- At run-time, the CLR looks up the run-time type of the object and invokes that override of the virtual method
+			- Also known as Dynamic Polymorphism
+				
+				public class Rectangle {
+					public virtual double Area() {
+						return this.a * this.b;
+					}
+				}
+
+				public class Square : Rectangle {
+					public override double Area() {
+						return this.a * this.a; 	// Method overriding
+					}
+				}
+			
+			- Usage of override method
+
+				public static void Main()
+				{
+					Rectangle rect = new Rectangle(3.0, 4.0);
+					Rectangle square = new Square(4.0);
+
+					Console.WriteLine(rect.Area());	  // 12.0	Method overriding
+					Console.WriteLine(square.Area()); // 16.0
+				}
+			
+			- Rules of Overriding Method 
+
+				- Overriding must take place in any sub-classes
+				- The overriding method and the base must have the same return type and the same signature
+				- Base method must have the virtual keyword
+				- Overriding method must have the abstract or override keyword
+				- Private and static methods cannot be overriden
+				- Virtual members can use base keyword to call the base class
+
+			- Virtual Members
+					
+				- Virtual members remain virtual indefinitely
+				- A derived class can stop virtual inheritance by declaring an override as sealed
+					- Sealed methods can be replaced by derived classes by using the new keyword
+				- The override modifer extends the base class virtual method
+					- The new modifier hides an accessible base class method
+
+			public class Shape {}
+			public class Circle : Shape {}
+			public static void Main()
+			{
+				Shape shape = new Circle();
+				shape.Draw();
+			}
 
 
-
-
+	Summary
+		- Polymorphism - definition and types
+		- is keyword
+		- as keyword
+		- Overload methods
+		- Override methods
