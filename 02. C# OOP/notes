@@ -190,12 +190,87 @@ Access Modifiers (Visability of Class Members)
 
 		- There are no restrictions on accessing public members
 		- To access class directly from a namespace, use the using keyword to include the namespace
-		
+
+	- internal - is the default class access modifier, and is accessible to any other class in the same project
+
 	- protected
 
-	- internal
-
 	- internal protected
+
+
+Validation
+
+	- Validation in Setters (used for simple data validation) - callers of your methods should take care of handling exceptions
+		
+		public decimal Salary
+		{
+			get { return this.salary }
+			set { if (salary < 650) { throw new ArgumentExeption(...); } this.salary = value; }
+		}
+	
+	- Validation in Constructors - Constructors use private setters with validation logic and it guarantees a valid state of the object after its creation
+
+		public Person(string firstName, string lastName, int age)
+		{
+			this.FirstName = firstName;		- validation happens inside the setter
+			this.LastName = lastName;
+			this.Age = age;
+		}
+
+Mutable vs Immutable Objects
+
+	Mutable Objects					Immutable Objects
+	Changeable					Unchangeable (read-only)
+	Uses the same memory location			Create new memory every time they're modified
+	StringBuilder					string
+	List						Tuples
+
+	- Mutable Fields - private mutable fields are still not encapsulated, in this case you can access the field methods through the getter
+
+		class Team
+		{
+			private List<Person> players;
+			public List<Person> Players { get { return this.players; } }
+		}
+
+	- Immutable Fields - you can use IReadOnlyColletion to encapsulate collections
+
+		public class Team
+		{
+			private List<Person players;
+			public IReadOnlyCollection<Person> Players
+			{
+				get { return this.players.AsReadOnly(); }
+			}
+
+			public void AddPlayer(Person player) => this.players.Add(player); // mutable now
+		}
+
+
+Summary
+
+	- Encapsulation
+		- Hides implementation
+		- Reduces complexity
+		- Ensures that structural changes remain local
+	
+	- Mutable and Immutable objects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
