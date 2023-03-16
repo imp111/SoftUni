@@ -1,0 +1,24 @@
+Lecture 1: Inheritance (Extending Classes):
+
+Hierarchy
+	- Superclass (Parent, Base Class) - The class giving its members to its child class
+
+	- Subclass (Child, Derived Class) - The class taking members from its base class
+
+		Subclass : Superclass (subclass inherits superclass (all its properties, methods and fields)
+
+Reusing constructors
+
+	Constructors are not inherited, so they have to be reused by the child classes using the base keyword.
+
+	Student : Person
+	public Student(string name, School school) : base(name)
+	{
+		...
+	}
+
+	Derived class instance contains instance of its base class.
+
+	In C#, there is not multiple inheritance, one class can inherit only one class, while one class can be inherited by a lot of classes.
+	The only way to achieve multiple inheritance is by Interfaces.
+
