@@ -1,0 +1,139 @@
+01. QA Introduction:
+
+QA / SQA (Software Quality Assurance)
+
+QA aims to assure that the software is bug free.
+QA is a methodology of checking that software compiles with the requirements.
+
+Types of QA:
+	- Manual QA (click and check results)
+	- Automated QA (scripts)
+	
+Continuous integration and delivery (CI / CD)
+	- automated build and deploy in testing environment
+	- automated test execution
+	- notification / reporting
+	
+Defects are reported and tracked in bug tracking systems.
+
+With Software Testing it is impossible to reduce bugs to zero, but it is possible to reduce the bugs and risk.
+
+
+Testing Objectives:
+	- Prevention of defects
+	- Verification of the specified requirements
+	- Verification of the expected behavior of a software
+	- To reduce the level of risk of inadequate software
+	- To provide information for stakeholders
+	
+Software Testing Process:
+	- Test planning - test what, when and how?
+	- Test design - test scenarios and test cases
+	- Test Environment - install, configure, prepare test data
+	- Test Execution - perform tests
+	- Test Reporting - reports tests
+	
+	
+Software Defects:
+
+Humans can make errors when writing code.
+Errors produce defects. Defects are bugs in the program code or mistakes in the requirements, design or others.
+Defects may cause failure when the code is executed (it does the wrong thing).
+
+
+Error (programming error) - add function that works fine, expect 5 + 3 = 7 (latent error, it should be 8)
+Defect (bug, activated error) - call add function with 5 + 3, get 7 in some variable (instead of 8) 
+Failure (deviation of system behavior) - shedule a meeting at 7, instead of 8
+
+Seven Testing Principles:
+1 - Testing shows presence of defects, not their absence
+	- Testing can show that defects are present
+	- Cannot prove that there are not bugs
+	- Appropriate testing reduces the probability of defects
+	
+2 - Exhaustive testing is impossible (it is impossible to be bug free, but can reduce the risk)
+	- All combinations of inputs and preconditions are usually almost infinite number (its impossible to test everything)
+	- Testing everything is not feasible (bad idea to test everything, only the most probable ones)
+	- Risk analysis and priorities should be used to focus testing efforts (try to maximize the success rate of the tests - 95% ++)
+
+3 - Early testing saves time and money (the earlier we find a bug, the better)
+	- Testing should be started as early as possible and should be focused on defined objectives
+	- The later a bug is found, the more it costs to be fixed
+Stages: Conception Design Development Testing Release
+the earlier we find a bug in these stages, the smaller the cost of fixing the bug
+
+4 - Defects cluster together
+	- Testing effort shall be focused propotionally to the expected and later observed defect density of modules
+	- A small number of modules usually contains most of the defects discovered
+
+5 - Beware of the pesticide paradox
+	- Same tests repeated over and over again tend to lose their effectivness
+	- Previous undetected defects remain undiscovered
+
+6 - Testing is context dependent (the test is working on my PC, but it may not work on the client's PC)
+	- Testing is done differently in different contexts
+	- Safety-critical software is tested differently from an e-comerce site (there is difference between medical equipment testing and website testing)
+	
+7 - Absence of errors is a fallacy 
+	- Finding and fixing defects itself does not help in the cases
+		- the system is built unstable 
+		- does not fulfill the users needs and expectations
+		
+		
+Test Scenario (Test Condition, Test Possibility):
+
+Any functionality, feature, story that can be tested.
+
+How to write test scenarios
+	- read requirement documents
+	- figure out possible user actions for each requirement
+	- write different test scenarios for each feature
+	- make sure every requirement is covered
+	- handout the scenarios for review
+	
+
+Test Cases (tests of a single exectuion path):
+
+A sequence of actions executed to verify a particular feature of functionality 
+
+At least two test cases per test scenarios.
+
+Test Case contains:
+	- Title 
+	- Steps
+	- Expected result
+	
+	
+Examples:
+	- Test Scenario - register to the platform
+	
+	- Test Cases for the scenario 
+		- non-existing username -> success
+		- existing username -> error
+		- too long username -> error
+		- invalid charecters in username -> error
+		
+
+02. Bugs and Bug Tracking:
+
+- Bug Report
+	- written document describing a certain bug found durning concrete phaase in the testing process
+	- it provides detailed information about the problem
+	- helps in keeping the records for future reference
+	- helps in categorizing the bugs to help in root cause analysis
+	- avoids reporting a duplicate bug
+	
+Example
+	- Bug ID: SB-21
+	- Priority: Next release
+	- Severity: Low
+	- Assigned to: Developer-X (will be fixed by developer X)
+	- Reported by: (your name)
+	- Reported on: (date reported)
+	- Status: (new, old, etc.)
+	- Environment: (url)
+	- Summary: Chat - the Creator of a group chat conversation cannot rename it
+	- Description: Long description of the bug
+	- Actual behavior: Button is disabled for the creator of the convo
+	- Expected behavior: All participants should be able to rename a group convo
+	- Steps to reproduce: (steps taken to reproduce the bug)
