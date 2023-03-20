@@ -18,3 +18,50 @@ Types to connect a virtual machine to a network (Internet, LAN, etc.)
 - Isolated connection (communication only between VMs) (Hyper-V - Private Switch, VirtualBox - Internal Network, VMware - Host Only*):
 	- VM to VM
 
+Network Models:
+	- OSI Model Layers
+		1. Phyisical
+		2. Data-Link
+		3. Network
+		4. Transport
+		5. Session
+		6. Presentation
+		7. Application
+
+	- TCP/IP Protocol Architecture Layers
+		1. Network Interface
+		2. Internet
+		4. Host-to-Host Transport
+		5. Application
+
+	- Protocols (protocol gives us set of rules which allows the devices to communicate with each other and we have protocols that operate on different layers):
+		1. Ethernet / Token Ring
+		2. IP (Internet Protocol - Handels addressing and communication between devices) (ARP, IGMP, ICMP (Internetr Control Message Protocol - networking devices such as routes are using it))
+		3. TCP (Transmission Control Protocol - complements IP and focuses on the transport of data packages), UDP (User Datagram Progocol - is like TCP, but it is connectionless, no error checking)
+		4. Telnet, FTP, SMTP, DNS, RIP, SNMP
+
+Common ports:
+
+IP address is like a building and ports are the different apartments.
+Ports point to some service.
+
+	- Well-known ports (<1024)
+		- 22 (SSH)
+		- 53 (DNS)
+		- 80 (HTTP)
+		- 110 (POP3)
+		- 123 (NTP)
+		- 143 (IMAP)
+
+	- Registered ports (<49152)
+	- Dynamic
+
+IP General Info:
+- Terms
+	- IP address (IPv4 and IPv6) - static or dynamic
+		- IPv4 - one IPv4 address is 4 bytes long, which is 32 bits or 4 octets (4 sets of 8 bits or 4 sets of 1 bytes). It ranges from 0.0.0.0 to 255.255.255.255. It is deviced in network and host parts. 
+		- IPv6
+	- Network mask (subnet mask) - it marks the border between two networks
+	- Gateway address - it connects two networks (usualy this is the router)
+	- Broadcast address - it is used for communication to all hosts on a network. It is the last address of a subnet and is the same for all.
+

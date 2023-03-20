@@ -1,0 +1,37 @@
+Update-Help - update man pages 
+
+Get-Help commandName - explanation page for each command
+Get-Command - list of all available comamnds
+	-Verb Get - filter the commands by verb
+	-Name *User* - filter the commands by name
+	-Module *LocalAccounts - we can filter the commands by module
+Get-LocalUser - list of all the local users
+	Name - to return the specific account we are looking for
+Get-Verb - get all verbs
+Get-LocalUser - list of all the local users
+	Name - to return specific user
+Get-LocalGroup - list of all the local groups
+Get-LocalUser AccountName | Select * - returns long information of the account
+Get-LocalGroupMember nameOfTheGroup - get all the members in a specific group
+
+New-LocalUser -Name nameOfTheUser - add a new user
+New-LocalGroup nameOfTheGroup - add a new group
+
+Add-LocalGroupMember -Group groupName -Member userName1, userName2 - add users to a group
+
+Remove-LocalGroupMember groupName -Member userName1, userName2, ..., usernameN - remove members from group
+Remove-LocalGroup groupName - delete local group
+Remove-LocalUser userName - delete local user
+
+
+Rename-Computer -NewName "SRV-CORE" -Restart - Rename the computer and restart
+Add-Computer -WorkGroupName "WSALAB" -Restart - Change the workgroup and restart
+Get-TimeZone -ListAvailable - check what are the valid options for a time zone
+Set-TimeZone -Name "FLE Standard Time" - Then to set the desired time zone we can execute
+
+New-LocalUser -Name "labadmin" -FullName "Lab Admin" - create a user with password set in an interactive way
+Or 
+New-LocalUser -Name "labadmin" -FullName "Lab Admin" -Password (ConvertTo-SecureString -AsPlain "Password1" -Force)
+
+Add-LocalGroupMembers -Group "Administrators" -Member "labadmin" - Then we make it a member of the Administrators group
+Get-LocalGroupMember "Administrators" - labadmin is in the group

@@ -1,0 +1,102 @@
+sconfig - server configuration
+
+help - help command
+help /? - Let’s get help about the help command itself
+
+cls - Clear the screen with
+
+ver - check version of windows
+
+systeminfo - detailed information about the system
+systeminfo | more - Because the information doesn’t fit on the screen, we can combine (pipe) two commands. 
+We can scroll the information line-by-line with Enter key, or page-by-page with Spacebar key. We can quit by pressing the Q key
+
+slmgr.vbs - If we want to get some information about the license, we can do it by using the slmgr.vbs script
+slmgr /dlv - Now let’s check current license
+slmgr /rearm - If we use a trial (time-based evaluation) version and our period (180 days for Windows Server or 90 days for Windows 10 Enterprise) 
+is about to expire or expired already, we can reset (rearm) the counter with:
+
+
+net - 
+net help
+
+
+
+
+Now let’s examine what local users we have. This we will do by using one very old, but powerful command – net
+
+If we just type:
+
+net
+
+We can see how many directions it covers. If we execute:
+
+net help
+
+We will get some helpful information. Now get information about sub-command:
+
+net help user
+
+So, in order to get information about the local users, we should type:
+
+net user
+
+Let’s check the information about the built-in users Administrator and Guest:
+
+net user administrator
+
+net user guest
+
+What about to create a user:
+
+net user demo Password1 /add
+
+Alternative syntaxis, in case you do not want to write the password in plain text, would be:
+
+net user demo * /add
+
+And the groups:
+
+net localgroup
+
+Let’s create a new one:
+
+net localgroup "Demo Group" /add /comment:"Demo group created during the practice"
+
+And add our demo user to it and to the Administrators group:
+
+net localgroup "Demo Group" demo /add
+
+net localgroup Administrators demo /add
+
+Again, check the info about our demo user:
+
+net user demo
+
+If we are working in an installation with Desktop Experience, we can check the graphical tool for managing users and groups. Open Server Manager if not opened already. Choose Computer Management from the Tools menu in the top-right corner. Then go to Local Users and Groups. Check if the user and group created earlier are seen here. Create one more user and add it to the same group. Now return to the console and check the members of the group
+
+Now let’s clear the artefacts that we created earlier:
+
+net localgroup Administrators demo /delete
+
+net localgroup "Demo Group" demo /delete
+
+net user demo /delete
+
+net user
+
+Don’t forget to delete the additional user, created via the GUI tool
+
+There is a shutdown command. Let’s check what are its parameters. This can be done by executing:
+
+help shutdown
+
+Or by:
+
+shutdown /?
+
+Restart the Core machine
+
+shutdown /r /t 0
+
+Or if we want to stop it, we can change the /r switch to /s
