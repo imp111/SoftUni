@@ -1,24 +1,79 @@
+01. Intro to Windows Server:
+
+	Requirements:
+	- CPU: 64-bit CPU with VT-x (Intel) and AMD-V (AMD)
+	- RAM: 4 - 8 GB
+	- Disk space: 80 - 120 GB
+	- Virtualization Software: Hyper-V, Virtualbox, VMware Workstation
+	- ISO File: Windows Server 2019.iso
+	- *Optional - Cloud Provider: Azure, AWS, GCP
+	
+	Architecture Overview:
+	- Kernel Mode (Hypervisor context) - composed of multiple internal layers and services
+		- Hyper-V Hypervisor - осигурява виртуализационните възможности в Windows Server
+
+	- Kernel Mode
+		- Hardware Abstraction Level (HAL) - Isolation layer between kernel, devices drivers, and executive and the platform-specific hardware. It is implemented in the hal.dll
+		- Kernel - Low-level OS functions such as thread scheduling, interrupt and exception dispatching, and multiprocessor synchronization
+		- Device Drivers - Both hardware (printers, etc.) and non-hardware (virtual devices) drivers
+		- Windowing and Graphics - Implements graphical user interface (GUI) functions, also knows as the Windows USER and GDI functions.
+		- Executive - Base OS services like memory management, process and thread management, security, I/O, networking and IPC
+
+	- User Mode
+		- NTDLL.DLL - Exports the Windows Native API and it the interface used by user-mode components of the operating system that must run without support from Win32 or other API
+		- Subsystem DLLs - Sybsystem libraries implement various subsets of the Win32 API (KERNEL32.DLL, USER32.DLL, GDI32.DLL)
+		- User Processes - Windows 32 or 64 bit processes
+		- Service Processes - Host Windows services, the run independently of user logons 
+		- System Processes - Servies like logon, not started by Service Control Manager
+		- Environment Subsystems - Windows, OS/2, POSIX
+
+
+	Editions and Limitations of Windows Server:
+	- Windows Server Essentials (only for 2016 and 2019)
+		- Purpose: for small businesses with basic IT requirements, very small or no IT department
+		- Virtualization: No, one physical or one virtual installation
+		- Licensing Model: Server based (up to 25 users and 50 devices)
+		- CAL requirements: No CAL required
+		- RAM Limit: max 64 GB
+		- CPU Limit: max 2 CPUs
+	
+	- Windows Server Standard
+		- Purpose: for all companies that require advanced features and virtrualize to a lesser extent
+		- Virtualization: 2 virtual machines or 2 Hyper-V Containers
+		- Licensing Model: Core-based 
+		- CAL requirements: Windows Server CAL (required for every user or device accessing a server)
+		- RAM Limit: max 24 TB
+		- CPU Limit: max 512 CPUs
+
+	- Windows Server Datacenter
+		- Purpose: For all companies with high requirements on IT workloads with large number of virtual systems
+		- Virtualization: Unlimited virtual machines and Hyper-V Containers
+		- Licensing Model: 
+		- CAL requirements: Windows Server CAL (required for every user or device accessing a server)
+		- RAM Limit: max 24 TB
+		- CPU Limit: max 512 CPUs
+
 02. Networking Basics:
 
-Types to connect a virtual machine to a network (Internet, LAN, etc.)
-- External Connection (VirtualBox - Bridged, VMware - Bridged, Hyper-V - External Switch) which allows communication between:
-	- VM to VM (the VM can communicate with other VMs)
-	- VM to Host (the VM can communicate with the PC which hosts the VM)
-	- VM to LAN (the VM can communicate with other devices in the physical local area network)
+	Types to connect a virtual machine to a network (Internet, LAN, etc.)
+	- External Connection (VirtualBox - Bridged, VMware - Bridged, Hyper-V - External Switch) which allows communication between:
+		- VM to VM (the VM can communicate with other VMs)
+		- VM to Host (the VM can communicate with the PC which hosts the VM)
+		- VM to LAN (the VM can communicate with other devices in the physical local area network)
 
-- Shared connection with NAT (Network Address Translating) (Shared connection with NATing allows for the VMs in the LAN to communicate with other devices through Internet - allow communication with the outside world) (Hyper-V - Internal Switch*, VirtualBox - NAT Network, VMWare - NAT) which allows communication between:
-	- VM to VM
-	- VM to Host
-	- VM to LAN* (the * shows that Port Forwarding is needed)
+	- Shared connection with NAT (Network Address Translating) (Shared connection with NATing allows for the VMs in the LAN to communicate with other devices through Internet - allow communication with the outside world) (Hyper-V - Internal Switch*, VirtualBox - NAT Network, VMWare - NAT) which allows communication between:
+		- VM to VM
+		- VM to Host
+		- VM to LAN* (the * shows that Port Forwarding is needed)
 
-- Shared connection (in this connection we don't have NATing, so the access to the outside world is not possible) (Hyper-V - Internal Switch, VirtualBox - Host-only Adapter, VMware - Host Only): 
-	- VM to VM
-	- VM to Host 
+	- Shared connection (in this connection we don't have NATing, so the access to the outside world is not possible) (Hyper-V - Internal Switch, VirtualBox - Host-only Adapter, VMware - Host Only): 
+		- VM to VM
+		- VM to Host 
 
-- Isolated connection (communication only between VMs) (Hyper-V - Private Switch, VirtualBox - Internal Network, VMware - Host Only*):
-	- VM to VM
+	- Isolated connection (communication only between VMs) (Hyper-V - Private Switch, VirtualBox - Internal Network, VMware - Host Only*):
+		- VM to VM
 
-Network Models:
+	Network Models:
 	- OSI Model Layers
 		1. Phyisical
 		2. Data-Link
@@ -40,10 +95,10 @@ Network Models:
 		3. TCP (Transmission Control Protocol - complements IP and focuses on the transport of data packages), UDP (User Datagram Progocol - is like TCP, but it is connectionless, no error checking)
 		4. Telnet, FTP, SMTP, DNS, RIP, SNMP
 
-Common ports:
+	Common ports:
 
-IP address is like a building and ports are the different apartments.
-Ports point to some service.
+	IP address is like a building and ports are the different apartments.
+	Ports point to some service.
 
 	- Well-known ports (<1024)
 		- 22 (SSH)
@@ -56,12 +111,12 @@ Ports point to some service.
 	- Registered ports (<49152)
 	- Dynamic
 
-IP General Info:
-- Terms
-	- IP address (IPv4 and IPv6) - static or dynamic
-		- IPv4 - one IPv4 address is 4 bytes long, which is 32 bits or 4 octets (4 sets of 8 bits or 4 sets of 1 bytes). It ranges from 0.0.0.0 to 255.255.255.255. It is deviced in network and host parts. 
-		- IPv6
-	- Network mask (subnet mask) - it marks the border between two networks
-	- Gateway address - it connects two networks (usualy this is the router)
-	- Broadcast address - it is used for communication to all hosts on a network. It is the last address of a subnet and is the same for all.
+	IP General Info:
+	- Terms
+		- IP address (IPv4 and IPv6) - static or dynamic
+			- IPv4 - one IPv4 address is 4 bytes long, which is 32 bits or 4 octets (4 sets of 8 bits or 4 sets of 1 bytes). It ranges from 0.0.0.0 to 255.255.255.255. It is deviced in network and host part 
+			- IPv6
+		- Network mask (subnet mask) - it marks the border between two networks
+		- Gateway address - it connects two networks (usualy this is the router)
+		- Broadcast address - it is used for communication to all hosts on a network. It is the last address of a subnet and is the same for all.
 
