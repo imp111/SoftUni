@@ -32,8 +32,8 @@ foreach (var item in dictionary)
         Console.Write($"{item.Value[i]:F2} ");
         
     }
+
     decimal average = item.Value.Average(); ;
     Console.Write($"(avg: {average:F2})");
     Console.WriteLine(  );
 }
-
