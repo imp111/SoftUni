@@ -6,7 +6,7 @@ for (int i = 0; i < array.Length; i++)
 {
     if (dictionary.ContainsKey(array[i]))
     {
-        dictionary[array[i]] += 1;  
+        dictionary[array[i]] += 1;
     }
     else
     {

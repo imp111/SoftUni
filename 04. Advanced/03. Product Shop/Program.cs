@@ -1,6 +1,7 @@
 ﻿SortedDictionary<string, Dictionary<string, decimal>> dictionary = new SortedDictionary<string, Dictionary<string, decimal>>();
 
-string[] input = Console.ReadLine().Split(',').ToArray(); // 0 - shop, 1 - product, 2 - price
+string[] input = Console.ReadLine().Split(',').ToArray();
+
 while (input[0].ToLower() != "revision")
 {
     if (input.Length == 3)
