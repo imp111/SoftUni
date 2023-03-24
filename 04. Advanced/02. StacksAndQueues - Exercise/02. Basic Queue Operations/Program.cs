@@ -18,7 +18,7 @@ namespace _02.Basic_Queue_Operations
             int[] storage = new int[n];
             storage = Console.ReadLine().Split().Select(int.Parse).ToArray();
             Queue<int> queue = new Queue<int>();
-            
+
             for (int i = 0; i < n; i++)
             {
                 queue.Enqueue(storage[i]);

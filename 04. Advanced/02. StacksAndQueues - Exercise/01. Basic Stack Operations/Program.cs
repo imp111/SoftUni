@@ -21,7 +21,7 @@ namespace _02.StacksAndQueues___Exercise
             bool boolOutput = false;
             int numOutput = 0;
 
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
                 stack.Push(input[i]);
             }
