@@ -18,13 +18,13 @@ namespace _02._Vehicles_Extension
             }
             set
             {
-                if (this.Capacity < this.Fuel)
+                if (value > this.Fuel)
                 {
-                    capacity = 0;
+                    capacity = value;
                 }
                 else
                 {
-                    capacity = value;
+                    capacity = 0;
                 }
             }
         }

@@ -2,12 +2,11 @@
 
 string[] input = Console.ReadLine().Split().ToArray();
 
-string type = "";
 double fuel = 0.0;
 double consumption = 0.0;
 double capacity = 0.0;
 
-if (input.Length == 3)
+if (input.Length == 4)
 {
     fuel = double.Parse(input[1]);
     consumption = double.Parse(input[2]);
@@ -18,7 +17,7 @@ Vehicle car = new Car(fuel, consumption, capacity);
 
 input = Console.ReadLine().Split().ToArray();
 
-if (input.Length == 3)
+if (input.Length == 4)
 {
     fuel = double.Parse(input[1]);
     consumption = double.Parse(input[2]);
@@ -29,7 +28,7 @@ Vehicle truck = new Truck(fuel, consumption, capacity);
 
 input = Console.ReadLine().Split().ToArray();
 
-if (input.Length == 3)
+if (input.Length == 4)
 {
     fuel = double.Parse(input[1]);
     consumption = double.Parse(input[2]);
@@ -42,6 +41,8 @@ int n = int.Parse(Console.ReadLine());
 
 string action;
 double distance;
+string type;
+
 for (int i = 0; i < n; i++)
 {
     input = Console.ReadLine().Split().ToArray();
@@ -89,3 +90,4 @@ for (int i = 0; i < n; i++)
 
 Console.WriteLine($"Car: {car.Fuel:F2}");
 Console.WriteLine($"Truck: {truck.Fuel:F2}");
+Console.WriteLine($"Bus: {bus.Fuel:F2}");
