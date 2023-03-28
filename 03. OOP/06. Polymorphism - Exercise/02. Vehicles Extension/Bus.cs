@@ -8,6 +8,7 @@ namespace _02._Vehicles_Extension
 {
     internal class Bus : Vehicle
     {
+        private const double airConditioner = 1.4;
         private double capacity;
 
         public double Capacity
@@ -33,6 +34,20 @@ namespace _02._Vehicles_Extension
         {
             this.Capacity = capacity;
         }
+        public override void Drive(double distance)
+        {
+            double fuelNeeded = distance * (this.Consumption + airConditioner);
+
+            if (fuelNeeded < this.Fuel)
+            {
+                Console.WriteLine($"Bus traveled {distance} km.");
+                this.Fuel -= fuelNeeded;
+            }
+            else
+            {
+                Console.WriteLine($"Bus needs refueling");
+            }
+        }
 
         public override void Refuel(double amount)
         {
@@ -47,6 +62,21 @@ namespace _02._Vehicles_Extension
             else
             {
                 this.Fuel += amount;
+            }
+        }
+
+        public override void DriveEmpty(double distance)
+        {
+            double fuelNeeded = distance * this.Consumption;
+
+            if (fuelNeeded < this.Fuel)
+            {
+                Console.WriteLine($"Bus traveled {distance} km.");
+                this.Fuel -= fuelNeeded;
+            }
+            else
+            {
+                Console.WriteLine($"Bus needs refueling");
             }
         }
     }

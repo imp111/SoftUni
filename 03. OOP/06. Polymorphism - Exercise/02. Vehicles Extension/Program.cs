@@ -69,6 +69,14 @@ for (int i = 0; i < n; i++)
         }
     }
 
+    if (action.ToLower() == "driveempty")
+    {
+        if (type.ToLower() == "bus")
+        {
+            bus.DriveEmpty(distance);
+        }
+    }
+
     if (action.ToLower() == "refuel")
     {
         switch (type.ToLower())

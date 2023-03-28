@@ -39,5 +39,9 @@ namespace _02._Vehicles_Extension
         {
             this.Fuel = amount;
         }
+
+        public virtual void DriveEmpty(double distance)
+        { 
+        }
     }
 }
