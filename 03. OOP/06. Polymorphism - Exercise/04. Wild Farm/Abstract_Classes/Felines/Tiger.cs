@@ -11,5 +11,15 @@ namespace _04._Wild_Farm
         public Tiger(string name, double weight, int foodEaten, string livingRegion, string breed) : base(name, weight, foodEaten, livingRegion, breed)
         {
         }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine("Meow");
+        }
+
+        public override string ToString()
+        {
+            return $"Tiger [{this.Name}, {this.Breed}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
+        }
     }
 }

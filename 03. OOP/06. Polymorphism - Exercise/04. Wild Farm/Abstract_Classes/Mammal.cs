@@ -26,5 +26,10 @@ namespace _04._Wild_Farm
         {
             this.LivingRegion = livingRegion;
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

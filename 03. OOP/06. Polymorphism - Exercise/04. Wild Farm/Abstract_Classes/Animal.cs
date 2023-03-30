@@ -55,5 +55,9 @@ namespace _04._Wild_Farm
             Weight = weight;
             FoodEaten = foodEaten;
         }
+
+        public virtual void MakeSound()
+        {
+        }
     }
 }
