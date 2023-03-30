@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace _03._Raiding
 {
-    internal class Rouge : BaseHero
+    internal class Rogue : BaseHero
     {
-        public Rouge(string name, int power) : base(name, power)
+        public Rogue(string name, int power) : base(name, power)
         {
             this.Power = 80;
         }
 
         public override string CastAbility()
         {
-            return $"Rouge - {this.Name} hits for {this.Power} damage";
+            return $"Rogue - {this.Name} hits for {this.Power} damage";
         }
     }
 }
