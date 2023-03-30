@@ -14,7 +14,7 @@ namespace _04._Wild_Farm
 
         public override void MakeSound()
         {
-            Console.WriteLine("ROAR!!!");
+            Console.WriteLine("Meow");
         }
 
         public override string ToString()
