@@ -6,22 +6,27 @@ List<Animal> list = new List<Animal>();
 while (command.ToLower() != "end")
 {
     string[] animalInput = command.Split().ToArray();
+
+    if (animalInput.Length > 5 || animalInput.Length < 4 || animalInput.Length == 1)
+    {
+        break;
+    }
+
     string type, name, livingRegion, breed, foodType;
     double weight, wingSize;
     int quantity;
 
     string[] food = Console.ReadLine().Split().ToArray();
 
-    type = animalInput[0];
+    if (food.Length > 2 || food.Length <= 0)
+    {
+        continue;
+    }
 
-    name = animalInput[1];
-    weight = double.Parse(animalInput[2]);
-    livingRegion = animalInput[3];
-    breed = animalInput[4];
-    
+    type = animalInput[0];
     quantity = int.Parse(food[1]);
-    wingSize = 0.0;
     foodType = food[0];
+
     if (type.ToLower() == "cat" || type.ToLower() == "tiger")
     {
         name = animalInput[1];
@@ -34,13 +39,15 @@ while (command.ToLower() != "end")
         {
             case "cat":
                 Mammal cat = new Cat(name, weight, quantity, livingRegion, breed);
-                list.Add(cat);
                 cat.MakeSound();
+                cat.Eat(foodType);
+                list.Add(cat);
                 break;
             case "tiger":
                 Mammal tiger = new Tiger(name, weight, quantity, livingRegion, breed);
-                list.Add(tiger);
                 tiger.MakeSound();
+                tiger.Eat(foodType);
+                list.Add(tiger);
                 break;
             default:
                 break;
@@ -57,13 +64,15 @@ while (command.ToLower() != "end")
         {
             case "hen":
                 Bird hen = new Hen(name, weight, quantity, wingSize);
-                list.Add(hen);
                 hen.MakeSound();
+                hen.Eat(foodType);
+                list.Add(hen);
                 break;
             case "owl":
                 Bird owl = new Owl(name, weight, quantity, wingSize);
-                list.Add(owl);
                 owl.MakeSound();
+                owl.Eat(foodType);
+                list.Add(owl);
                 break;
             default:
                 break;
@@ -79,13 +88,15 @@ while (command.ToLower() != "end")
         {
             case "mouse":
                 Mammal mouse = new Mouse(name, weight, quantity, livingRegion);
-                list.Add(mouse);
                 mouse.MakeSound();
+                mouse.Eat(foodType);
+                list.Add(mouse);
                 break;
             case "dog":
                 Mammal dog = new Dog(name, weight, quantity, livingRegion);
-                list.Add(dog);
                 dog.MakeSound();
+                dog.Eat(foodType);
+                list.Add(dog);
                 break;
             default:
                 break;

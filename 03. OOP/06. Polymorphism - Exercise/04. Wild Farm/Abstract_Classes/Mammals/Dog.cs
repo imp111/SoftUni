@@ -21,5 +21,18 @@ namespace _04._Wild_Farm
         {
             return $"Dog [{this.Name}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";
         }
+
+        public override void Eat(string foodType)
+        {
+            if (foodType.ToLower() == "meat")
+            {
+                this.Weight += this.FoodEaten * 0.40;
+            }
+            else
+            {
+                this.FoodEaten = 0;
+                Console.WriteLine($"Dog does not eat {foodType}!");
+            }
+        }
     }
 }

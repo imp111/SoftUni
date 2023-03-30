@@ -18,6 +18,19 @@ namespace _04._Wild_Farm
             Console.WriteLine("Squeak");
         }
 
+        public override void Eat(string foodType)
+        {
+            if (foodType.ToLower() == "fruit" ||  foodType.ToLower() == "vegetable")
+            {
+                this.Weight += this.FoodEaten * 0.10;
+            }
+            else
+            {
+                this.FoodEaten = 0;
+                Console.WriteLine($"Mouse does not eat {foodType}!");
+            }
+        }
+
         public override string ToString()
         {
             return $"Mouse [{this.Name}, {this.Weight}, {this.LivingRegion}, {this.FoodEaten}]";

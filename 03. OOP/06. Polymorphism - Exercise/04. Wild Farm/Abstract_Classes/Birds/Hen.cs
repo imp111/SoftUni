@@ -21,5 +21,10 @@ namespace _04._Wild_Farm.Birds
         {
             return $"Hen [{this.Name}, {this.WingSize}, {this.Weight}, {this.FoodEaten}]";
         }
+
+        public override void Eat(string foodType)
+        {
+            this.Weight += this.FoodEaten * 0.35;
+        }
     }
 }

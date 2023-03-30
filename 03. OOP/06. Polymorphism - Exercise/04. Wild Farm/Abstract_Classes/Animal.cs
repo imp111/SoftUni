@@ -56,6 +56,10 @@ namespace _04._Wild_Farm
             FoodEaten = foodEaten;
         }
 
+        public virtual void Eat(string foodType)
+        {
+        }
+
         public virtual void MakeSound()
         {
         }
