@@ -744,7 +744,107 @@ Lecture 5: Exception and Error Handling (Handling Errors During the Program Exec
 
 
 	Throwing Exceptions
+	
+		- Throwing exceptions is done by the throw keyword
+		- Used to notify the calling code in case of an error or unusual situation
+		- When exception is thrown
+			- The program execution stops
+			- The exception travels over the stack
+				- Until a matching catch block is reached to handle it
+		- Unhandled exceptions display an error message
 
 
+		Throwing an exception with error message
+			
+			throw new ArguemntException("Invalid amount!");
+
+		Exceptions can accept message and cause
+			
+			try {
+				...
+			}
+			catch (SqlException sqlEx) {
+				throw new InvalidOperationException("Cannot save invoice.", sqlEx);
+			}
+	
+			- If the original exception (sqlEx) is not passed, the initial cause of the exception is lost
+
+		Re-Throwing Exceptions (Caught Exceptions can be re-thrown again)
+
+			try {
+  				int.Parse(str);
+			}
+			catch (FormatException fe) {
+  				Console.WriteLine("Parse failed!");
+  				throw fe; // Re-throw the caught exception with new stack
+			}
+			catch (FormatException) {
+  				throw; // Re-throw the last caught exception
+			}
 		
+	
+	Best Practices
+
+		Using Catch Block
+			
+			- Catch blocks should
+				- Begin with the exception lowest in the hierarchy
+				- Continue with the more general exceptions
+				- Otherwise a compilation error will occur
+			- Each catch block should handle only the these exceptions which it expects
+				- If a method is not competent to handle an exception, it should leave it unhandled
+				- Handling all exceptions disregarding their type is a popular bad practice (anti-pattern)
+
+		Choosing Exception Type
+
+			- When an invalid parameter value is passed to a method
+				- ArgumentException
+				- ArgumentNullException
+				- ArgumentOutOfRangeException
+
+			- When requested operation is not supported
+				- NotSupportedException
+
+			- When a method is still not implemented
+				- NotImplementedException
+
+			- If no suitable standard exception class is available
+				- Create own exception class by inheriting Exception base class
+
+		Best Practices
+
+			- When raising an exception, always pass to the constructor a good description of the problem as explanation message
+			- The exception message should explain what causes the problem and how to solve it
+				- Good: "Size should be integer in range [1...15]"
+				- Good: "Invalid state. First call Initialize()"
+				- Bad: "Unexpected error"
+				- Bad: "Invalid argument"
+			
+			- Exceptions can decrease the application performance
+				- Throw exceptions only in situatuions which are really exceptional and should be handled
+				- Do not throw exceptions in the normal program control flow
+				- CLR could throw exceptions at any time with no way to predict them (System.OutOfMemoryException)
+		
+		Create Custom Exception
+		
+			- Custom exceptions inherit an exception class (System.Exception base class)
+			
+				public class InvalidEgnException : Exception
+				{
+  					public InvalidEgnException(string msg): base(msg) 
+					{ 
+						// Exception 
+					}
+				}
+
+			- Thrown just like any other exception
+				
+				throw new InvalidEgnException("Invalid EGN provided.");
+
+	Summary
+		- Exceptions provide a flexible error handling mechanism
+		- Unhandled exceptions cause error messages
+		- Try-finally ensures a given code block is always executed
+			- Even when exception is thrown
+
 	
