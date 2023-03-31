@@ -620,3 +620,131 @@ Lecture 4: Polymorphism (Polymorphism, Override and Overload Methods):
 		- as keyword
 		- Overload methods
 		- Override methods
+
+
+Lecture 5: Exception and Error Handling (Handling Errors During the Program Execution):
+
+	Exceptions 
+		- Simplify code construction and maintenance
+		- Allow the problematic situations to be prcoessed at multiple levels
+		- Exception objects have detailed information about the error
+	
+
+		The System.Exception Class
+		- In C#, Exceptions are objects
+		- System.Exception class is the base for all exceptions in CLR
+			- Contains information about the cause of the error
+			- Message - a text description of the exception
+				- StackTrace - the snapshot of the stack at the moment of exception throwing
+				- InnerException - exception that caused the current exception (if any)
+
+
+		Exception Hierarchy in .NET
+
+		1. System.Exception						(-> = inherits)
+		2. System.SystemException, CustomException 			(SystemException, CustomException -> Exception) 
+		3. System.NullReferenceException, System.FormatException 	(NullReferenceException, FormatException -> SystemException)
+		4. System.ArithmeticException					(ArithmeticException -> SystemException)
+		5. System.DividedByZeroException, System.OverflowException	(DividedByZeroException, OverflowEXception -> ArithmeticException)
+		
+		Types of exceptions
+		- .NET exceptions inherit from System.Exception
+		- The system exceptions inherit from System.SystemException
+			- System.ArgumentException
+			- System.FormatException
+			- System.NullReferenceException
+			- System.OutOfMemoryException
+			- System.StackOverflowException
+		- User-defined exceptions should be inherited from Syste.Exception class.
+
+
+	Handling Exceptions (Catching and Processing Erros)
+
+		- Exceptions are handled by the try-catch construction
+
+			try
+			{
+				// Code that can raise an exception
+			}
+			catch (SomeException)
+			{
+				// How to handle the caught exception
+			}
+
+
+		- Catch blocks can be used multiple times to catch different exception types
+
+			string s = Console.ReadLine();
+			try 
+			{
+  				int.Parse(s);
+    				Console.WriteLine("You entered a valid Int32 number {0}.", s);
+			}
+			catch (FormatException) 
+			{
+  				Console.WriteLine("Invalid integer number!");
+			}
+			catch (OverflowException) 
+			{
+  				Console.WriteLine("The number is too big to fit in Int32!");
+			}
+	
+
+		- When catching an exception of a particular class, all its inheritors (child exceptions) are caught too 
+		(if we try, catch an ArithmeticException, we are also trying to catch, DivideByZero and Overflow)
+		
+			string str = Console.ReadLine();
+			try {
+  				Int32.Parse(str);
+			}
+			catch (Exception) {
+  				Console.WriteLine("Cannot parse the number!");
+			}
+			catch (FormatException) {
+  				Console.WriteLine("Invalid integer number!");
+			}
+			catch (OverflowException) {
+  				Console.WriteLine("The number is too big to fit in Int32!");
+			}
+
+			- If this case, the FormatException and OverflowException are going to be unreachable, because the two exceptions are inherited 
+			by the Exception base class, and if the Exception passes the catch, it is going to caught the Format and Overflow exceptions.
+
+		
+	Handling All Exceptions
+		
+		- Unmanaged code can throw other exceptions, so in that we use the base Exception class
+
+			try {
+				// Code that can raise any exception
+			}
+			catch (Exception ex) {
+				Console.WriteLine(ex.Message);
+			}
+
+
+			- The try-finally Statement
+
+			try {
+				// Code that can raise any exception
+			}
+			finally {
+				// This block will always execute
+			}
+
+			- Ensures execution of a given block in all cases regardless of whether the try block raise an exception
+			- Used for execution of cleaning-up code (releasing resources)
+
+
+		- How Do Exceptions Work?
+
+			try	-	Run this code
+			catch	-	Execute this code when there is an exception
+			finally	-	Always run this code
+
+
+	Throwing Exceptions
+
+
+		
+	
