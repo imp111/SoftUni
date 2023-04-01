@@ -1,5 +1,4 @@
-﻿
-try
+﻿try
 {
     int n = int.Parse(Console.ReadLine());
 
@@ -8,18 +7,25 @@ try
 catch (ArgumentOutOfRangeException)
 {
     Console.WriteLine("Invalid number");
-    throw;
+}
+catch (ArgumentNullException)
+{
+    Console.WriteLine("Invalid number");
+}
+catch (FormatException)
+{
+    Console.WriteLine("Invalid number");
 }
 finally
 {
-    Console.WriteLine("Goodbye");
+    Console.WriteLine("Goodbye.");
 }
 
-static double Sqrt(double value)
+static double Sqrt(int value)
 {
     if (value < 0)
     {
-        throw new ArgumentOutOfRangeException(nameof(value), "Sqrt for negative numbers is undefined!");
+        throw new ArgumentOutOfRangeException();
     }
 
     return Math.Sqrt(value);
