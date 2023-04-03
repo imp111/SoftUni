@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Square Root", "01. Square Root\01. Square Root.csproj", "{A921E2F2-9D23-466E-BE0E-A5AE99E9C98B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Square Root", "01. Square Root\01. Square Root.csproj", "{A921E2F2-9D23-466E-BE0E-A5AE99E9C98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Enter Numbers", "02. Enter Numbers\02. Enter Numbers.csproj", "{600EF148-B64F-4D07-AE65-36B72AAF6017}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Enter Numbers", "02. Enter Numbers\02. Enter Numbers.csproj", "{600EF148-B64F-4D07-AE65-36B72AAF6017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Fixing", "03. Fixing\03. Fixing.csproj", "{787E307D-382C-429E-86C0-BD4348D0B691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Fixing", "03. Fixing\03. Fixing.csproj", "{787E307D-382C-429E-86C0-BD4348D0B691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Fixing Vol2", "04. Fixing Vol2\04. Fixing Vol2.csproj", "{0263B009-449D-4D73-A34B-EF68B31F9D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Fixing Vol2", "04. Fixing Vol2\04. Fixing Vol2.csproj", "{0263B009-449D-4D73-A34B-EF68B31F9D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Convert.ToDouble", "05. Convert.ToDouble\05. Convert.ToDouble.csproj", "{C2D140FF-61D4-4012-8737-3E275B2323DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Convert.ToDouble", "05. Convert.ToDouble\05. Convert.ToDouble.csproj", "{C2D140FF-61D4-4012-8737-3E275B2323DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Valid Person", "06. Valid Person\06. Valid Person.csproj", "{83BCAC17-3AD6-4393-A9BF-12769762312A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C2D140FF-61D4-4012-8737-3E275B2323DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2D140FF-61D4-4012-8737-3E275B2323DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2D140FF-61D4-4012-8737-3E275B2323DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BCAC17-3AD6-4393-A9BF-12769762312A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BCAC17-3AD6-4393-A9BF-12769762312A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BCAC17-3AD6-4393-A9BF-12769762312A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BCAC17-3AD6-4393-A9BF-12769762312A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
