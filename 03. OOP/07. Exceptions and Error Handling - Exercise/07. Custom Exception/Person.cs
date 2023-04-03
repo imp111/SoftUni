@@ -24,10 +24,14 @@ namespace _07._Custom_Exception
                 {
                     throw new ArgumentNullException("value", "The first name cannot be null or empty string");
                 }
-                else
+
+                bool isDigitPresent = value.Any(c => char.IsDigit(c));
+                if (isDigitPresent)
                 {
-                    firstName = value;
+                    throw new InvalidPersonNameException("First name cannot contain numbers");
                 }
+
+                firstName = value;
             }
         }
 
@@ -42,6 +46,12 @@ namespace _07._Custom_Exception
                 if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentNullException("value", "The first name cannot be null or empty string");
+                }
+
+                bool isDigitPresent = value.Any(c => char.IsDigit(c));
+                if (isDigitPresent)
+                {
+                    throw new InvalidPersonNameException("Last name cannot contain numbers");
                 }
 
                 firstName = value;
@@ -60,7 +70,7 @@ namespace _07._Custom_Exception
                 {
                     throw new ArgumentOutOfRangeException("value", "Age should be in the range [0...120]");
                 }
-
+                
                 age = value;
             }
         }

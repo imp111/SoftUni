@@ -23,3 +23,7 @@ catch (ArgumentNullException e)
 {
     Console.WriteLine(e.Message);
 }
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+}
