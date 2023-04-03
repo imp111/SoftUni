@@ -847,4 +847,45 @@ Lecture 5: Exception and Error Handling (Handling Errors During the Program Exec
 		- Try-finally ensures a given code block is always executed
 			- Even when exception is thrown
 
-	
+Lecture 6: Debugging Techniques (Building Rock-Solid Software):
+
+	Introduction to Debugging
+		
+		Debugging - process of locating and fixing or bypassing bugs (errors) in program code
+
+		To debug a program
+			- Start with a problem
+			- Isolate the source of the problem
+			- Fix it
+
+		Debugging tools (debuggers) help identify coding errors at various development stages
+
+
+		Debugging vs Testing
+		
+			Testing							Debugging
+			- A means of initial detection of errors		- A means of diagnosing and correcting the root causes of errors
+			- The process of verifying and validating		that have already been detected
+			that a software or application is bug free		- The process of identifying, analyzing and fixing a bug in the software
+
+
+		Debugging Philosophy
+		- Can be viewed as one big decision tree
+			- Invidvidual nodes represent theories
+			- Leaf nodes represent possible root causes
+			- Traversal of tree boils down to process state inspection
+			- Minimizing time to resoluton is key
+				- Careful traversal of the decision tree
+				- Pattern recognition
+				- Visualization and ease of use helps minimize time to resolution
+
+		
+		- Example
+			
+			1. Exception					(Exception -> FileNotFound, NullReference, Wrong Input)
+			2. FileNotFound, NullReference, Wrong Input	(FileNotFound -> Wrong Path, Wrong Symbols)
+			3. Wrong Path, Wrong Symbols			(Wrong Symbols -> Missing "@", Single "/")
+			4. Missing "@", Single "/"
+
+
+	Visual Studio Debugger
