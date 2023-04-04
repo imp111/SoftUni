@@ -889,3 +889,140 @@ Lecture 6: Debugging Techniques (Building Rock-Solid Software):
 
 
 	Visual Studio Debugger
+	
+		Visual Studio gives us a lot of tools to debug your application
+			- Breakpoints
+			- Visualize the program flow
+			- Control the flow of executiuon
+			- Data tips
+			- Watch variables
+			- Debugging multithreaded programs
+
+		Debugging a Solution
+			- F5 to start debugging
+		
+		Debugging Windows
+			- Debug Windows are the means to instrospect on the state of a process
+			- Opens a new windows with the selected information in it
+			- Windows categories
+				- Data inspection
+				- Threading
+			- Accessible from menu
+				- Debug -> Windows
+
+		Debugging Toolbar
+			- Convenient shortcut to common debugging tasks
+				- Step into
+				- Step over
+				- Continue
+				- Break
+				- Breakpoints
+
+			- Can be customized
+				- Add / Remove buttons
+
+		IntelliTrace
+			- Operates in the background, records what you are doing during debugging
+			- You can easily get a past state of your application from IntelliTrace
+			- You can navigate through your code and see what's happened
+			- To navigate just click on any of the events 
+
+	Break Points
+		
+		Ability to stop execution based on certain criteria is key when debugging
+			- When a function is hit
+			- When data changes
+			- When specific thread hits a function
+			
+		Managing breakpoints
+			- Managed in the breakpoint window
+			- Adding breakpoints
+			- Removing or disabling breakpoints
+			- Labeling or grouping breakpoints
+			- Export/import breakpoints
+
+	Data Inspection
+		
+		Visual Studio offers great data inspection features
+			- Watch windows
+				- Allows you to inspect various states of your application
+				- Several different kinds of "predefined" watch windows
+					- Autos
+					- Locals
+				- Customs watch windows also possible
+					- Contains only variables that you choose to add
+					- Right click on the variable and select "Add to Watch"
+
+			- Autos and Locals
+				- Local watch window contains the local variables for the specific stack frame
+					- Debug -> Windows -> Locals
+					- Displays: name of the variable, value and type
+					- Allows drill down into objects by clicking on the + sign in the tree control
+				- Autos lets the debugger decide which variables to show in the windows
+					- Loosely based on the current and previous statement
+
+			- Memory and Registers
+				- Memory window can be used to inspect process wide memory
+					- Address field can be a raw pointer or an expression
+					- Drag and drop a variable from the source window
+					- Number of columns displayed can be configured
+					- Data format can be configured
+				- Registers window can be used to inspect processor registers
+
+			- Data Tips
+				- Provides information about variables
+					- Variables must be within scope of current execution
+				- Place mouse pointer over any variable
+					- Variables can be expanded by using the + sign
+				- Pinning the data tip causes it to always stay open
+				- Comments can be added to data tips
+				- Data tips support drag and drop
+				- Importing and exporting data tips
+
+			- Immediate window
+				- Useful when debugging due to the expansive expressions that can be executed
+					- To output the value of a variable {name of variable}
+					- To set values, use {name of variable}={value}
+					- To call a method, use {name of variable}<method>(arguments)
+	
+	Threads and Stacks
+		
+		Threads
+			- Fundamental units of code execution
+			- Programs use more than one thread (in .NET there is always more than one thread)
+			- Each thread has a memory area associated with it known as a stack
+				- stores local variables
+				- stores frames specific information
+			- Memory area employs last in first out semantics
+
+		Thread Window
+			- Contains an overview of thread activiy in the process
+			- Include basic information in a per thread basis
+				- Thread ID's
+				- Category
+				- Name
+				- Location
+				- Priority
+
+		Breakpoint Filters
+			- Allows you tyo excerpt even more control of when a breakpoint hits
+			- Customization
+				- Machine name
+				- Process ID
+				- Process Name
+				- Thread ID
+				- Thread Name
+			- Multiple can be combined using &, ||, !
+
+		Call Stacks
+			- Visual Studio shows the elements of a call stack
+				- Local variables
+				- Method frames
+	
+	Summary
+		- Intro to Debugging
+		- Visual Studio Debugger
+		- Breakpoints
+		- Data Inspection
+			- Locals, Autos, Watch
+		- Finding Defect
