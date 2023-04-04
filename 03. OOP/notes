@@ -1026,3 +1026,125 @@ Lecture 6: Debugging Techniques (Building Rock-Solid Software):
 		- Data Inspection
 			- Locals, Autos, Watch
 		- Finding Defect
+
+Lecture 8: SOLID Principles (Design Principles and Approaches):
+
+	Single Responsibility (S) - Every class should be responsible for only a single part of the functionality and that responsibility shoud be entirely encapsulated by the class
+		
+		Strong Cohesion
+		- Strong cohesion refers to the grouping of functionally related processes into a particular module
+		- Aim for strong cohesion
+			- Each task maps a single code unit
+			- A method should do one operation
+			- A class should represent one entity
+
+		Loose Coupling
+		- Coupling - the degree of dependence between modules
+			- How closely connected two modules are
+			- The strength of the relationship between modules
+		- Aim for loose coupling
+			- Supports readability and maintainability
+			- Often a sign of good system design
+
+		Dependencies and Coupling
+		- Depend directly on other modules		- Depend on abstractions
+
+		Cohesion and Coupling
+		- Small number of instance variables inside a class
+		- Each method of a class should manipulate one or more of those variables
+		- Two modules should exchange as little information as possible
+		- Use abstraction
+		- Creating an easily reusable subsystem
+
+		Module 1 <------------>	Module 2				Module 1 --------------	Module 2
+		   |	                   ^					   |
+		   |	    	     	   | 					   |
+		   |	                   v  					   |
+		Module 3 --------------	Module 4				Module 3 --------------	Module 4
+		(Low comesion and high coupling)				(Higm comesion and low coupling)
+
+
+	Open / Closed Principle (O) - Software entities like classes, modules and functions should be open for extention, but closed for modifications
+
+		Extensibility 
+			- adding a new behavior doesn't require changes over existing source code
+
+		Reusability
+			- Subsystems are suitable for reusing in other projects - modularity
+
+		Open / Closed Principle Approaches
+			- Parameters - control behavior specifics via a parameter or a delegate
+			- Rely on abstraction, not implementation - inheritance / template method pattern
+			- Strategy Pattern - plug in model (insert a new implementation of the interface)
+
+		When to apply Open / Closed Principle 
+			- By experience - know the problem domain and if a change is very likely to recur
+			- New domain problem - implement the most simple way
+				- Changes once - modify, second time - refactor
+			- TANSTAAFL (There ain't no such thing as a free lunch)
+				- OCP adds complexity to design
+				- no design can be closed against all changes
+			- Need to retest (recheck functionality) after changes
+
+		Template Method Pattern (1)
+
+			Abstract Method (Varying behavior)
+			+ templateMethod()
+			+ stepOne()
+			+ stepTwo()
+			...
+
+			ConcreteClassOne : Abstract Method (implements abstract class)
+			+ stepOne()
+			+ stepTwo()
+
+			ConcreteClasTwo : Abstract Method
+			+ stepOne()
+			+ stepTwo()
+
+		Template Method Pattern (2)
+
+			public abstract class CrossCompiler
+			{
+				public void CrossCompile() (template method)
+				{
+					// some functionality...
+					this.CollectSource();
+					// some more functionality...
+					thisl.CompileToTarget();
+					// some functionality...
+				}
+
+				protected abstract void CollectSource();
+				protected abstract void CompileToTarget();
+			}
+
+			public class IPhoneCompiler : CrossCompiler
+			{
+				protected override void CollectSource()
+				protected override void CompileToTarget()
+				{ // IPhone specific compilation }
+			}
+
+			public class AndroidCompiler : CrossCompiler
+			{
+				protected override void CollectSource()
+				protected override void CompileToTarget()
+				{ // Android specific compilation }
+			}
+
+
+	Liskov Substitution Principle (L) - derived types must be completely substitutable for their base types
+
+		Derived classes
+			- only extend functionalities of the base class
+			- must not remove base class behavior (Student IS-SUBSTITUTED-FOR Person)
+
+		Design Smell - Violations
+			- Type Checking 
+			- Overriden methods say "I am not implemented"
+			- Base class depends on its subtypes
+
+		LSP Approaches
+			- Tell Don't Ask
+				- If you need to check what is the objecft - move the behavior inside the object
