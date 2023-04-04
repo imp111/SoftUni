@@ -1201,3 +1201,37 @@ Lecture 8: SOLID Principles (Design Principles and Approaches):
 			{
 				void Work() { // Do some work }
 			}
+
+		Adapter Pattern
+			- Problem that the Adapter pattern solves
+				- Reusing classes that do not have an interface that a client requires
+				- Making classes with incompatible interfaces work together
+				- Providing an alternative interface for a class
+			- Convert the incompatible interface of a class Adaptee into another interface - Target, that clients require
+				
+				interface ITarget
+				{
+					void Request();
+				}
+
+				class Adaptee
+				{
+					public void SpecificRequest()
+					{
+						Console.WriteLine("Called SpecificRequest()");
+					}
+				}
+
+				class Adapter : ITarget
+				{
+					private Adaptee adaptee = new Adaptee();
+
+					public void Request()
+					{
+						// do some other work
+						adaptee.SpecificRequest();
+					}
+				}
+
+	Dependency Inversion Principle (D)
+
