@@ -1234,4 +1234,23 @@ Lecture 8: SOLID Principles (Design Principles and Approaches):
 				}
 
 	Dependency Inversion Principle (D)
+		
+		Examples
+			- A dependency is any external component / system:
+				- Framework				- Configuration
+				- 3rd party library			- The new keyword
+				- Database				- Static method
+				- File system				- Global function
+				- Email					- Random generator
+				- Web service				- Console
+				- System resource (clock)
 
+		Dependencies in Traditional Programming
+
+			1. UI
+			2. Business layer
+			3. Infrastructure, Database, Utilities, External libraries
+
+		Depend on Abstraction
+			
+		
