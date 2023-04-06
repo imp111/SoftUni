@@ -1253,4 +1253,91 @@ Lecture 8: SOLID Principles (Design Principles and Approaches):
 
 		Depend on Abstraction
 			
-		
+			class Copy -> class Keyboard, class Printer (-> - inherits)
+
+			|
+			v
+
+			class Copy -> interface Reader <- class KeyboardReader
+				|
+				v
+				interface Writer <- class PrinterWriter
+
+		Types of Dependency Inversion
+
+			- Construction injection
+				- Pros								- Cons
+					- Class requiremenets are self-documenting			- Too many parameters
+					- We don't have to worry about state validation			- Sometimes, the functionaliy doesn't need all of the dependencies
+				
+				class Copy
+				{
+					private IReader reader;
+					private IWriter writer;
+
+					public Copy(IReader reader, IWriter writer)
+					{
+						this.reader = reader;
+						this.writer = writer;
+					}
+
+					// Read/Write data through the reader/writer
+				}
+
+				var copy = new Copy(new ConsoleReader(), new FileWriter("out.txt"));
+
+
+			- Propertry injection
+				- Pros								- Cons
+					- Functionality can be changed at any time			- State can be invalid
+					- That makes the code very flexible				- Lees intuitive to use
+
+
+				class Copy
+				{
+					public IReader Reader { get; set; }
+					public IWriter Writer { get; set; }
+					public void CopyAllChars()
+					{
+						// Read/Write data through the reader/writer
+					}
+				}
+				
+				Copy copy = new Copy();
+				copy.Reader = new ConsoleReader();
+				copy.Writer = new FileWriter("output.txt");
+				copy.CopyAllChars();
+
+			- Parameter injection
+				- Pros								- Cons
+					- Changes are only localized to the method			- Too many parameters
+													- Breaks the method signature
+
+				class Copy
+				{
+					public CopyAllChars(IReader reader, IWriter writer)
+					{
+						// Read/Write data through the Reader/Writer
+					}
+				}
+
+				Copy copy = new Copy();
+				var reader = new ConsoleReader();
+				var writer = new FileWriter("output.txt");
+				copy.CopyAllChars(reader, writer);
+
+		DIP Violations
+			- Classic DIP Violations
+				- using the new keyword
+				- using static methods/properties
+			- How to fix code, that violates the DIP
+				- extract interfaces + use constructor injection
+				- set up an Inversion of Control (IoC) container
+	
+	Summary
+		- SOLID principle make software more:
+			- Understandable
+			- Flexible
+			- Maintainable
+
+
