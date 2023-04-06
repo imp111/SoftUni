@@ -93,6 +93,7 @@ This repository contains all of my exercises and homeworks from C# courses at So
 17. Iterators and Comparators - Lab
 18. Iterators and Comparators - Exercise
 
+<!---
 ## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
 01. Intro And Basic Syntax - Lab
 02. Intro And Basic Syntax - Exercise
@@ -133,3 +134,4 @@ This repository contains all of my exercises and homeworks from C# courses at So
 05. Additional Techniques in Active Directory
 06. System Monitoring and Maintenance
 07. PowerShell
+--->
