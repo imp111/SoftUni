@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ExtendedDatabase
+namespace _02._Extended_Database
 {
-    public class ExtendedDatabase
+    public class DatabaseExtended
     {
         private Person[] persons;
 
         private int count;
 
-        public ExtendedDatabase(params Person[] persons)
+        public DatabaseExtended(params Person[] persons)
         {
             this.persons = new Person[16];
             AddRange(persons);
