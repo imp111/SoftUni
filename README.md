@@ -96,11 +96,11 @@ This repository contains all of my completed SoftUni course exercises.
 
 ## :white_check_mark: [Linux System Administration](https://github.com/imp111/SoftUni/tree/main/Linux%20System%20Administration%20-%20Fundamentals)
 01. Working on the console. Users and access management
-  - Orientation to the console
-  - Support
-  - Files and directories
-  - Access permissions
-  - Users and groups
+  -- Orientation to the console
+  -- Support
+  -- Files and directories
+  -- Access permissions
+  -- Users and groups
 02. Working with files and flows
   - Text editors
   - Regular expressions
