@@ -100,20 +100,20 @@ This repository contains all of my completed SoftUni course exercises.
         - Support
         - Files and directories
         - Access permissions
-        - Users and groups
-02. Working with files and flows
-      - Text editors
-      - Regular expressions
-      - Files search
-      - Extract information from files
-      - Flows management
-      - Flow command performance
-03. Network, software, and services management
-  - Networks and basic network services
-  - Packages and bundled managers
-  - Install and remove software
-  - Remote access and file storage services
-  - Managing and monitoring services
+    - Users and groups
+3. Working with files and flows
+        - Text editors
+        - Regular expressions
+        - Files search
+        - Extract information from files
+        - Flows management
+        - Flow command performance
+5. Network, software, and services management
+          - Networks and basic network services
+          - Packages and bundled managers
+          - Install and remove software
+          - Remote access and file storage services
+          - Managing and monitoring services
 04. System and process management and monitoring
   - Boot methods and managers
   - OS loading process
