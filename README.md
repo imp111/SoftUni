@@ -96,14 +96,40 @@ This repository contains all of my completed SoftUni course exercises.
 
 ## :white_check_mark: [Linux System Administration](https://github.com/imp111/SoftUni/tree/main/Linux%20System%20Administration%20-%20Fundamentals)
 01. Working on the console. Users and access management
-  • Orientation to the console;
-  • Support;
-  • Files and directories;
-  • Access permissions;
-  • Users and groups;
-  • Interactive demo;
-  • Self-study exercise.
-
+  - Orientation to the console
+  - Support
+  - Files and directories
+  - Access permissions
+  - Users and groups
+02. Working with files and flows
+  - Text editors
+  - Regular expressions
+  - Files search
+  - Extract information from files
+  - Flows management
+  - Flow command performance
+03. Network, software, and services management
+  - Networks and basic network services
+  - Packages and bundled managers
+  - Install and remove software
+  - Remote access and file storage services
+  - Managing and monitoring services
+04. System and process management and monitoring
+  - Boot methods and managers
+  - OS loading process
+  - Targets and run-levels
+  - Process management
+  - System monitoring and management
+05. Working with disks, file systems, and archives
+  - Disks and partitions
+  - File systems
+  - FHS specification
+  - Backup and recovery
+06. Bash Scripting and Automation
+  - Bash in details
+  - Creating scripts
+  - Automate tasks
+  - Performing on schedule
 
 <!---
 ## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
