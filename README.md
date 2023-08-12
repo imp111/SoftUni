@@ -115,21 +115,21 @@ This repository contains all of my completed SoftUni course exercises.
     - Remote access and file storage services
     - Managing and monitoring services
 04. System and process management and monitoring
-  - Boot methods and managers
-  - OS loading process
-  - Targets and run-levels
-  - Process management
-  - System monitoring and management
+    - Boot methods and managers
+    - OS loading process
+    - Targets and run-levels
+    - Process management
+    - System monitoring and management
 05. Working with disks, file systems, and archives
-  - Disks and partitions
-  - File systems
-  - FHS specification
-  - Backup and recovery
+    - Disks and partitions
+    - File systems
+    - FHS specification
+    - Backup and recovery
 06. Bash Scripting and Automation
-  - Bash in details
-  - Creating scripts
-  - Automate tasks
-  - Performing on schedule
+    - Bash in details
+    - Creating scripts
+    - Automate tasks
+    - Performing on schedule
 
 <!---
 ## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
