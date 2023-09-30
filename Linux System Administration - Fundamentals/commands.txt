@@ -1,0 +1,13 @@
+Structure of notes:
+
+command - explanation of the command
+	- common flags
+
+
+1. Users and access management:
+
+	alias - all set aliases
+	env, printenv - returns information about the environment (functions, variables, etc.)
+	set - same as env and printenv, but can also change parameters of the environent
+		-o
+		+o
