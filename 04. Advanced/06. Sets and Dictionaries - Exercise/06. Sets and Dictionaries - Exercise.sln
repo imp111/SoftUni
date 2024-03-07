@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Unique Usernames", "01. Unique Usernames\01. Unique Usernames.csproj", "{42E8B947-81E6-4EBF-87A1-F8FF9163765B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Unique Usernames", "01. Unique Usernames\01. Unique Usernames.csproj", "{42E8B947-81E6-4EBF-87A1-F8FF9163765B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sets of Elements", "02. Sets of Elements\02. Sets of Elements.csproj", "{A869CD29-61DE-49E5-B8EF-94671393DE1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Sets of Elements", "02. Sets of Elements\02. Sets of Elements.csproj", "{A869CD29-61DE-49E5-B8EF-94671393DE1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Periodic Table", "03. Periodic Table\03. Periodic Table.csproj", "{BAE434A1-3FBA-4EC7-B29D-9E6CADC49D48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A869CD29-61DE-49E5-B8EF-94671393DE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A869CD29-61DE-49E5-B8EF-94671393DE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A869CD29-61DE-49E5-B8EF-94671393DE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE434A1-3FBA-4EC7-B29D-9E6CADC49D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE434A1-3FBA-4EC7-B29D-9E6CADC49D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE434A1-3FBA-4EC7-B29D-9E6CADC49D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE434A1-3FBA-4EC7-B29D-9E6CADC49D48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
