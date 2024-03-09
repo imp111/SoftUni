@@ -15,5 +15,5 @@ foreach (var item in input)
 
 foreach (var item in occurances)
 {
-    Console.WriteLine($"{item.Key} : {item.Value} time/s");
+    Console.WriteLine($"{item.Key}: {item.Value} time/s");
 }
