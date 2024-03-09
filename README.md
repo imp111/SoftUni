@@ -40,16 +40,6 @@ This repository contains all of my completed SoftUni course exercises.
 12. WORKSHOP - ASP.NET CORE
 --->
 
-## :white_check_mark: [MySQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
-01. Data Definition and Datatypes
-02. Basic CRUD
-03. Built-in Functions
-04. Data Aggregation
-05. Table Relations
-06. Joins, Subqueries, CTE and Indices
-07. Database Programmability and Transactions
-08. Additional Exercises
-
 ## :white_check_mark: [CSharp-OOP](https://github.com/imp111/SoftUni/tree/main/02.%20C%23%20OOP)
 01. Working with Abstraction - Lab
 02. Working with Abstraction - Exercise
@@ -92,6 +82,16 @@ This repository contains all of my completed SoftUni course exercises.
 16. Generics - Exercises
 17. Iterators and Comparators - Lab
 18. Iterators and Comparators - Exercise
+
+## :white_check_mark: [MySQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
+01. Data Definition and Datatypes
+02. Basic CRUD
+03. Built-in Functions
+04. Data Aggregation
+05. Table Relations
+06. Joins, Subqueries, CTE and Indices
+07. Database Programmability and Transactions
+08. Additional Exercises
 
 <!---
 ## :white_check_mark: [Linux System Administration](https://github.com/imp111/SoftUni/tree/main/Linux%20System%20Administration%20-%20Fundamentals)
