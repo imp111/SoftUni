@@ -80,8 +80,8 @@ This repository contains all of my completed SoftUni course exercises.
 04. Multidimensional Arrays - Exercise
 05. Sets and Dictionaries Advanced - Lab
 06. Sets and Dictionaries Advanced - Exercise
-07. STREAMS, FILES AND DIRECTORIES - Lab
-08. STREAMS, FILES AND DIRECTORIES - Exercise
+07. STREAMS, FILES, AND DIRECTORIES - Lab
+08. STREAMS, FILES, AND DIRECTORIES - Exercise
 09. Functional Programming - Lab
 10. Functional Programming - Exercises
 11. Defining Classes - Lab
@@ -93,7 +93,7 @@ This repository contains all of my completed SoftUni course exercises.
 17. Iterators and Comparators - Lab
 18. Iterators and Comparators - Exercise
 
-
+<!---
 ## :white_check_mark: [Linux System Administration](https://github.com/imp111/SoftUni/tree/main/Linux%20System%20Administration%20-%20Fundamentals)
 01. Working on the console. Users and access management
     - Orientation to the console
@@ -130,7 +130,7 @@ This repository contains all of my completed SoftUni course exercises.
     - Creating scripts
     - Automate tasks
     - Performing on schedule
-
+-->
 <!---
 ## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
 01. Intro And Basic Syntax - Lab
