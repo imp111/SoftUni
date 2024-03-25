@@ -108,3 +108,30 @@ Associative Arrays - array indexed by keys -> value pair (not with 0, 1, 2, ...,
 			sortedSet.Add("Asha");
 			Console.WriteLine(string.Join(" ", sortedSet)); // output: Asha, Peter
 
+Lecture 9: Basic Algorithms
+
+Recursion - a method that calls itself one or more times until a specified condition is met. When the condition is met, the rest of each repetition is processed from the last one called to the first.
+
+		24 x 5
+factorial(5) <-------> Result: 120
+     |		| 4 x 6
+     v		|
+factorial(4) <---
+     |		| 3 x 2
+     v		|
+factorial(3) <---
+     |		| 2 x 1
+     v		|
+factorial(2) <---
+     |		| 1 x 1
+     v		|
+factorial(1) <---
+     |		| 1
+     v          |
+factorial(0)  ---
+
+
+Brute-force Algorithms
+Greedy Algorithms
+Sorting Algorithms
+Searching Algorithms

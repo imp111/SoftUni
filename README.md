@@ -40,6 +40,28 @@ This repository contains all of my completed SoftUni course exercises.
 12. WORKSHOP - ASP.NET CORE
 --->
 
+## :white_check_mark: [CSharp-OOP](https://github.com/imp111/SoftUni/tree/main/02.%20C%23%20OOP)
+01. Working with Abstraction
+02. Inheritance
+03. Encapsulation
+04. Interfaces and Abstraction
+05. Polymorphism
+06. SOLID
+07. Reflection and Attributes
+08. Exceptions and error handling
+09. Unit testing
+10. Test-driven development
+
+## :white_check_mark: [CSharp-Advanced](https://github.com/imp111/SoftUni/tree/main/03.%20C%23%20Advanced)
+01. Stacks and Queues
+02. Multidimensional Arrays
+03. Sets and Dictionaries Advanced
+04. Streams, Files, and Directories
+05. Functional Programming
+06. Defining Classes
+07. Generics
+08. Iterators and Comparators
+
 ## :white_check_mark: [MySQL](https://github.com/imp111/SoftUni/tree/main/05.%20MySQL)
 01. Data Definition and Datatypes
 02. Basic CRUD
@@ -50,50 +72,7 @@ This repository contains all of my completed SoftUni course exercises.
 07. Database Programmability and Transactions
 08. Additional Exercises
 
-## :white_check_mark: [CSharp-OOP](https://github.com/imp111/SoftUni/tree/main/02.%20C%23%20OOP)
-01. Working with Abstraction - Lab
-02. Working with Abstraction - Exercise
-03. Inheritance - Lab
-04. Inheritance - Exercise
-05. Encapsulation - Lab
-06. Encapsulation - Exercise
-07. Interfaces and Abstraction - Lab
-08. Interfaces and Abstraction - Exercise
-09. Polymorphism - Lab
-10. Polymorphism - Exercise
-11. SOLID - Lab
-12. SOLID - Exercise
-13. Reflection and Attributes - Lab
-14. Reflection and Attributes - Exercise
-15. EXCEPTIONS AND ERROR HANDLING
-16. WORKSHOP - Custom Unit Testing Framework
-17. WORKSHOP - Snake
-18. UNIT TESTING - Lab
-19. UNIT TESTING - Exercise
-20. TEST DRIVEN DEVELOPMENT - Lab
-21. TEST DRIVEN DEVELOPMENT - Exercise
-
-## :white_check_mark: [CSharp-Advanced](https://github.com/imp111/SoftUni/tree/main/03.%20C%23%20Advanced)
-01. Stacks and Queues - Lab
-02. Stacks and Queues - Exercise
-03. Multidimensional Arrays - Lab
-04. Multidimensional Arrays - Exercise
-05. Sets and Dictionaries Advanced - Lab
-06. Sets and Dictionaries Advanced - Exercise
-07. STREAMS, FILES AND DIRECTORIES - Lab
-08. STREAMS, FILES AND DIRECTORIES - Exercise
-09. Functional Programming - Lab
-10. Functional Programming - Exercises
-11. Defining Classes - Lab
-12. Defining Classes - Exercise
-13. WORKSHOP - Lab
-14. WORKSHOP - Exercise
-15. Generics - Lab
-16. Generics - Exercises
-17. Iterators and Comparators - Lab
-18. Iterators and Comparators - Exercise
-
-
+<!---
 ## :white_check_mark: [Linux System Administration](https://github.com/imp111/SoftUni/tree/main/Linux%20System%20Administration%20-%20Fundamentals)
 01. Working on the console. Users and access management
     - Orientation to the console
@@ -130,7 +109,7 @@ This repository contains all of my completed SoftUni course exercises.
     - Creating scripts
     - Automate tasks
     - Performing on schedule
-
+-->
 <!---
 ## :white_check_mark: [Fundamentals-with-CSharp](https://github.com/imp111/SoftUni/tree/main/01.%20C%23%20Fundamentals)
 01. Intro And Basic Syntax - Lab
