@@ -38,11 +38,16 @@ If you want to work with the variable's value – we use $
 If you want to work with the variable itself (as an object) – no $ 
 
 
+5. System and process management and monitoring
+
+BIOS vs UEFI
+BIOS (Basic Input/Output System)
+	- Operates in 16-bit mode - since it is only 16-bit, it has basic functionality
+	- Slower boot process - it does things sequentially, so it loads slower than the UEFI
+	- Offers text user interface - the older versions did not offer text user inteface
 
 
-
-
-6. Bash Scripting and Automation
+7. Bash Scripting and Automation
 cron - task scheduler in Linux
 	- crond - daemon
 	- crontab - management tool
