@@ -1,0 +1,57 @@
+- Create first user and set password:
+	sudo useradd -c "ProjectX Developer" developer
+	sudo passwd developer
+
+- Create second user and set password:
+	sudo useradd -c "ProjextX Manager" manager
+	sudo passwrd manager
+
+- Create a group named projectxyz with gid 3000:
+	sudo groupadd -g 3000 projectxyz
+
+- Make both users (developer and manager) members of the projectxyz group:
+	sudo usermod -aG projectxyz developer
+	sudo usermod -aG projectxyz manager
+
+- Create a folder /shared/projects/projectXYZ
+	sudo mkdir -p /shared/projects/projectXYZ
+
+- Create series of folder under /shared/projects with the structure:
+	projectXYZ
+		- Stage1
+			- DOCUMENTS
+			- BUDGET
+		- Stage2
+			- DOCUMENTS
+			- BUDGET
+		- Stage3
+			- DOCUMENTS
+			- BUDGET
+
+	sudo mkdir -p /shared/projects/projectXYZ/Stage{1..3}/{DOCUMENTS,BUDGET}
+
+- Create at least 5 files document1.doc through document5.doc in every DOCUMENTS folder:
+	sudo touch /shared/projects/projectXYZ/Stage{1..3}/DOCUMENTS/document{1..5}.doc	
+
+- Create readme_en.txt, readme_bg.txt, and readme_de.txt files in every BUDGET folder:
+	sudo touch /shared/projects/projectXYZ/Stage{1..3}/BUDGET/readme_{en,bg,de}.txt
+
+- Change the owner of the projectXYZ folder and all files and folders there to manager:
+	sudo chown -R manager /shared/projects/projectXYZ/
+
+- Change the group owner group of the projectXYZ folder and all files and folders there to projectxyz:
+	sudo chgrp -R projectxyz /shared/projects/projectXYZ/
+
+- Change the permissions of the projectXYZ folder and all subfolders (not the files, just the folders) to be read, write and execute for the owner and the group and no permissions for everyone else. Adjust the permissions of all folders in such a way, so all new files made by either the developer or the manager user will be owned by the projectxyz group:
+	sudo chmod -R 770 /shared/projects/projectXYZ/
+	sudo chmod g+s /shared/projects/projectXYZ /shared/projects/projectXYZ/Stage{1..3} /shared/projects/projectXYZ/Stage{1..3}/{BUDGET,DOCUMENTS}
+	
+- Set permissions for all files under the above folder structure (projectXYZ) to read and write for the owner and the group and no permissions for everyone else:
+	sudo chmod 660 /shared/projects/projectXYZ/Stage{1..3}/DOCUMENTS/document{1..5}.doc
+	sudo chmod 660 /shared/projects/projectXYZ/Stage{1..3}/BUDGET/readme_{en,bg,de}.txt
+
+
+
+
+
+

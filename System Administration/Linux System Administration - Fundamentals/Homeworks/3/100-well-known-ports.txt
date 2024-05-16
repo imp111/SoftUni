@@ -1,0 +1,100 @@
+socks		1080-tcp			# socks proxy server
+proofd		1093-tcp
+rootd		1094-tcp
+openvpn		1194-tcp
+openvpn		1194-udp
+rmiregistry	1099-tcp			# Java RMI Registry
+lotusnote	1352-tcp	lotusnotes	# Lotus Note
+ms-sql-s	1433-tcp			# Microsoft SQL Server
+ms-sql-m	1434-udp			# Microsoft SQL Monitor
+ingreslock	1524-tcp
+datametrics	1645-tcp	old-radius
+datametrics	1645-udp	old-radius
+sa-msg-port	1646-tcp	old-radacct
+sa-msg-port	1646-udp	old-radacct
+kermit		1649-tcp
+groupwise	1677-tcp
+l2f		1701-udp	l2tp
+radius		1812-tcp
+radius		1812-udp
+radius-acct	1813-tcp	radacct		# Radius Accounting
+radius-acct	1813-udp	radacct
+cisco-sccp	2000-tcp			# Cisco SCCP
+nfs		2049-tcp			# Network File System
+nfs		2049-udp			# Network File System
+gnunet		2086-tcp
+gnunet		2086-udp
+rtcm-sc104	2101-tcp			# RTCM SC-104 IANA 1/29/99
+rtcm-sc104	2101-udp
+gsigatekeeper	2119-tcp
+gris		2135-tcp		# Grid Resource Information Server
+cvspserver	2401-tcp			# CVS client/server operations
+venus		2430-tcp			# codacon port
+venus		2430-udp			# Venus callback/wbc interface
+venus-se	2431-tcp			# tcp side effects
+venus-se	2431-udp			# udp sftp side effect
+codasrv		2432-tcp			# not used
+codasrv		2432-udp			# server port
+codasrv-se	2433-tcp			# tcp side effects
+codasrv-se	2433-udp			# udp sftp side effect
+mon		2583-tcp			# MON traps
+mon		2583-udp
+dict		2628-tcp			# Dictionary server
+f5-globalsite	2792-tcp
+gsiftp		2811-tcp
+gpsd		2947-tcp
+gds-db		3050-tcp	gds_db		# InterBase server
+icpv2		3130-udp	icp		# Internet Cache Protocol
+isns		3205-tcp			# iSNS Server Port
+isns		3205-udp			# iSNS Server Port
+iscsi-target	3260-tcp
+mysql		3306-tcp
+ms-wbt-server	3389-tcp
+nut		3493-tcp			# Network UPS Tools
+nut		3493-udp
+distcc		3632-tcp			# distributed compiler
+daap		3689-tcp			# Digital Audio Access Protocol
+svn		3690-tcp	subversion	# Subversion protocol
+suucp		4031-tcp			# UUCP over SSL
+sysrqd		4094-tcp			# sysrq daemon
+sieve		4190-tcp			# ManageSieve Protocol
+epmd		4369-tcp			# Erlang Port Mapper Daemon
+remctl		4373-tcp		# Remote Authenticated Command Service
+f5-iquery	4353-tcp			# F5 iQuery
+ntske		4460-tcp	# Network Time Security Key Establishment
+ipsec-nat-t	4500-udp			# IPsec NAT-Traversal [RFC3947]
+iax		4569-udp			# Inter-Asterisk eXchange
+mtn		4691-tcp			# monotone Netsync Protocol
+radmin-port	4899-tcp			# RAdmin Port
+sip		5060-tcp			# Session Initiation Protocol
+sip		5060-udp
+sip-tls		5061-tcp
+sip-tls		5061-udp
+xmpp-client	5222-tcp	jabber-client	# Jabber Client Connection
+xmpp-server	5269-tcp	jabber-server	# Jabber Server Connection
+cfengine	5308-tcp
+mdns		5353-udp			# Multicast DNS
+postgresql	5432-tcp	postgres	# PostgreSQL Database
+freeciv		5556-tcp	rptp		# Freeciv gameplay
+amqps		5671-tcp			# AMQP protocol over TLS/SSL
+amqp		5672-tcp
+amqp		5672-sctp
+x11		6000-tcp	x11-0		# X Window System
+x11-1		6001-tcp
+x11-2		6002-tcp
+x11-3		6003-tcp
+x11-4		6004-tcp
+x11-5		6005-tcp
+x11-6		6006-tcp
+x11-7		6007-tcp
+gnutella-svc	6346-tcp			# gnutella
+gnutella-svc	6346-udp
+gnutella-rtr	6347-tcp			# gnutella
+gnutella-rtr	6347-udp
+redis		6379-tcp
+sge-qmaster	6444-tcp	sge_qmaster	# Grid Engine Qmaster Service
+sge-execd	6445-tcp	sge_execd	# Grid Engine Execution Service
+mysql-proxy	6446-tcp			# MySQL Proxy
+babel		6696-udp			# Babel Routing Protocol
+ircs-u		6697-tcp		# Internet Relay Chat via TLS/SSL
+bbs		7000-tcp

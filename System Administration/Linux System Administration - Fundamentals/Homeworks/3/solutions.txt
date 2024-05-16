@@ -1,0 +1,73 @@
+1. Make a local copy of the /etc/services file with the same name in the home directory:
+	
+	cp /etc/services ~/
+
+2. Using cmd tools, create a variant of the local services file containing only the comment lines (lines starting with # symbol) and save it under the name services_comments.txt:
+
+	grep ^\# services > services_comments.txt
+
+3. Using cmd tools, create another variant of the local services file containing everything but the comment lines (empty lines could be either present or absent in the resulting file) and save it under the name services_wo_comments.txt:
+
+	grep -v ^\# services > services_wo_comments.txt
+
+4. Using cmd toos, create third variant of the local services file without comment lines and containing only information about udp services and save it under the name services_udp.txt
+
+	grep -v ^\# services | grep udp > services_udp.txt
+
+5. Open the file services_wo_commands.txt in vi editor
+
+	vi services_wo_commands.txt
+
+6. Find the line about blackjack service for CentOS and openSUSE, or socks for Ubuntu
+
+	/socks
+
+7. Delete everything from this line to the end of the file
+8. Save the result as new file under the name well-known-ports.txt
+9. Quit vi without saving the changes to the original file
+	
+	press ESC and press v (to enter visual mode)
+	select everything after socks (including the socks line)
+	press dd (to delete everything selected)
+	:w well-known-ports.txt
+	:q!
+
+10. Using cmd tools, substitute the symbol / with - symbol for the first 100 lines in the well-known-ports.txt file and store the result as 100-well-known-ports.txt
+
+	head -n 100 well-known-ports.txt | sed 's/\//-/' > 100-well-known-ports.txt
+
+11. Create a document named doc1.txt with the following content:
+
+	10-IT-HQ
+	20-Accounting-HQ
+	30-Help Desk-Remote
+	40-Sales-HQ
+	
+	heredoc solution:
+	cat > doc1.txt << EOF
+
+12. Create a document named doc2.txt wit the following content:
+
+	10-B.Thomas
+	20-J.Foster
+	30-G.Smith
+	40-F.Hudson
+	
+	heredoc solution:
+	cat > doc1.txt << EOF
+
+13. Join the doc1.txt and doc2.txt files in a resulting file named doc3.txt (it should contain the combined information from the other two – in fact it will show who is working where):
+
+	join -t - doc1.txt doc2.txt > doc3.txt
+
+14. Enter set of commands to extract the unique values from the third field of doc3.txt file and store them in locations.txt file:
+
+	cut -d "-" -f 3 doc3.txt | sort | uniq -u > locations.txt	
+
+15. Extend the previous command in order to count the unique values and store the result to the locationscount.txt file:
+
+	cut -d "-" -f 3 doc3.txt | sort | uniq -u | wc -l > locations-count.txt	
+
+16. Find all files in /etc and its sub-directories with size less than 200 bytes and store their sorted list:
+
+	find /etc -type f -size 200c -exec ls {} \; | sort > small-etc-files.txt
