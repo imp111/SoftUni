@@ -1,0 +1,238 @@
+1. Working with console, users, and groups 
+
+Executable Artifacts: 
+- Shell Built-in Commands 
+	External Commands 
+	- Scripts 
+	- Binary files 
+- Special Types 
+	- Aliases 
+	- Functions 
+
+Commands Execution (Shell's Perspective): 
+Let's say we execute the command ls. 
+
+This is what happens: 
+Shell -> fork() [shell copy -> exec(ls) -> ls] -> shell 
+
+When we execute ls, the bash is forked (child bash is created, and the command is executed). After that, we are returned to the parent shell. 
+
+When something is executed (scripts): 
+Sourcing and execution – are valid methods to execute scripts 
+
+Sourcing does not create a subshell (doesn't fork), any changes made by the sourcing are then saved to the parent. 
+How to execute sourcing: 
+	- . source.sh 
+	- source script.sh 
+
+Execution creates subshell (except for system commands), once the execution of the command is finished, also the shell is closed (the fork). 
+How to execute execution: 
+exec ./script.sh 
+
+Absolute and Relative Paths: 
+Absolute path – always starts with the / 
+Relative path – never start with / 
+
+When you work with variables: 
+If you want to work with the variable's value – we use $ 
+If you want to work with the variable itself (as an object) – no $ 
+
+
+04. System and processes management and monitoring
+
+BIOS (Basic Input/Output System)
+	 - Operates in 16-bit mode
+	 - Only text user interface
+	 - Slow boot
+	 - Supports only MBR
+	 - Stored in CMOS RAM chip
+
+Power on -> 
+BIOS (Power On Self Test - checks the hardware, and self testing the system components) -> 
+MBR (its size is 512 bytes, MBR is also called Stage 1 Bootloader, you can find it in the boot order menu in BIOS, its main purpouse is to take the boot process from BIOS to the actual boot loader) -> 
+Boot loader (Stage 2 boot loader, which is located in some partition on the drive, stage 2 boot loader is a lot more complicated because it is not constrained by the 512 bytes size) -> 
+Boot Manager (the screen when we get to choose the OS we want to run, and which Kernel we want to choose) -> 
+Kernel (also contains this file Initrd - contains additional libraries, drivers, and other files that are necessery for and only for the booting,after that are not used) ->Init process (unloads INITRD, initiliazies the system) -> 
+User programs -> 
+OS
+
+UEFI (Unified Extensible Firmware Interface)
+	- Operates in 32 and 64-bit mode
+	- Supports GUI
+	- Fast boot
+	- Settings stored on ESP (EFI System Partition) partition on one of the drives
+	- Supports MBR and GPT
+
+Power on -> UEFI (Power on self test) -> EFI Boot Loader (EFI System Partition) -> OS
+
+Boot loaders
+On BIOS based machines
+	- GRUB2 (GNU Grand Unified Boot Loader) - grub2-mkconfig (to update the resulting files)
+		Configuration files - files we can change
+			- /etc/default/grub
+			- /etc/grub.d/*
+			- /etc/grub2.cfg
+		Resulting files - we should not modify them, when we do it is usually by command
+			- /boot/grub2/grub.cfg
+			- /boot/grub2/grubenv
+	- Syslinux - used for installation, live, or rescue media (this is the usual boot loader in the linux installation media)
+	- LOadlin (Load Linux) - used for booting from non-Linux OS
+
+ON UEFI based machines (usually the result files path is different)
+	- GRUB2 - grub2-mkconfig
+		Configuration files
+			- /etc/default/grub
+			- /etc/grub.d/*
+			- /etc/grub2-efi.cfg
+		Resulting files
+			- /boot/efi/EFI/centos/grub.cfg
+			- /boot/efi/EFI/centos/grubenv
+			- /boot/grub2/grubenv
+	
+Initialization Methods
+	- SysVinit (System 5 init or Sys5) - sequential, unilizes runlevels
+	- Upstart - event driven (when some event happes, other one is activated)
+	- OpenRC - dependency based initialization system (dependency based - something will be turned on after the all the neccesery steps are completed before that, Apache will be turned on after we have network connection, etc.)
+	- systemd - dependency based initialization system with aggresive parallelization
+		- systemd 
+		- systemctl 
+		- systemd-analyze - unility for performance statistics inspection
+		- journald - loggin component by default. Binary files. Replaceable
+		- consoled - user console daemon
+		- networkd
+		- logind
+
+	dmesg - print or control kernel ring buffer
+		-H 
+		-H -l warn -f kern
+
+	efibootmgr - manipulate the EFI boot manager
+		-v
+		-o
+
+Systemd
+	Units (init scripts) - unit is a file that represents system component configuration
+		- Naming convention - "unit name"."unit type"
+		- Locations
+			- Installed by the distribution - /usr/lib/systemd/system/*
+			- Runtime - /run/systemd/system/* (units that are used during the OS is working)
+			- Custom - /etc/systemd/system/*
+		- Types
+			- Service - .target - describes how to manage a service or application
+			- Targer - .target - provides synchronization points for other units when booting or changing states
+			- Timer - .timer - timer managed by systemd. A matching unit will be started when the timer
+
+	Service Units
+		- /usr/lib/systemd/system/ssh.service
+	
+	Target Unit
+		- /usr/lib/systemd/system/rescue.target
+
+	Unit Dependencies
+		- Wants - Wants=unit2, when unit1 runs, unit2 will run as well
+		- Requires - Requires=unit2, both units will run simultaneously, if unit2 fails unit1 will be deactivated
+		- Dependant
+
+Processes and Jobs
+	Process - running program with its own address space
+	Job - interactive program that doesn't detach (can be in the same session or in the background)
+		- jobs - display status of jobs
+		- fg - move job to the foreground (in the same session) 
+		- bg - move job to background 
+		- ps
+		- pstree - display a tre of processes
+		- pgrep
+		- top - display linux processes
+		- htop - extention to top
+
+	Signals (Inter-process communication - IPC) - asynchronous notification sent to a process
+		- SIGHUP - 1 - hang up or shutdown and restart process
+		- SIGINT - 2 - interrupt a process (ctrl + c)
+		- SIGKILL - 9 - kill the process (cannot be ignored or caught)
+		- SIGTERM - 15 - terminate a process (can be ignored or caught)
+		- SIGTSTP - 20 - stop the terminal (ctrl + z)
+		
+		- kill - send a signal to a process
+		- killall - kill processes by name
+		- pkill - 
+
+	___________________________________________________
+	| 0 (High) ----	Priority (PR) level ---- 39 (Low) |
+	|						  |
+	| -20 (Low) ---	Niceness level -------- 19 (High) |
+	___________________________________________________
+
+	The nicer a certain process is, the lower his priority is (the less resources are given to him) and vice versa.
+
+	- renice - alter priority
+	- watch - executing a program periodically, showing output full-screen
+	- nohup - run command immune to SIGHUP with output to a file
+	- screen - screen manager with terminal emulation
+	- tmux
+
+Monitoring
+
+	- free - display amount of free and used memory in the system
+	- df - report file system disk space usage
+	- du - estimate disk space usage (used for folders)
+	- vmstat - virtual memory
+	- iostat - report cpu and io statistics
+	- pidstat
+	- sar - display linux processes
+	- nmon
+	- iotop -
+	- lsof - list open files
+
+
+6. Bash Scripting and Automation
+cron - task scheduler in Linux
+	- crond - daemon
+	- crontab - management tool
+Config files
+	- Tasks - /etc/crontab and /etc/cron.d/*
+	- Rights - /etc/cron.allow and /etc/cron.deny
+Per user jobs
+	- /var/spool/cron/*
+
+.---------------- minute (0 - 59)
+|  .------------- hour (0 - 23)
+|  |  .---------- day of month (1 - 31)
+|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+|  |  |  |  |
+*  *  *  *  * user-name  command to be executed(full path)
+
+Examples:
+0 0,12 * * * /utilities/backup.sh - runs at 00:00 and 12:00 every day
+0 */2 * * * /utilities/backup.sh - runs every 2 hours every day
+0 9-17 * * * /utilities/backup.sh - runs hourly between 9 and 17 o'clock every day
+
+Shortcuts:
+@yearly or @anually - run once a year at midnight of 1st of January (0 0 1 1 *)
+@monthly - run once a month at midnight of the first day (0 0 1 * *)
+@weekly - run once a week at midnight on Sunday morning (0 0 * * 0)
+@daily or @midnight - run once a day at midnight (0 0 * * *)
+@hourly - run once an hour at the beginning of the hour (0 * * * *)
+
+anacron - runs commands periodically with frequency in days. It also does not assume that the machine is non-stop powered. This means that for each job anacron checks if it has been executed in the last N days, where N is the interval specified for the job.
+
+Jobs are stored in:
+	- etc/anacrontab
+Configuration can be tested with:
+	- anacron -T
+
+at - run a task once at a specific time. Each task is queued at /val/spool/at
+Security is defined through /etc/at.allow and etc/at.deny
+Tools:
+	- at - main utility
+	- batch - auxiliary utility can be used as at to schedule commands (
+	- atq - show jobs at at's queue
+	- atrm - delete jobs
+Shortcuts - today, midnight, noon, teatime, date, now + time unit (now + 3 hours)
+
+systemd timer - systemd unit files (.timer) that control services (.service)
+Read from the same paths as the other units. Offer built-in support for calendar and monotonic events.
+Calendar (real-time) timers work the same way as cron jobs. Monotonic timers activate after a time span relative to a point.
+Can be created as transient (temporary/on the fly) units as well.
+
+
