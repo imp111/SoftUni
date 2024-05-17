@@ -38,7 +38,6 @@ This repository contains all of my completed SoftUni course exercises.
 10. EXERCISE: DESIGN PATTERNS
 11. EXERCISE: BEST PRACTICES AND ARCHITECTURE
 12. WORKSHOP - ASP.NET CORE
---->
 
 ## :white_check_mark: [CSharp-OOP](https://github.com/imp111/SoftUni/tree/main/02.%20C%23%20OOP)
 01. Working with Abstraction
