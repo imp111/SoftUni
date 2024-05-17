@@ -1,4 +1,45 @@
-1. Working with console, users, and groups 
+Working in the Console. Getting help. Working with Files and Folders. Users and Groups. Access Rights:
+
+	1. Environment. Environmental: Defenitions and Tools
+		- Sets the operational conditions. 
+		- Driven by variables ($USER, $SHELL, $PATH, etc.)
+		- Can be setted up on both system level and per user
+		- Can be modified by both users and processes
+		- Can be inherited
+
+		Environmental Special Variables:
+			General Purpouse
+				- $? - return the exit code of the last executed command
+				- $! - return the PID of the last job run in the background
+				- $$ - return the PID of the current process 
+				- $_ - return the final argument of the previous command
+			Prompt Related
+				- $PS1 - regular prompt
+				- $PS2 - prompt during multi-line commands
+
+		Prompt Macros:
+			- \h - hostname until the first '.'
+			- \H - full hostname
+			- \t - current time in 24-hour format HH:MM:SS
+			- \A - current time in 24-hour format HH:SS
+			- \u - username of the current user
+			- \w - current working directory
+			- \W - base name of the current working directory
+			- \# - command number of this command
+			- \$ - If UID=0 then it is '#', otherwise it is '$'
+
+		set - controls shell options. Display values of shell variables
+			- set +o - display shell options suitable for re-use
+			- set - display all shell variable names and values
+
+		unset - unset values and attributes of shell variables and functions
+			- unset MyVar1 - unset a single variable
+			- unset -v MyVar1 MyVar2 MyVar3 - unset multiple variables
+
+
+	2. Command Execution. Executable Artifacts. Order of executions
+	
+
 
 Executable Artifacts: 
 - Shell Built-in Commands 
@@ -37,6 +78,7 @@ When you work with variables:
 If you want to work with the variable's value – we use $ 
 If you want to work with the variable itself (as an object) – no $ 
 
+02. 
 
 04. System and processes management and monitoring
 

@@ -1,3 +1,13 @@
+1. Working in the console. Getting help. Working with Files and Folders. Users and Groups. Access Rights.
+	
+	Console Deep Dive. Environmental: Definitions and Tools:
+
+	Environment - sets the operational conditions. The environment is driven by different variables ($PATH, $USER, $SHELL, etc.).
+	Can be setted up on both system level (global) and per user (local). It can be both modifiable by both users and processes and can be inherited by child environment.
+
+	Special Environental Variables
+
+
 6. Bash Scripting and Automation
 
   systemctl status serviceName       - check if specific service status
