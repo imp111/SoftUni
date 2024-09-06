@@ -7,26 +7,6 @@ wp core download --skip-content --force --version=6.5.5 - wordpress core files d
 /scripts/suspendacct [accountUsername] --force - suspend cpanel account from terminal
 /scirpts/unsuspendacct [accountUsername] --force - unsuspend cpanel account from terminal
 
-POP SSL: 995
-POP non-SSL: 110/tcp
-IMAP SSL: 993
-IMAP non-SSL: 143/tcp
-SMTP non-SSL: 25
-SMTP SSL: 465, 587
-Cpanel: 2083
-WHM: 2087
-Webmail: 2096
-Plesk: 8443
-SSH: 22/tcp
-DNS: 53/udp
-HTTP: 80/tcp
-NTP: 123/tcp
-127.0.0.1 - loop back address
-
-- Broadcast address - usually the last address in the subnet, used to broadcast to all hosts in the network
-- Network mask (subnet mask) - used to mark the boarder between two networks or subnets
-- Gateway - connects to networks (in home networks, it is usually the router)
-
 --------------------------------------------------------------------------------------------------------------------------------
 
 AWK:
