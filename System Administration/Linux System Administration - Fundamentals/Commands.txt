@@ -21,7 +21,6 @@ SSH: 22/tcp
 DNS: 53/udp
 HTTP: 80/tcp
 NTP: 123/tcp
-127.0.0.1 - loop back address
 
 - Broadcast address - usually the last address in the subnet, used to broadcast to all hosts in the network
 - Network mask (subnet mask) - used to mark the boarder between two networks or subnets
