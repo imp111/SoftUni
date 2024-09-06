@@ -1,14 +1,13 @@
-Working in the Console. Getting help. Working with Files and Folders. Users and Groups. Access Rights:
-
-	1. Environment. Environmental: Defenitions and Tools
+1. Working in the Console. Getting help. Working with Files and Folders. Users and Groups. Access Rights:
+	A) Environment. Environmental: Definitions and Tools
 		- Sets the operational conditions. 
 		- Driven by variables ($USER, $SHELL, $PATH, etc.)
-		- Can be setted up on both system level and per user
+		- Can be set up on both system level and per user
 		- Can be modified by both users and processes
 		- Can be inherited
 
 		Environmental Special Variables:
-			General Purpouse
+			General Purpose
 				- $? - return the exit code of the last executed command
 				- $! - return the PID of the last job run in the background
 				- $$ - return the PID of the current process 
@@ -24,63 +23,88 @@ Working in the Console. Getting help. Working with Files and Folders. Users and 
 			- \A - current time in 24-hour format HH:SS
 			- \u - username of the current user
 			- \w - current working directory
-			- \W - base name of the current working directory
+			- \W - the base name of the current working directory
 			- \# - command number of this command
 			- \$ - If UID=0 then it is '#', otherwise it is '$'
 
-		set - controls shell options. Display values of shell variables
-			- set +o - display shell options suitable for re-use
-			- set - display all shell variable names and values
+	B) Command Execution. Executable Artifacts. Order of executions
+		Executable Artifacts: 
+			- Shell Built-in Commands 
+			- External Commands 
+				- Scripts 
+				- Binary files 
+			- Special Types 
+				- Aliases 
+				- Functions 
 
-		unset - unset values and attributes of shell variables and functions
-			- unset MyVar1 - unset a single variable
-			- unset -v MyVar1 MyVar2 MyVar3 - unset multiple variables
+		Commands Execution (Shell's Perspective): 
+			Let's say we execute the command ls. This is what happens (Command execution): 
+				
+				shell -> fork() -> shell
+						-> shell copy -> exec(ls) -> ls
 
+				Shell copy inherits shell and runs the ls in the background.
+				When we execute ls, the bash is forked (child bash is created, and the command is executed). After that, we are returned to the parent shell. 
 
-	2. Command Execution. Executable Artifacts. Order of executions
+			When something is executed (scripts): 
+				Sourcing and execution – are valid methods to execute scripts 
+
+			- Sourcing does not create a subshell (doesn't fork), any changes made by the sourcing are then saved to the parent. 
+			How to execute Sourcing: 
+				- . source.sh 
+				- source script.sh 
+
+			- Execution creates a subshell (except for system commands), once the execution of the command is finished, also the shell is closed (the fork). 
+
+				Execution check order process: Alias -> Function -> Built-in -> Hash -> PATH
+					- builtin command - force built-in usage
+					- /bin/test - set explicit path
+					- command test - ignore aliases and functions
+					- \test - ignore aliases
+			
+				How to execute execution: 
+					exec ./script.sh 
+
+		Absolute vs Relative Path:
+			- Absolute - always starts from the / directory
+			- Relative - starts from the current dir (does not start from /)
+
+		When you work with variables: 
+			- If you want to work with the variable's value – we use $ 
+			- If you want to work with the variable itself (as an object) – no $ 
+
+		Configuration Files:
+			- System Level (for everyone) - /etc/ 
+				- /etc/profile (used for env control and startup programs execution)
+				- /etc/bashrc (used for functions and aliases definition)
+				- /etc/profile.d/* (it is read by profile and bashrc, it is also recommended to not directly edit the profile and bashrc files, but to make changes in the profile.d folder as both of the files read from that folder)
+			- User Level (for each user) - stored in the user's home folder
+				- ~/.profile - executed only in login shell, reads from ~/.bashrc
+				- ~/.bashrc - executed always
 	
+		Login Shell Sequence:
+			- Interactive Login Shell -> /etc/profile, ~/.bash_profile -> ~/.bashrc -> /etc/bashrc -> /etc/profile.d/* -> ~/.bash_logout (when logging out)
+			- Non-Interactive Login Shell -> Parent Environment, ~/.bashrc -> /etc/bashrc -> /etc/profile.d/*
+
+		Multiple Files:
+			- creating ({X,Y,Y},{A..D},{1..10})
+			- *, ?, [], {}
+
+		Files Types:
+			- - regular 
+			- d directory
+			- l symbolic link
+			- b - block device
+			- c - character device
+			- p - named pipe
+			- s - socket
+
+		Soft vs Hard Links:
+			- Hard Link (ln - by default it creates a hard link) - hard links create a link to a file. That link points to the object (the inode). This means that if we edit the link, it will also edit the inode and the object itself. Changing the link or the file that the link points to, will change the content of both the file and link since they both point to the same inode. If we delete the hard link, all files that represent this inode will also be deleted.
+			- Soft Link (ln -s - creates soft link) - the soft link is usually a very small size. The soft link creates a different object, with a different inode but this inode is just a redirection to the file that it points to. We can delete the link and it won't affect the original object, also if we delete the original object, the link will also be destroyed.
 
 
-Executable Artifacts: 
-- Shell Built-in Commands 
-	External Commands 
-	- Scripts 
-	- Binary files 
-- Special Types 
-	- Aliases 
-	- Functions 
-
-Commands Execution (Shell's Perspective): 
-Let's say we execute the command ls. 
-
-This is what happens: 
-Shell -> fork() [shell copy -> exec(ls) -> ls] -> shell 
-
-When we execute ls, the bash is forked (child bash is created, and the command is executed). After that, we are returned to the parent shell. 
-
-When something is executed (scripts): 
-Sourcing and execution – are valid methods to execute scripts 
-
-Sourcing does not create a subshell (doesn't fork), any changes made by the sourcing are then saved to the parent. 
-How to execute sourcing: 
-	- . source.sh 
-	- source script.sh 
-
-Execution creates subshell (except for system commands), once the execution of the command is finished, also the shell is closed (the fork). 
-How to execute execution: 
-exec ./script.sh 
-
-Absolute and Relative Paths: 
-Absolute path – always starts with the / 
-Relative path – never start with / 
-
-When you work with variables: 
-If you want to work with the variable's value – we use $ 
-If you want to work with the variable itself (as an object) – no $ 
-
-02. 
-
-04. System and processes management and monitoring
+4. System and processes management and monitoring
 
 BIOS (Basic Input/Output System)
 	 - Operates in 16-bit mode
@@ -90,11 +114,11 @@ BIOS (Basic Input/Output System)
 	 - Stored in CMOS RAM chip
 
 Power on -> 
-BIOS (Power On Self Test - checks the hardware, and self testing the system components) -> 
-MBR (its size is 512 bytes, MBR is also called Stage 1 Bootloader, you can find it in the boot order menu in BIOS, its main purpouse is to take the boot process from BIOS to the actual boot loader) -> 
+BIOS (Power On Self Test - checks the hardware, and self-testing the system components) -> 
+MBR (its size is 512 bytes, MBR is also called Stage 1 Bootloader, you can find it in the boot order menu in BIOS, its main purpose is to take the boot process from BIOS to the actual boot loader) -> 
 Boot loader (Stage 2 boot loader, which is located in some partition on the drive, stage 2 boot loader is a lot more complicated because it is not constrained by the 512 bytes size) -> 
-Boot Manager (the screen when we get to choose the OS we want to run, and which Kernel we want to choose) -> 
-Kernel (also contains this file Initrd - contains additional libraries, drivers, and other files that are necessery for and only for the booting,after that are not used) ->Init process (unloads INITRD, initiliazies the system) -> 
+Boot Manager (the screen where we get to choose the OS we want to run, and which Kernel we want to choose) -> 
+Kernel (also contains this file Initrd - contains additional libraries, drivers, and other files that are necessary for and only for the booting, after that are not used) ->Init process (unloads INITRD, initializes the system) -> 
 User programs -> 
 OS
 
@@ -105,10 +129,10 @@ UEFI (Unified Extensible Firmware Interface)
 	- Settings stored on ESP (EFI System Partition) partition on one of the drives
 	- Supports MBR and GPT
 
-Power on -> UEFI (Power on self test) -> EFI Boot Loader (EFI System Partition) -> OS
+Power on -> UEFI (Power on self-test) -> EFI Boot Loader (EFI System Partition) -> OS
 
 Boot loaders
-On BIOS based machines
+On BIOS-based machines
 	- GRUB2 (GNU Grand Unified Boot Loader) - grub2-mkconfig (to update the resulting files)
 		Configuration files - files we can change
 			- /etc/default/grub
@@ -278,3 +302,63 @@ Calendar (real-time) timers work the same way as cron jobs. Monotonic timers act
 Can be created as transient (temporary/on the fly) units as well.
 
 
+6. Bash Scripting and Automation
+
+  systemctl status serviceName       - check if specific service status
+  systemctl enable --now serviceName - enable a service, now
+  systemctl start serviceName        - start a service service
+
+  Scheduling with "at":
+  at 18:48                           - schedule a job at a exact time in the future (3 minutes after the current time)
+  at now + 3 minutes                 - schedule a job using relative time (again 3 minutes after the current time)
+  atq                                - checks the queue of the scheduled jobs
+  atrm idOfJob                       - remove a job using the ID
+
+  Scheduling with crond/cron (depending on the distribution):
+  crontab -e                         - edit the crontab
+  crontab -l                         - list all the crontab schedules
+  
+  /var/spool/cron/                   - contains all the cron jobs
+
+Cpanel and WHM:
+
+/usr/local/cpanel/ - this is where cPanel and WHM software lives
+/usr/local/cpanel/3rdparty/ - 3rd party subfolder for software that cpanel uses but did not develop (example: /perl, /mailman)
+/usr/local/cpanel/base - the files that are loaded when accessing the cpanel/whm control panelurl.com/2087, /2083
+/usr/local/cpanel/bin - binary files (executables) used via interface oprations or automated tasks
+/usr/local/cpanel/Whostmgr, Cpanel - back-end Perl modules, mirroring the module names with the path. (.pm - perl module)
+/usr/local/cpanel/logs/ - any logged data generated specifically by cPanel/WHM itself, such as with interface actions/errors, transfers, cPHulk, licensing, and tailwatchd, among others. (most important files: error_log, access_log).
+
+/usr/bin/cpanel - important dir 1
+/var/cpanel - important dir 2
+
+restartsrv script - used to restart, start, stop services
+	[actions]
+	- stop
+	- reload
+	- status
+	- restart
+	- default option is restart
+
+/scripts/restartsrv_exim --stop
+/scripts/restartsrv [any cPanel service] --action 
+
+when any of the above is executed, it will attempt to run it three times and if it fails it will report that it could not complete that action.
+
+Restart Script Logic (/scripts/restartsrv):
+
+if (service is known (service provided by cPanel))
+	the respective service restart script is run. 
+	/scripts/restartsrv exim -> /scripts/restartsrv_exim is executed with the provided arguments
+else
+	/scripts/restartsrv_unknown with any provided arguments is executed
+
+
+Check Services Daemon (chkservd):
+	chkservd monitors all services in /etc/chksrv.d/chksrvd.conf (cron, apache, IMAP, SSH, etc.)
+
+Service Manager (in WHM) is the GUI for chkservd.
+
+To create a new service, create a file in /etc/chkserv.d/service_name but the service will not appear in chkservd.conf until it is enabled in WHM.
+
+TailWatch (tailwatchd) - monitors logs for certain activities (Tweak Settings)
