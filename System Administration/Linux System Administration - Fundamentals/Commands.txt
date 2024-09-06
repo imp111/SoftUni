@@ -17,21 +17,21 @@ $1 - first column
 $1,$2 - first and second columnt
 NR - number of the line
 NF - number of columns per line
-$NF - display last column per line
-NR==3 - from third line
+$NF - display the last column per line
+NR==3 - from the third line
 " " - print any string
 
 ---------------------------------------------------------------------------------------------------------------------------------
-set (+o) - check local vars and  
-unset - del a var
+set (+o) - controls shell options. Display values of shell variables
+unset (-v) - unset values and attributes of shell variables and functions
 env - environmental variables
-hash (-p, -l) - remembers or display program locations
+hash (-p, -l) - remembers or displays program locations
 whereis (-b) - locates binary, source and man page files for a cmd
-which (-a) - shows full path of (shell) commands
+which (-a) - shows the full path of (shell) commands
 type (-a) - display info about command type
 alias (-p) - display or define aliases
 unalias (-a) - remove alias
-export - sets a variable as a environmental one
+export - sets a variable as an environmental one
 whereis - 
 history - command history
 file
@@ -44,5 +44,5 @@ mkdir
 rmdir
 ln (-s)
 w - see who is logged in
-sha256sum binaryFile - gives hash sum of a file
+sha256sum binaryFile - gives the hash sum of a file
 diff (-y)
