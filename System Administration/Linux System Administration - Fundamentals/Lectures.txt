@@ -103,6 +103,46 @@
 			- Hard Link (ln - by default it creates a hard link) - hard links create a link to a file. That link points to the object (the inode). This means that if we edit the link, it will also edit the inode and the object itself. Changing the link or the file that the link points to, will change the content of both the file and link since they both point to the same inode. If we delete the hard link, all files that represent this inode will also be deleted.
 			- Soft Link (ln -s - creates soft link) - the soft link is usually a very small size. The soft link creates a different object, with a different inode but this inode is just a redirection to the file that it points to. We can delete the link and it won't affect the original object, also if we delete the original object, the link will also be destroyed.
 
+		Users:
+        		Users file (/etc/passwd)
+                		- username
+                		- password placeholder
+                		- user ID
+                		- group ID
+                		- comment (usually Full name)
+                		- Home dir
+                		- User shell
+       			Users password (/etc/shadow)
+                		- username
+                		- encrypted password
+                		- last password change
+                		- minimum days between changes
+                		- max days validity
+                		- warn before expire (days)
+                		- inactivity days after the password expires (number of days after the password expires, and will still be accepted).
+                		- account expiration date
+			Users Default During Creation
+                		Default Values
+                        		- /etc/login.defs
+                        		- /etc/default/useradd
+				Default home directory files and folders (when creating a new user, the files and directories that are in the /skel folder are copied to the home dir of the new user
+					- taken (copied) from /etc/skel/
+
+		Groups:
+			Groups file (/etc/group)
+				- Group name
+				- Password placeholder
+				- Group ID
+				- Group members
+			Groups Password file (/etc/gshadow)
+				- Group name
+				- Encrypted password
+				- Group administrators
+				- Group members
+	
+			
+
+
 
 4. System and processes management and monitoring
 
