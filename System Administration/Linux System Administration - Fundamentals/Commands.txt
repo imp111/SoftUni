@@ -33,7 +33,7 @@ awk '{print}' file.txt
 
 $0 - entire line
 $1 - first column
-$1,$2 - first and second columnt
+$1,$2 - first and second columns
 NR - number of the line
 NF - number of columns per line
 $NF - display the last column per line
@@ -65,3 +65,19 @@ ln (-s)
 w - see who is logged in
 sha256sum binaryFile - gives the hash sum of a file
 diff (-y)
+useradd (-D, -e) - create a new user or update default new user information
+usermod (-c, -aG) - modify user account
+userdel (-r) - remove user
+users - list of users that are currently logged in
+who (-Hu) - list of users that are currently logged in
+whoami - print effective user id
+last (-n, -f) - list of last logged-in users
+lastb (-n, -w) - list of last unsuccessful login attempts
+lastlog - report the most recent login for all users
+passwd - change password for user
+chpasswrd (chpasswd username:password) - update passwords in batch mode (when using the command in scripts or automation)
+chage (-l, -E) - change user password expiry information
+chfn (-f, -o) - change user finder (descriptive) information
+chsh (-s, --list-shells) - change user shell
+
+
