@@ -73,6 +73,10 @@
 			- If you want to work with the variable's value – we use $ 
 			- If you want to work with the variable itself (as an object) – no $ 
 
+		Different between sudo - user and sudo user:
+			- sudo - user - we specify that this will be a login session, we will go through the whole initialization process
+			- sudo user - 
+
 		Configuration Files:
 			- System Level (for everyone) - /etc/ 
 				- /etc/profile (used for env control and startup programs execution)
