@@ -88,3 +88,8 @@ newgrp - log in to a new group (it changes main group of the uses)
 id (-G) - print real and effective user and group IDs
 sudo (-u) - execute a command as another user (by default it executes as root)
 su (-) - run a command with substitute user and group ID
+chmod - change file mode bits (ownership of a file)
+chown (owner:group file, -R) - change file owner and group
+chgrp (-vR) - change group ownership
+umask (-S) - display or set file mode mask
+
