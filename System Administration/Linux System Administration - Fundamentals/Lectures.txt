@@ -141,6 +141,45 @@
 				- Group members
 	
 			
+		Security:
+			DAC (Discretionary Access Control) - level 1
+				- Regular file access permissions
+				- Access Control Lists (ACL)
+			MAC (Mandatory Access Control) - level 2
+				- SELinux
+		
+		Access Rights:
+			r (4) - read
+				- Files - allows to view the content of a file
+				- Dir - allows to view the content of a dir
+			w (2) - write
+				- Files - allows to modify and delete a file
+				- Dir - allows to delete the dir, modify the content of the dir (create, rename, delete files in the dir), modify the content of the files that the user can read
+			x (1) - execute
+				- Files - allows to execute the file (read permission is also needed)
+				- Dir - allows to access the dir and access the metadata about files in the dir
+
+			Symbol notation - rwxrw-r--
+			Octal notation - 764
+
+			Default access rights
+				- Files - 666 - 002 = 664 [Maximum rights - Subtract umask = Result ]
+				- Directories - 777 - 002 = 775 [Maximum rights - Subtract umask = Result ]
+
+			Special Permissions
+				Sticky Bit (prevents non-owners of a file to delete it, usually used on dirs) - 1xxx
+					- chmod 1755 /dir #octal notation
+					- chmod o+t /dir #symbol notation
+		
+				Set Group ID (SGID) (allows users to run a program, as if the user is part of the group, usually used for shared dirs. Let's say users A and B are part of group C, and there is a dir D, which is owned by group C, users A and B will be able to edit the contents of the folder) - 2xxx
+					- chmod 2644 script.sh
+					- chmod g+s script.sh
+
+				Set User ID (SUID) (allows users to run a program as if it were its owner, we execute the file as we are the owner of it, in the name of the owner, usually the owner is root) - 4xxx
+					- chmod 4644 scripts.sh
+					- chmod u+s script.sh 
+
+
 
 
 
