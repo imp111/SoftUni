@@ -79,5 +79,12 @@ chpasswrd (chpasswd username:password) - update passwords in batch mode (when us
 chage (-l, -E) - change user password expiry information
 chfn (-f, -o) - change user finder (descriptive) information
 chsh (-s, --list-shells) - change user shell
-
-
+groupadd (-g) - create a new group
+groupmod (-g, -n) - modify a group
+groupdel - delete a group
+groups - show the groups the user is part of
+gpasswd - administer groups and their passwords
+newgrp - log in to a new group (it changes main group of the uses)
+id (-G) - print real and effective user and group IDs
+sudo (-u) - execute a command as another user (by default it executes as root)
+su (-) - run a command with substitute user and group ID
