@@ -1,1 +1,104 @@
+/usr/local/cpanel/ - this is where cPanel and WHM software lives
+/usr/local/cpanel/3rdparty/ - 3rd party subfolder for software that cpanel uses but did not develop (example: /perl, /mailman)
+/usr/local/cpanel/base - the files that are loaded when accessing the cpanel/whm control panelurl.com/2087, /2083
+/usr/local/cpanel/bin - binary files (executables) used via interface oprations or automated tasks
+/usr/local/cpanel/Whostmgr, Cpanel - back-end Perl modules, mirroring the module names with the path. (.pm - perl module)
+/usr/local/cpanel/logs/ - any logged data generated specifically by cPanel/WHM itself, such as with interface actions/errors, transfers, cPHulk, licensing, and tailwatchd, among others. (most important files: error_log, access_log).
 
+/usr/bin/cpanel - important dir 1
+/var/cpanel - important dir 2
+
+restartsrv script - used to restart, start, stop services
+	[actions]
+	- stop
+	- reload
+	- status
+	- restart
+	- default option is restart
+
+/scripts/restartsrv_exim --stop
+/scripts/restartsrv [any cPanel service] --action 
+
+when any of the above is executed, it will attempt to run it three times and if it fails it will report that it could not complete that action.
+
+Restart Script Logic (/scripts/restartsrv):
+
+if (service is known (service provided by cPanel))
+	the respective service restart script is run. 
+	/scripts/restartsrv exim -> /scripts/restartsrv_exim is executed with the provided arguments
+else
+	/scripts/restartsrv_unknown with any provided arguments is executed
+
+
+Check Services Daemon (chkservd):
+	chkservd monitors all services in /etc/chksrv.d/chksrvd.conf (cron, apache, IMAP, SSH, etc.)
+
+Service Manager (in WHM) is the GUI for chkservd.
+
+To create a new service, create a file in /etc/chkserv.d/service_name but the service will not appear in chkservd.conf until it is enabled in WHM.
+
+TailWatch (tailwatchd) - monitors logs for certain activities (Tweak Settings)
+
+MultiPHP (WHM -> Home -> Software -> MultiPHP Manager)
+grep phpversion /var/cpanel/userdata/USERNAME/DOMAIN - check php version for the domain
+WHM -> Home -> Software -> EasyApache 4 - to install a php version
+
+EasyApache 4 allows you to use versions of PHP that are not provided by CPanel but can be installed with a package manager and cannot start with the "ea-" prefix that EasyApache 4 uses.
+
+System PHP version - the PHP version that is set to default for all accounts on the server.
+
+Handlers (Apache-to-PHP interface) - determines how Apache acts when a PHP file is requested.
+DSO
+
+Emails:
+- exiwhat - active connections being handled
+- ps -C exim wwwu - list of all running exim processes
+- lsof -c exim - list of files being accessed by Exim
+
+Testing IMAP - a good test is to ensure that Dovecot is authenticating and responding properly. You can do that with Telnet (yum install telnet) or openssl (openssl s_client -connect IpAddress
+
+/var/log/exim_mainlog - main exim log
+/var/log/maillog - dovecot and spam assasin log
+/usr/local/cpanel/3rdparty/mailman/logs/* - mailman logs
+/var/log/mail.log - dovecot log on Ubuntu
+
+Exim main logs:
+- /var/log/exim_mainlog - logs message arrival and delivery attempts, output is controlled by th log_selector option
+- /var/log/exim_rejectlog - logs delivery rejections based on policy
+- /var/log/exim_paniclog - logs severe errors (errors that cause Exim to crash), such as errors that cause a message to never be delivered, should be empty or nearly empty
+
+Exim Message Status Indicators:
+<= - message arrival (2015-03-13 09:20:29 1YWQRx-0008D8-LD <= root@hw1-x86.tech.cpanel.net)
+=> - successful delivery (2015-03-11 10:35:36 1YVifY-0004Dw-KL => mary@cpanel.net)
+== - deferred message (delayed) (2015-03-11 10:40:13 1YVik1-0004RW-Ef == root@hw1-x86.tech.cpanel.net)
+** - delivery failure (2015-03-11 10:40:13 1YVik1-0004RW-Ef ** root@hw1-x86.tech.cpanel.net)
+
+Exim ID vs Message ID:
+Message ID (id=" " in the log file)
+- IDs are unique across different systems and does not change. 
+- It can be found in the logs and in the message headers.
+
+Exim ID
+- IDs are unique but are not guaranteed to be unique across systems in a network or over the internet.
+- It is visible in the mail headers, but mostly used in exim_mainlog
+- Every time a message reaches a server using Exim, a new Exim ID is assigned for the message on that server.
+
+Routers and Transport:
+2015-09-01 10:47:28 1ZWnmI-0001hA-Nb => dogs <dogs@animals.test> R=virtual_user T=virtual_userdelivery
+R= - router
+T= - transfer
+- /etc/exim.conf - to check how the router or transport is instructed
+
+Queue Runs:
+Exim logs tell you when a queue run starts and what PID it is running as. During the run, the Exim process takes one message at a time and attempts to deliver it.
+
+Current Working Dir (cwd=" "):
+Exim logs the cwd of any process that invokes it. This way you can track where the mail is being sent from.
+There will not be a cmw entry for mail received via SMTP.
+
+2015-09-01 10:09:02 cwd=/var/spool/exim 2 args: /usr/sbin/exim -q
+
+SpamAssassin Entries in the Exim log:
+When SpamAssassin scans a message, it leaves a note in the Exim log [exim_mainlog] (2015-07-06 11:59:09 [13024] 1ZC3B5-0003O4-7s H=some.server.net [10.2.3.4]:58393 I=[10.9.8.7]:25 Warning: "SpamAssassin as testuser detected message as NOT spam (-100.4)")
+
+The Dovecot Mail Log (/var/log/maillog), also IMAP log entries (IMAP logins) can be found in that log
