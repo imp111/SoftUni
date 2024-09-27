@@ -186,6 +186,23 @@
 
 
 
+2. Working with files and flows
+
+Input/Output Streams:
+	- stdin (0)
+	- stdout (1)
+	- stderr (2)
+
+Stream redirection:
+	> - stdout redirect (overwrite)
+		- &> - stdout and stderr redirect (overwrite) 
+		- 1> - stdout redirect 
+		- 2> - stderr redirect
+		- 2>&1 - redirects stderr, where the stdout is redirected
+	>> - stdout or stderr redirect (append)
+	< - stdin redirect
+	<< - heredoc append (cat > file.txt << end)
+
 
 4. System and processes management and monitoring
 
