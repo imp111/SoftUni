@@ -102,3 +102,32 @@ SpamAssassin Entries in the Exim log:
 When SpamAssassin scans a message, it leaves a note in the Exim log [exim_mainlog] (2015-07-06 11:59:09 [13024] 1ZC3B5-0003O4-7s H=some.server.net [10.2.3.4]:58393 I=[10.9.8.7]:25 Warning: "SpamAssassin as testuser detected message as NOT spam (-100.4)")
 
 The Dovecot Mail Log (/var/log/maillog), also IMAP log entries (IMAP logins) can be found in that log
+
+Mail Storages Formats:
+        MdBox (dovecot) - stores multiple messages in the dovecot files
+                - /home/cptest/mail/mailboxes - contains a dir for each folder inside the user's mailbox
+                - /home/cptest/mail/mailboxes/exampleFolder/dbox-Mails - this dir exists in each mailbox folder, and that dir contains two dovecot files, which contain info on what messages are in the mailbox (not the messages themself)
+                        - dovecot.index.cache
+                        - dovecot.index.log
+                - /home/cptest/mail/storage/ - the storage folder is where the mail is actually stored.
+                        - dovecot.map.index.log
+                        - m.1 - the files where the messages are stored (starts with Return-Path)
+
+        MailDir (hidden dirs, links) - stores each email in its own file. New dir contains unread emails, cur contains read emails. All the folders are for the default mail account (format: [cpanel-user]@[server-hostname]). The messages for each domain are kept in a dir named after the domain. The sym links are used, so the default account can use webmail to read the messages of the other accounts. Each email account is represented by a directory (kia@cars.test - kia dir, vw@cars.test - vw dir).
+
+Email Filters:
+
+        Email Account-level Filters - creating filets for each email account can be done by Email Filters feature (cPanel). This filter creates 3 files in the dir of the email:
+                - filter file (used by Exim)
+                - filter.yaml (YAML file used for rendering the interface)
+                - fulter.cache (cache file)
+                - when it is a email account-level filter, the address contains a + sign and the router remained as "virtual_user".
+
+        cPanel Account-level Filters (Global Email Filters in cPanel)
+                - /etc/vfilters (the Exim filter file)
+                - in the user's home dir/.cpanel
+                        - .yaml
+                        - .cache
+
+The 'valiases' File:
+        /etc/valiases/ - a dir that contains a file for each domain on the server. Each file contains the forwarders that are set up for the account (including: mailing lists, info regarding the handling of messages to users that do not exist).
