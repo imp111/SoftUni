@@ -184,8 +184,6 @@
 					- chmod u+s script.sh 
 
 
-
-
 2. Working with files and flows
 
 Input/Output Streams:
@@ -203,6 +201,41 @@ Stream redirection:
 	< - stdin redirect
 	<< - heredoc append (cat > file.txt << end)
 
+Command Sequences:
+	; (cmd1 ; cmd2) - sequence (stdout of cmd1 is disconnected to stdin of cmd2)
+	| (cmd1 | cmd2) - pipe (stdout of cmd1 is connected to stdin of cmd2)
+	&& (cmd1 && cmd2) - success (cmd2 will be executed if cmd1 is executed successfully, exit status 0)
+	|| (cmd1 || cmd2) - failure (cmd2 will be executed if cmd1 is not executed successfully, exit status 1)
+
+Command Substitution:
+	` ` (cat `cat file1.txt`) 
+	$() (cat $(cat file1.txt))
+
+Regular Expressions:
+	Wildcards
+		* - any char
+		? - any single char
+		[] - any char that is a member of the set
+		[!] - any char that is not a member of the set
+		[[:class:]] - 
+		[:alnum:] Alphanumeric characters A-Z, a-z, and 0-9
+		[:word:] Same as [:alnum:] including underscore (_)
+		[:alpha:] Alphabetic characters A-Z and a-z
+		[:digit:] Numeric characters 0-9
+		[:lower:] All lowercase letters a-z
+		[:upper:] All uppercase letters A-Z
+	Regular Expressions
+		Control Characters
+			. (.text => atext, btext) - any single char
+			^ (^text => text, textasdsa, texttwo) - beginning of the line
+			$ (text$ => text, asasdtext, twotext) - ending of the line
+			\ (.\.text => a.text) - escape special character
+		Quantifiers
+			?
+			*
+			+
+			{}
+	
 
 4. System and processes management and monitoring
 
