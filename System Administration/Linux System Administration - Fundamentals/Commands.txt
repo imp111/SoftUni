@@ -93,5 +93,29 @@ chown (owner:group file, -R) - change file owner and group
 chgrp (-vR) - change group ownership
 umask (-S) - display or set file mode mask
 
-
+tee (-a) - Read from standard input and write to standard output and files
+xargs
+grep
+find
+tac - concatane and print files in reverse
+more
+less
+head
+cat
+tail
+uniq
+sort
+wc (-c, -l)
+nl - add a number at the beginning of each line
+cut (-d, -f)
+paste
+join (-t, -j)
+split (-a, -d, -l) - split a file into pieces (multiple smaller files)
+expand - convert tabs to spaces
+unexpand - convert spaces to tabs
+fmt - simple text formatting
+tr
+od
+sed
+awk
 
