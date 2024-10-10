@@ -131,3 +131,70 @@ Email Filters:
 
 The 'valiases' File:
         /etc/valiases/ - a dir that contains a file for each domain on the server. Each file contains the forwarders that are set up for the account (including: mailing lists, info regarding the handling of messages to users that do not exist).
+
+
+Managing the Mail Queue:
+
+Viewing the Exim Queue:
+        - Exim queue count: exim -bpc
+        - Exim entire mail queue: exim -bp
+        - Structure of exim mail queue entry:
+                | Time in queue | Size of message | Exim ID | Message sender | Message Recipient |
+
+Selecting and Viewing Messages:
+        By sender:
+                exiqrep -f [user]@domain.tld
+
+                - Exim logs: /var/log/exim_mainlog
+
+        By recipient:
+                exiqrep -r [user]@domain.tld
+
+        By age (age criteria):
+                exiqgrep -o 172800 (older than n seconds)
+                exiqgrep -y 1800 (younger than n seconds)
+
+View Message Details:
+        Viewing Headers:
+                exim -Mvh <exim-id>             (message, view, header)
+
+        Viewing Body:
+                exim -Mvb <exim-id>             (message, view, body)
+
+Making Changes:
+        Resending a message (instead of waiting it, you can try to resend it now):
+
+                exim -M (the -M options attempts to resend the message)
+                exiqgrep -r user@domain.tld -i | xargs exim -M (resend all of the messages in the queue for the user@domain.tld)
+
+
+        Deleting a message from the queue:
+
+                exim -Mrm <exim-id> (rm - stands for remove)
+
+        Deleting multiple messages from the queue:
+
+                exiqgrep -i -f  @spammer.tld | xargs exim -Mrm
+
+
+Checking routing info:
+
+        Checking delivery path of an address:
+
+                exim -bt (it shows where exim thinks a message should be going and how it should get there)
+
+                Example for a local account:
+                # exim -bt dogs@animals.test
+                        dogs@animals.test
+                        router = virtual_user, transport = virtual_userdelivery
+
+
+                Example for a remote destination:
+                # exim -bt noone@gmail.com
+                noone@gmail.com
+                router = lookuphost, transport = remote_smtp
+                host gmail-smtp-in.l.google.com      [64.233.169.26]  MX=5
+                host alt1.gmail-smtp-in.l.google.com [173.194.219.26] MX=10
+                host alt2.gmail-smtp-in.l.google.com [173.194.204.26] MX=20
+                host alt3.gmail-smtp-in.l.google.com [74.125.141.26]  MX=30
+                host alt4.gmail-smtp-in.l.google.com [64.233.186.26]  MX=40
