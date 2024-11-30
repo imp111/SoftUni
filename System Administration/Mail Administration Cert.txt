@@ -1,0 +1,59 @@
+Mail Server - Administrator
+
+Dovecot - the mail server used in cPanel and WHM env. It is an application that can provide IMAP and POP3 server functionality.
+MUA (Mail User Agents or mail clients such as Outlook, Thunderbird, etc.) - The thing that gives you the ability to see your emails stored on the server.
+
+IMAP and POP3 (Dovecot) servers take requests from MUAs, after that, the IMAP and POP answers those requests by accessing e-mail messages stored on the server and feeding them out to the MUA. So when a user's MUA contacts the mail server (Dovecot), the software which answers that request is an IMAP or POP3 server.
+
+Dovecot also provides final message delivery functionality with the Dovecot LDA (Local Delivery Agent).
+LDA is responsible for storing email messages in the message store.
+Message store - an area of your disk drive that holds the files that make up your server's email.
+
+Dovecot pretty much has the tool (LDA), which handels storing incoming emails in the server's email storage area.
+Local delivery (storing the emails to the server storage) can be managed in a few ways:
+	- Directly by the Message Transfer Agent (MTA uses SMTP to transfer messages. Example MTA is Exim)
+	- Through a separate Mail Delivery Agent
+	- By using Dovecot’s LDA (Local Delivery Agent)
+
+Important! Dovecot is NOT responsible for receiving mail from other mail servers. Dovecot only handles e-mail messages coming out of the local message store going out to IMAP and POP3 clients, as well messages which have already been received by the MTA and are to be stored into the local message store.
+
+POP and IMAP are the two protocol used by MUAs for communication with the mail server.
+
+MUA -> MTA (Exim, Outgoing via SMTP) -> MDA (Stores them on the mail storage on the server via LDA, Dovecot) -> MUA (the mail client takes the emails from the mail server via POP or IMAP)
+
+Primary mail storage options:
+	- mdbox - multiples messages in a single file
+	- Maildir - each message is stored in a different file
+	- mdbox (provided by Dovecot)
+	
+Authentication daemon (provided by Dovecot) - Dovecot provides authentication services for email on a cPanel server. A user cannot receive or send mail until after Dovecot’s authentication daemon has completed verification of the password.
+	WHM » Service Configuration » Mailserver Configuration
+
+Trash emptying - Dovecot does not empty its trash by default. In order to enable automatic trash disposal, you'll need to select the Auto-Expunge Trash option in:
+	WHM » Service Configuration » Mailserver Configuration
+
+You can switch between mbox and Maildir for each cPanel user:
+	WHM » Email » Mailbox Conversion
+	
+"Time Moved Backwards" error on Dovecot - to fix the issue just sync the system's and the networks time:
+	WHM >> Server Configuration >> Server Time
+	
+System mail accounts - these system account do are not used to receive normal emails but are used for system notifications and errors:
+	- root
+	- cpanel
+	- nobody
+	
+	They need to have forwarders to work:
+		Home » Server Contacts » Edit System Mail Preferences
+	
+
+Exim (Mail Transfer agent - MTA) - MTAs send and receive email messages for your server (used to send emails from server to server via SMTP).
+Each message handled by Exim has a message id - a 16 charecters long, divided into 3 parts (16VDhn-0001bo-D3)
+
+Exim is Access Control List based system. The configuration for Exim is done through a single config file.
+This file contains - main section - with generic settings and variables (/etc/exim.conf). The content of this file can be changed from Exim Configuration Manager (Basic editor or Advanced Editor).
+
+Apache Spam assasin daemon: spamd
+
+
+	

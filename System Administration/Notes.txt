@@ -1,0 +1,110 @@
+Crons:----------------------------------------------------
+/opt/alt/php81/usr/bin/php -q /home/galactikh/public_html/clients/crons/cron.php
+
+/opt/alt/php81/usr/bin/php -q - Path to the PHP version on the server
+/home/galactikh/public_html/clients/crons/cron.php - path to the cron in the File Manager
+
+/var/log/cron - cron logs
+grep "cron name" /var/log/cron - check if a cron is executed
+
+
+IP logs on firewall:--------------------------------------
+grep “ip….” /var/log/lfd.log → The log contains any failed login attempts, as well as IP addresses that have been blocked by CSF.
+grep “ip….” /etc/csf/csf.deny → Contains lists of IP addresses that have been blocked. For each entry, it shows the date the IP address was blocked and the reason.
+grep “ip….” /etc/csf/csf.allow → Contains lists of IP addresses that have been whitelisted.
+grep “ip….” /usr/local/cpanel/logs/login_log → good place to check details why an IP is getting blocked (but run this before the IP is being unblocked from the firewall deny list).
+
+
+---|DISK USAGE|---
+echo "Detailed Inodes usage for: $(pwd)" ; for d in $(find -maxdepth 1 -type d | cut -d '/' -f 2 | grep -xv . | sort); do c=$(find $d | wc -l); printf "$c\t\t- $d\n" ; done ; printf "Total: \t\t$(find $(pwd) | wc -l)\n"
+
+
+Doteasy HTTP redirect IP: 192.250.239.171
+
+Glue records:
+We are not the domain registrar:
+From what I can see the Registrar of the domain exampleDomain is registrar.
+
+To configure custom name servers, you need to follow two steps:
+    From your domain registrar, configure the following records to point to our IPs:
+        ns1.jetzed.com -> 13.248.158.180
+        ns2.jetzed.com -> 75.2.118.134
+        ns3.jetzed.com -> 76.223.26.245
+        ns4.jetzed.com -> 99.83.147.209
+Note: You don’t need to use all 4 IPs. Using the first two IPs will work perfectly fine.
+
+    In the cPanel, add A records for the mentioned IPs.
+Follow these steps:
+    Navigate to your domain cPanel -> Zone Editor.
+
+    Add the following A records:
+        ns1.jetzed.com| A | 13.248.158.180
+        ns2.jetzed.com| A | 75.2.118.134
+        ns3.jetzed.com | A | 76.223.26.245
+        ns4.jetzed.com | A | 99.83.147.209
+		
+Remember to wait for the propagation period of 24-48 hours for nameserver changes.
+
+
+
+Ticket template:---------------------------------------------------
+
+Hello,
+
+I am raising this ticket, as per our live chat conversation, regarding the issue you are experiencing.
+
+The affected domain/service is:  
+
+Details identified from the chat investigation: 
+
+Following the below steps will reproduce the issue: 
+
+Our team will further investigate the issue and will update you in more detail once it is resolved.
+
+Please feel free to send any additional information that you see fit.
+
+Kind regards, 
+Aleksandar T.
+
+
+PHP handlers:------------------------------------------------------
+
+AddHandler application/x-httpd-alt-php56___lsphp .php
+AddHandler application/x-httpd-alt-php70___lsphp .php
+AddHandler application/x-httpd-alt-php71___lsphp .php
+AddHandler application/x-httpd-alt-php72___lsphp .php
+AddHandler application/x-httpd-alt-php73___lsphp .php
+AddHandler application/x-httpd-alt-php74___lsphp .php
+AddHandler application/x-httpd-alt-php80___lsphp .php
+AddHandler application/x-httpd-alt-php81___lsphp .php
+AddHandler application/x-httpd-alt-php82___lsphp .php
+AddHandler application/x-httpd-alt-php83___lsphp .php
+
+PHP info:---------------------------------------------------------
+
+<?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();
+
+// Show just the module information.
+// phpinfo(8) yields identical results.
+phpinfo(INFO_MODULES);
+
+?>
+
+
+Default .htaccess:
+#Begin Wordpress
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+#End Wordpress
+
+Domains:
+
+Verification email is sent each time the domain is renewed. ClientHold status indicates that issue, the domain is not verified after the 14 days period.
