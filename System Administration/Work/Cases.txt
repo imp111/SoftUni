@@ -1,0 +1,114 @@
+Plesk / Server Error check list:
+- connectionString - localhost, server IP
+- IIS Application pool - enable 32-bit applications then recycle
+When trying to upload a file via API or from the website, and you receive an error permision denied: go to Plesk -> domain -> hosting -> enable additional write/modify permissions and web deploy publishing
+ 
+Domains:
+- customer is asking if we are providing ID protection when buying the domain - yes it is included when buying the domain, and when running the whois command, the sensitive data will not be visible
+- When domain is not resolving to any nameservers, and the user didn't change the nameservers, the domain is active - check the domain status, if it is on clinetHold, this is the issue. He should check his verification email and once he verify the domain, it should start resolving immediately.
+
+Domain migration:
+- Migrating cPanel account from different provider to us - we raise a ticket and we ask the user to provide his cPanel credentials in the ticket, the rest will be done by infra
+ 
+Wordpress:
+- User does not have access to his wp-admin page (error 504) - go to phpMyAdmin, check the prefix, search in the correct database for the prefix_user, find the correct user, go to the user_metadata, locate the row with id that is the same as the user id you are looking for, change the value to a:1:{s:13:"administrator";s:1:"1";} (this will give full admin access to the user)
+- User is getting account suspended when logging to admin page - did a master A record as the domain was resolving from an old server ip
+- User is getting there has been a critical error on this website - check error.log file
+- Cpanel
+- User wishes to transfer cPanel content to cPanel content (in the same WHM account) - we don't do this kind of migrations as this is internal migration, and the customer has to do it himself. So in order to download the files of your website you can use FTP, as for the databases you can export them directly from phpMyAdmin. After that you can go to the account that you want to migrate the website and upload them again by using FTP for the Files and phpMyAdmin for the databases. However if you are not sure how to do it I would not recommend to do it alone and ask a developer to assist you with it.
+- Error 500 on plesk - go to hosting -> on the SSL/TLS support section, enable redirect visitors from HTTP to HTTPS via a SEO frendly 301 redirect
+ 
+Emails:
+- Customer was having trouble receiving emails only on his end, I was able to send and receiveemails - the solution to the issue was that his IP was blocked in WHM (go to firewall and remove his IP), he also had his domain blocked in spamexperts. He was using our server only for emails (his website was hosted somewhere else).
+ 
+Spam Filtering:
+- Outbound - Spam Experts
+- Inbound 
+	- SpamAssassin which is integrated into cPanel
+	- SpamAssassin is also integrated into Plesk control panel
+ 
+Incoming and outgoing server details:
+Username: your email account
+Password: Use the email account’s password.
+Incoming Server: server.hostname.mysecurecloudhost.com
+IMAP Port: 993
+POP3 Port: 995
+Outgoing Server: server.hostname.mysecurecloudhost.com
+SMTP Port: 465
+SSL - ON
+
+Here are your incoming (POP3/IMAP) & outgoing mail (SMTP) configuration settings:
+For Non-SSL connections, the [ports] are: POP3 -> 110, IMAP -> 143 and SMTP -> 25 or 2525
+Hostname: mail.yourdomain.tld (Please replace yourdomain.tld with your actual domain name.)
+For SSL connections: POP3 -> 995, IMAP -> 993 and SMTP ->465
+Hostname: s1391.lon1.mysecurecloudhost.com
+ 
+- The customer is contacting us for POP information, ports, hostname, etc. The ones that are listed in cPanel are not going to work because his MX records are pointing to a different mail provider. He should contact them and ask for the credentials.
+ 
+SSL:
+- Customer tried to access his website, but it is not loading with SSL - when checking the status of the SSL certificate, it gives a DSV error. This error indicates that there is a mismatch with the nameservers provided in WHM and the one on the domain. Go to WHM (DNS Zone Manager)and change the nameservers to the one specified from the registrar (when you run the whois command).
+- For the SSL to be installed for a certain domain, the domain doesn't need to use our nameservers. All it needs is to resolve to the IP of the server of our hosting plan.
+- Customer is receiving ERR_SSL_PROTOCOL_ERROR but is loading in incognito - the customers domain was resolving from two IPs (it had 2 A records), which caused a conflict and sometimes it loads from one IP and sometimes from the second. Make sure there is only 1 A record and run a master A to reset it. Wait for a few hours and once that is done, it should be working fine.
+ 
+Database: 
+- MySQL Version (Minimum required 5.6 your version [its in red]) - add mb_db in php version in cpanel
+ 
+Migration from cPanel to cPanel:
+- Once you have purchased the hosting package, you will need to manually move the files and database. You can download the files using FTP and upload them to the new server. You can obtain the database from cPanel --> Backup --> Get the database from there. As for the emails, you will need to create the email accounts on the new package and manually move the mails using this tool or mail client such as Outlook or use online tool such as https://imapsync.lamiral.info/X/
+ 
+DNS:
+- If customers website is not loading, in the DNS checker the DNS records seems to not be propagating, but in the control panel the records seems to be pointing to the correct IPs, resetting the DNS zone seems to fix the issue and the domain starts propagating normally. The DNS records reset is done in Cpanel -> Zone Editor -> Domain -> Manage -> Actions -> Reset DNS Zone
+ 
+Website migration:
+- If all the websites are under 1 cPanel, our team may assist with the migration - however you will need to raise a ticket (this can happen once you have an account with us and have purchased your Silver hosting plan) and will need to provide either a full cPanel backup or credentials to the old hosting panel so our team can perform the backup and migrate the websites for you.
+ 
+Mochahost Premium backups:
+- Usually Mochahost does not have daily backups, it only has weekly and when buying a package you have the option for daily premium backups, which make a backup everyday. To check the backups, go to the JetBackup 5 tool of the specific cPanel account.
+ 
+Sales:
+Q: Is Go Land (backend) and React (frontend) supported?
+A: Unfortunately, our shared hosting packages don’t support Go Land. The option we can offer is an unmanaged server (you can check our plans from here https://mochahost.com/linux-servers ), in this way you will have root access to the server and can install whatever you wish, but that requires a serious number of skills as you will have all the power and rule the server by yourself. Unmanaged servers are usually taken care of by system administrators that have the knowledge to maintain a server by themselves.
+- The customer is receiving SLD already used for another order of this product - the domain is already used for another service order, so he has to use a different domain.
+- Fair usage policy on unlimited accounts. Any ‘unlimited’ allowances are subject to fair use and any customer using an amount of monthly bandwidth or disk space deemed excessive in comparison to the average usage by other customers on our platform may, at our discretion, be advised to improve website efficiency and/or configure a CDN, or upgrade to a bespoke solution and will be billed accordingly.
+
+Hosting plan:
+- The customers hosting plan invoice was paid, but his service was still not active (usually it should be activated immediately). Open Grafana and find a server that has the same location as the one in the order. After that go to the plan -> Manage -> Web Hosting - cPanel and choose the server that we found on Grafana -> Click on Create account button and shortly after the plan will be active and the customer will be able to access the cPanel.
+- Customer is asking for shareable link of a backup, unfortunately we do not provide that. The thing we can advise him is to download the backup to his computer -> upload it to his public_html folder -> and use wget to download it: wget mainDomain/backupName
+ 
+cPanel and Website access:
+- Customer is receiving connection timeout when trying to access his website or cpanel - check if his IP is banned in FireWall -> Try loading the site in incognito mode or from a different browser -> check imunify360 (go to firewall, search for the IP and re-add it (use the ADD option)).
+- Stuck/Expired SSL - When you go to customers's SSL/TSL Status page in cpanel, find the domain, and try to run the AutoSSL but it just keeps spinning, it means that it is stuck. To fix the issue, you have to: cPanel -> SSL/TLS Status -> Domain -> View certificate -> Uninstall the certificate -> WHM -> Manage AutoSSL -> Manage Users -> Domain -> Install the SSL -> Logs (to check the Logs if the SSL is installed successfully).
+
+Webmail:
+- Webmail too many redirects error - when trying to access his webmail, the user is receiving too many redirect error. 
+- He needs to log into their CF Account -> Choose the domain -> SSL/TLS and change the Encryption level from Full to Flexible
+- The other cause of the issue could be corrupted db file. To fix that go to: File Manager -> etc -> domain -> find the db that has the same name as the email account that has a problem and rename it (exmaple: haidy.duran.rcube.db -> haidy.duran.rcube.db_OLD). The system will generate a new file once we access the webmail again.
+ 
+- Error 403 Access denied - could be caused from the 
+Order Allow,Deny
+Deny from all (deny rule) in the .htaccess, remove it and it should be working.
+After that if you get error 500 or blank page, and after that you check the error_log and there is a syntax error, it is most likely the php version. You can add handler in .htaccess or update the cpanel php version
+ 
+- When the customer is receiving error 404 not found, but all the files seems to be there, the domain is pointing to the correct IP and it is fully resolving, check the permissions (should be 750). Also you can check the group owner of the directory, just SSH and check the group (it should be nobody group - cd /home/domain/public_html/ -> chgrp -R nobody .)
+- The master DNS zone of a domain: Let's say we have a domain (mrmschool.edu.in), the domain could be added to two different server and his master dns zone can only be on one. The master dns zone pretty much dictates, which dns records are going to be used for that domain. For example, this domain bstc.mrmschool.edu.in was resolving from 192.250.231.38 (p1443.use1.mysecurecloudhost.com) and the master dns zone was also for the server but the domain was not located on that server, it was located on 192.250.231.26 (p1428.use1.mysecurecloudhost.com). Master A record reset will change the active DNS zone (from p1443.use1.mysecurecloudhost.com to p1428.use1.mysecurecloudhost.com) and it will start resolving from 192.250.231.26 IP.
+- The website shows some php extention is not activated, but when you check the php extensions it is enabled. In this case, most likey it is stuck and needs to be refreshed. To do that, go to WHM -> CageFS -> username of cpanel -> Disable -> Enable
+- Upgrading Shared hosting plan to VPS - cannot be done, you should order the VPS and after that request the shared hosting plan content migration and once that is done, you can cancel the shared hosting plan and get a refund to the credit card or account balance.
+
+- Mail migration tool the customers can use - Mailbox Imapsync Online
+
+Custom website (Laravel, etc.):
+- If the customer has a custom website, without wordpress instalattion and index.php is missing, to make the website load from a diffreent file (example: main.php), add DirectoryIndex main.php at the top of the .htaccess file.
+
+
+If you are unable to access your * account please send us an email to support@*.com and attach the following information:
+Full Name:
+Company:
+Email address under the account:
+Phone number:
+Address:
+Old tickets ref:
+Copy of the last/past paid invoice:
+Services and domains under the account.
+Our senior team will review your ticket and the information and will get back to you via the same email.
+
+The wordpress site of the customer is loading just fine, but when trying to open any page of the website, it shows error 404: to fix this issue, check if the website has .htaccess, if not, add it!

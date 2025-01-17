@@ -518,6 +518,11 @@ Can be created as transient (temporary/on the fly) units as well.
   
   /var/spool/cron/                   - contains all the cron jobs
 
+
+
+
+
+
 Cpanel and WHM:
 
 /usr/local/cpanel/ - this is where cPanel and WHM software lives
@@ -560,3 +565,230 @@ Service Manager (in WHM) is the GUI for chkservd.
 To create a new service, create a file in /etc/chkserv.d/service_name but the service will not appear in chkservd.conf until it is enabled in WHM.
 
 TailWatch (tailwatchd) - monitors logs for certain activities (Tweak Settings)
+
+MultiPHP (WHM -> Home -> Software -> MultiPHP Manager)
+grep phpversion /var/cpanel/userdata/USERNAME/DOMAIN - check php version for the domain
+WHM -> Home -> Software -> EasyApache 4 - to install a php version
+
+EasyApache 4 allows you to use versions of PHP that are not provided by CPanel but can be installed with a package manager and cannot start with the "ea-" prefix that EasyApache 4 uses.
+
+System PHP version - the PHP version that is set to default for all accounts on the server.
+
+Handlers (Apache-to-PHP interface) - determines how Apache acts when a PHP file is requested.
+DSO
+
+Emails:
+- exiwhat - active connections being handled
+- ps -C exim wwwu - list of all running exim processes
+- lsof -c exim - list of files being accessed by Exim
+
+Testing IMAP - a good test is to ensure that Dovecot is authenticating and responding properly. You can do that with Telnet (yum install telnet) or openssl (openssl s_client -connect IpAddress
+
+/var/log/exim_mainlog - main exim log
+/var/log/maillog - dovecot and spam assasin log
+/usr/local/cpanel/3rdparty/mailman/logs/* - mailman logs
+/var/log/mail.log - dovecot log on Ubuntu
+
+Exim main logs:
+- /var/log/exim_mainlog - logs message arrival and delivery attempts, output is controlled by th log_selector option
+- /var/log/exim_rejectlog - logs delivery rejections based on policy
+- /var/log/exim_paniclog - logs severe errors (errors that cause Exim to crash), such as errors that cause a message to never be delivered, should be empty or nearly empty
+
+Exim Message Status Indicators:
+<= - message arrival (2015-03-13 09:20:29 1YWQRx-0008D8-LD <= root@hw1-x86.tech.cpanel.net)
+=> - successful delivery (2015-03-11 10:35:36 1YVifY-0004Dw-KL => mary@cpanel.net)
+== - deferred message (delayed) (2015-03-11 10:40:13 1YVik1-0004RW-Ef == root@hw1-x86.tech.cpanel.net)
+** - delivery failure (2015-03-11 10:40:13 1YVik1-0004RW-Ef ** root@hw1-x86.tech.cpanel.net)
+
+Exim ID vs Message ID:
+Message ID (id=" " in the log file)
+- IDs are unique across different systems and does not change. 
+- It can be found in the logs and in the message headers.
+
+Exim ID
+- IDs are unique but are not guaranteed to be unique across systems in a network or over the internet.
+- It is visible in the mail headers, but mostly used in exim_mainlog
+- Every time a message reaches a server using Exim, a new Exim ID is assigned for the message on that server.
+
+Routers and Transport:
+2015-09-01 10:47:28 1ZWnmI-0001hA-Nb => dogs <dogs@animals.test> R=virtual_user T=virtual_userdelivery
+R= - router
+T= - transfer
+- /etc/exim.conf - to check how the router or transport is instructed
+
+Queue Runs:
+Exim logs tell you when a queue run starts and what PID it is running as. During the run, the Exim process takes one message at a time and attempts to deliver it.
+
+Current Working Dir (cwd=" "):
+Exim logs the cwd of any process that invokes it. This way you can track where the mail is being sent from.
+There will not be a cmw entry for mail received via SMTP.
+
+2015-09-01 10:09:02 cwd=/var/spool/exim 2 args: /usr/sbin/exim -q
+
+SpamAssassin Entries in the Exim log:
+When SpamAssassin scans a message, it leaves a note in the Exim log [exim_mainlog] (2015-07-06 11:59:09 [13024] 1ZC3B5-0003O4-7s H=some.server.net [10.2.3.4]:58393 I=[10.9.8.7]:25 Warning: "SpamAssassin as testuser detected message as NOT spam (-100.4)")
+
+The Dovecot Mail Log (/var/log/maillog), also IMAP log entries (IMAP logins) can be found in that log
+
+Mail Storages Formats:
+        MdBox (dovecot) - stores multiple messages in the dovecot files
+                - /home/cptest/mail/mailboxes - contains a dir for each folder inside the user's mailbox
+                - /home/cptest/mail/mailboxes/exampleFolder/dbox-Mails - this dir exists in each mailbox folder, and that dir contains two dovecot files, which contain info on what messages are in the mailbox (not the messages themself)
+                        - dovecot.index.cache
+                        - dovecot.index.log
+                - /home/cptest/mail/storage/ - the storage folder is where the mail is actually stored.
+                        - dovecot.map.index.log
+                        - m.1 - the files where the messages are stored (starts with Return-Path)
+
+        MailDir (hidden dirs, links) - stores each email in its own file. New dir contains unread emails, cur contains read emails. All the folders are for the default mail account (format: [cpanel-user]@[server-hostname]). The messages for each domain are kept in a dir named after the domain. The sym links are used, so the default account can use webmail to read the messages of the other accounts. Each email account is represented by a directory (kia@cars.test - kia dir, vw@cars.test - vw dir).
+
+Email Filters:
+
+        Email Account-level Filters - creating filets for each email account can be done by Email Filters feature (cPanel). This filter creates 3 files in the dir of the email:
+                - filter file (used by Exim)
+                - filter.yaml (YAML file used for rendering the interface)
+                - fulter.cache (cache file)
+                - when it is a email account-level filter, the address contains a + sign and the router remained as "virtual_user".
+
+        cPanel Account-level Filters (Global Email Filters in cPanel)
+                - /etc/vfilters (the Exim filter file)
+                - in the user's home dir/.cpanel
+                        - .yaml
+                        - .cache
+
+The 'valiases' File:
+        /etc/valiases/ - a dir that contains a file for each domain on the server. Each file contains the forwarders that are set up for the account (including: mailing lists, info regarding the handling of messages to users that do not exist).
+
+
+Managing the Mail Queue:
+
+Viewing the Exim Queue:
+        - Exim queue count: exim -bpc
+        - Exim entire mail queue: exim -bp
+        - Structure of exim mail queue entry:
+                | Time in queue | Size of message | Exim ID | Message sender | Message Recipient |
+
+Selecting and Viewing Messages:
+        By sender:
+                exiqrep -f [user]@domain.tld
+
+                - Exim logs: /var/log/exim_mainlog
+
+        By recipient:
+                exiqrep -r [user]@domain.tld
+
+        By age (age criteria):
+                exiqgrep -o 172800 (older than n seconds)
+                exiqgrep -y 1800 (younger than n seconds)
+
+View Message Details:
+        Viewing Headers:
+                exim -Mvh <exim-id>             (message, view, header)
+
+        Viewing Body:
+                exim -Mvb <exim-id>             (message, view, body)
+
+Making Changes:
+        Resending a message (instead of waiting it, you can try to resend it now):
+
+                exim -M (the -M options attempts to resend the message)
+                exiqgrep -r user@domain.tld -i | xargs exim -M (resend all of the messages in the queue for the user@domain.tld)
+
+
+        Deleting a message from the queue:
+
+                exim -Mrm <exim-id> (rm - stands for remove)
+
+        Deleting multiple messages from the queue:
+
+                exiqgrep -i -f  @spammer.tld | xargs exim -Mrm
+
+
+Checking routing info:
+
+        Checking delivery path of an address:
+
+                exim -bt (it shows where exim thinks a message should be going and how it should get there)
+
+                Example for a local account:
+                # exim -bt dogs@animals.test
+                        dogs@animals.test
+                        router = virtual_user, transport = virtual_userdelivery
+
+
+                Example for a remote destination:
+                # exim -bt noone@gmail.com
+                noone@gmail.com
+                router = lookuphost, transport = remote_smtp
+                host gmail-smtp-in.l.google.com      [64.233.169.26]  MX=5
+                host alt1.gmail-smtp-in.l.google.com [173.194.219.26] MX=10
+                host alt2.gmail-smtp-in.l.google.com [173.194.204.26] MX=20
+                host alt3.gmail-smtp-in.l.google.com [74.125.141.26]  MX=30
+                host alt4.gmail-smtp-in.l.google.com [64.233.186.26]  MX=40
+
+
+
+
+
+
+
+
+
+
+Mail Server - Administrator-----------------------------------------------------------------------------------------------------------------------
+
+Dovecot - the mail server used in cPanel and WHM env. It is an application that can provide IMAP and POP3 server functionality.
+MUA (Mail User Agents or mail clients such as Outlook, Thunderbird, etc.) - The thing that gives you the ability to see your emails stored on the server.
+
+IMAP and POP3 (Dovecot) servers take requests from MUAs, after that, the IMAP and POP answers those requests by accessing e-mail messages stored on the server and feeding them out to the MUA. So when a user's MUA contacts the mail server (Dovecot), the software which answers that request is an IMAP or POP3 server.
+
+Dovecot also provides final message delivery functionality with the Dovecot LDA (Local Delivery Agent).
+LDA is responsible for storing email messages in the message store.
+Message store - an area of your disk drive that holds the files that make up your server's email.
+
+Dovecot pretty much has the tool (LDA), which handels storing incoming emails in the server's email storage area.
+Local delivery (storing the emails to the server storage) can be managed in a few ways:
+	- Directly by the Message Transfer Agent (MTA uses SMTP to transfer messages. Example MTA is Exim)
+	- Through a separate Mail Delivery Agent
+	- By using Dovecot’s LDA (Local Delivery Agent)
+
+Important! Dovecot is NOT responsible for receiving mail from other mail servers. Dovecot only handles e-mail messages coming out of the local message store going out to IMAP and POP3 clients, as well messages which have already been received by the MTA and are to be stored into the local message store.
+
+POP and IMAP are the two protocol used by MUAs for communication with the mail server.
+
+MUA -> MTA (Exim, Outgoing via SMTP) -> MDA (Stores them on the mail storage on the server via LDA, Dovecot) -> MUA (the mail client takes the emails from the mail server via POP or IMAP)
+
+Primary mail storage options:
+	- mdbox - multiples messages in a single file
+	- Maildir - each message is stored in a different file
+	- mdbox (provided by Dovecot)
+	
+Authentication daemon (provided by Dovecot) - Dovecot provides authentication services for email on a cPanel server. A user cannot receive or send mail until after Dovecot’s authentication daemon has completed verification of the password.
+	WHM » Service Configuration » Mailserver Configuration
+
+Trash emptying - Dovecot does not empty its trash by default. In order to enable automatic trash disposal, you'll need to select the Auto-Expunge Trash option in:
+	WHM » Service Configuration » Mailserver Configuration
+
+You can switch between mbox and Maildir for each cPanel user:
+	WHM » Email » Mailbox Conversion
+	
+"Time Moved Backwards" error on Dovecot - to fix the issue just sync the system's and the networks time:
+	WHM >> Server Configuration >> Server Time
+	
+System mail accounts - these system account do are not used to receive normal emails but are used for system notifications and errors:
+	- root
+	- cpanel
+	- nobody
+	
+	They need to have forwarders to work:
+		Home » Server Contacts » Edit System Mail Preferences
+	
+
+Exim (Mail Transfer agent - MTA) - MTAs send and receive email messages for your server (used to send emails from server to server via SMTP).
+Each message handled by Exim has a message id - a 16 charecters long, divided into 3 parts (16VDhn-0001bo-D3)
+
+Exim is Access Control List based system. The configuration for Exim is done through a single config file.
+This file contains - main section - with generic settings and variables (/etc/exim.conf). The content of this file can be changed from Exim Configuration Manager (Basic editor or Advanced Editor).
+
+Apache Spam assasin daemon: spamd
+
