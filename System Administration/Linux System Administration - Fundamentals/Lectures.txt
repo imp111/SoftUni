@@ -354,14 +354,14 @@ ON UEFI based machines (usually the result files path is different)
 			- /boot/grub2/grubenv
 	
 Initialization Methods
-	- SysVinit (System 5 init or Sys5) - sequential, unilizes runlevels
-	- Upstart - event driven (when some event happes, other one is activated)
-	- OpenRC - dependency based initialization system (dependency based - something will be turned on after the all the neccesery steps are completed before that, Apache will be turned on after we have network connection, etc.)
-	- systemd - dependency based initialization system with aggresive parallelization
+	- SysVinit (System 5 init or Sys5) - sequential, utilizes run levels
+	- Upstart - event-driven (when some event happens, other one is activated)
+	- OpenRC - dependency-based initialization system (dependency-based - something will be turned on after all the necessary steps are completed before that, Apache will be turned on after we have a network connection, etc.)
+	- systemd - dependency-based initialization system with aggressive parallelization
 		- systemd 
 		- systemctl 
-		- systemd-analyze - unility for performance statistics inspection
-		- journald - loggin component by default. Binary files. Replaceable
+		- systemd-analyze - utility for performance statistics inspection
+		- journald - logging component by default. Binary files. Replaceable
 		- consoled - user console daemon
 		- networkd
 		- logind
@@ -375,7 +375,7 @@ Initialization Methods
 		-o
 
 Systemd
-	Units (init scripts) - unit is a file that represents system component configuration
+	Units (init scripts) - A unit is a file that represents system component configuration
 		- Naming convention - "unit name"."unit type"
 		- Locations
 			- Installed by the distribution - /usr/lib/systemd/system/*
@@ -383,7 +383,7 @@ Systemd
 			- Custom - /etc/systemd/system/*
 		- Types
 			- Service - .target - describes how to manage a service or application
-			- Targer - .target - provides synchronization points for other units when booting or changing states
+			- Target - .target - provides synchronization points for other units when booting or changing states
 			- Timer - .timer - timer managed by systemd. A matching unit will be started when the timer
 
 	Service Units
@@ -401,13 +401,13 @@ Processes and Jobs
 	Process - running program with its own address space
 	Job - interactive program that doesn't detach (can be in the same session or in the background)
 		- jobs - display status of jobs
-		- fg - move job to the foreground (in the same session) 
+		- fg - move the job to the foreground (in the same session) 
 		- bg - move job to background 
 		- ps
-		- pstree - display a tre of processes
+		- pstree - display a tree of processes
 		- pgrep
 		- top - display linux processes
-		- htop - extention to top
+		- htop - extension to top
 
 	Signals (Inter-process communication - IPC) - asynchronous notification sent to a process
 		- SIGHUP - 1 - hang up or shutdown and restart process
@@ -426,10 +426,10 @@ Processes and Jobs
 	| -20 (Low) ---	Niceness level -------- 19 (High) |
 	___________________________________________________
 
-	The nicer a certain process is, the lower his priority is (the less resources are given to him) and vice versa.
+	The nicer a certain process is, the lower his priority is (the fewer resources are given to him), and vice versa.
 
 	- renice - alter priority
-	- watch - executing a program periodically, showing output full-screen
+	- watch - executing a program periodically, showing output fullscreen
 	- nohup - run command immune to SIGHUP with output to a file
 	- screen - screen manager with terminal emulation
 	- tmux
@@ -489,7 +489,7 @@ at - run a task once at a specific time. Each task is queued at /val/spool/at
 Security is defined through /etc/at.allow and etc/at.deny
 Tools:
 	- at - main utility
-	- batch - auxiliary utility can be used as at to schedule commands (
+	- batch - auxiliary utility can be used to schedule commands (
 	- atq - show jobs at at's queue
 	- atrm - delete jobs
 Shortcuts - today, midnight, noon, teatime, date, now + time unit (now + 3 hours)
@@ -507,7 +507,7 @@ Can be created as transient (temporary/on the fly) units as well.
   systemctl start serviceName        - start a service service
 
   Scheduling with "at":
-  at 18:48                           - schedule a job at a exact time in the future (3 minutes after the current time)
+  at 18:48                           - schedule a job at an exact time in the future (3 minutes after the current time)
   at now + 3 minutes                 - schedule a job using relative time (again 3 minutes after the current time)
   atq                                - checks the queue of the scheduled jobs
   atrm idOfJob                       - remove a job using the ID
@@ -528,20 +528,20 @@ Cpanel and WHM:
 /usr/local/cpanel/ - this is where cPanel and WHM software lives
 /usr/local/cpanel/3rdparty/ - 3rd party subfolder for software that cpanel uses but did not develop (example: /perl, /mailman)
 /usr/local/cpanel/base - the files that are loaded when accessing the cpanel/whm control panelurl.com/2087, /2083
-/usr/local/cpanel/bin - binary files (executables) used via interface oprations or automated tasks
+/usr/local/cpanel/bin - binary files (executables) used via interface operations or automated tasks
 /usr/local/cpanel/Whostmgr, Cpanel - back-end Perl modules, mirroring the module names with the path. (.pm - perl module)
 /usr/local/cpanel/logs/ - any logged data generated specifically by cPanel/WHM itself, such as with interface actions/errors, transfers, cPHulk, licensing, and tailwatchd, among others. (most important files: error_log, access_log).
 
 /usr/bin/cpanel - important dir 1
 /var/cpanel - important dir 2
 
-restartsrv script - used to restart, start, stop services
+restartsrv script - used to restart, start, and stop services
 	[actions]
 	- stop
 	- reload
 	- status
 	- restart
-	- default option is restart
+	- default option is to restart
 
 /scripts/restartsrv_exim --stop
 /scripts/restartsrv [any cPanel service] --action 
@@ -735,7 +735,7 @@ Checking routing info:
 
 
 
-Mail Server - Administrator-----------------------------------------------------------------------------------------------------------------------
+Mail Server - Administrator---------------------------------------------------------------------------------------
 
 Dovecot - the mail server used in cPanel and WHM env. It is an application that can provide IMAP and POP3 server functionality.
 MUA (Mail User Agents or mail clients such as Outlook, Thunderbird, etc.) - The thing that gives you the ability to see your emails stored on the server.
