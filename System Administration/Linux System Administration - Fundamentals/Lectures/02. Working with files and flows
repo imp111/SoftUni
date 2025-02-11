@@ -1,0 +1,114 @@
+Input/Output Streams:
+	- stdin (0)
+	- stdout (1)
+	- stderr (2)
+
+Stream redirection:
+	> - stdout redirect (overwrite)
+		- &> - stdout and stderr redirect (overwrite) 
+		- 1> - stdout redirect 
+		- 2> - stderr redirect
+		- 2>&1 - redirects stderr, where the stdout is redirected
+	>> - stdout or stderr redirect (append)
+	< - stdin redirect
+	<< - heredoc append (cat > file.txt << end)
+
+Command Sequences:
+	; (cmd1 ; cmd2) - sequence (stdout of cmd1 is disconnected to stdin of cmd2)
+	| (cmd1 | cmd2) - pipe (stdout of cmd1 is connected to stdin of cmd2)
+	&& (cmd1 && cmd2) - success (cmd2 will be executed if cmd1 is executed successfully, exit status 0)
+	|| (cmd1 || cmd2) - failure (cmd2 will be executed if cmd1 is not executed successfully, exit status 1)
+
+Command Substitution:
+	` ` (cat `cat file1.txt`) 
+	$() (cat $(cat file1.txt))
+
+Regular Expressions:
+	Wildcards
+		* - any char
+		? - any single char
+		[] - any char that is a member of the set
+		[!] - any char that is not a member of the set
+		[[:class:]] - 
+		[:alnum:] Alphanumeric characters A-Z, a-z, and 0-9
+		[:word:] Same as [:alnum:] including underscore (_)
+		[:alpha:] Alphabetic characters A-Z and a-z
+		[:digit:] Numeric characters 0-9
+		[:lower:] All lowercase letters a-z
+		[:upper:] All uppercase letters A-Z
+	Regular Expressions
+		Control Characters
+			. (.text => atext, btext) - any single char
+			^ (^text => text, textasdsa, texttwo) - beginning of the line
+			$ (text$ => text, asasdtext, twotext) - ending of the line
+			\ (.\.text => a.text) - escape special character
+		Quantifiers
+			? - match an element zero times or one times
+			* - match an element zero or more times
+			+ - match an element one or more times
+			{} - match an element a specific number of times
+				{n} - exactly n times
+				{n, m} - at least n times, but not more than m times
+				{n,} - n or more times
+				{,m} - no more than m times
+Vim:
+	Config files
+		System-level
+			- /etc/virc || /etc/vimrc
+		User-level
+			- ~/.vimrc
+
+	Navigation mode
+		gg - moves to first line of the file
+		G (shift + g) - moves to last line of the file
+		lineNumbergg (15gg) - moves to line 15
+		^ (Shift + 6) - moves to the line start
+		$ (Shift + 4) - moves to the line end
+		b - move backward a word
+		w - move forward a word
+
+	Insert mode
+		i - insert here
+		I (shift + i) - insert at the beginning of the line
+		a - append after the current position
+		A (shift + a) - append to the end of the line
+		o - open a new line below
+		O (shift + o) - open a new line above
+
+	Replace and Visual mode
+		r - replace the symbol under the cursor
+		R (shift + r) - enter replace mode
+		v - enters visual mode
+		V (shift + v) - enters visual mode with line selections
+
+	Deleting text and lines
+		x - delete a single character under the cursor (deletes the right char)
+		X - delete a single character before the cursor (delete the left char)
+		dw - delete to the end of a single word under the cursor
+		3dw - delete three words
+		dd - delete the current line
+		d^ or d0 - all text from the beginning of the line to the cursor
+		D or d$ - all text from the cursor position to the end of the line
+		dL - all text from the cursor to the end of the screen
+		dG - all text from the line of the cursor to the end of the screen
+
+	Copy, Paste, and Join
+		yy - Copies a line of text
+		3yy - Copies three lines of text
+		yw - Copies from the cursor to the end of the word
+		3yw - Copies three words
+		p - Pastes to the right of the cursor
+		P - (Shift + p) Pastes to the left of the cursor
+		J - (Shift + j) Joins current line to the previous
+
+ 	Search-and-Replace Syntax
+		action/string-to-find/replace-with/modifier
+ 		First instance on the current line - :s/tcp/TCP/
+ 		All instances on the current line - :s/tcp/TCP/g
+ 		All instances - :%s/tcp/TCP/g
+
+Sudo:
+	Control who can do what and from where
+		Main configuration file - /etc/sudoers
+		Additional configuration files - /etc/sudoers.d/
+		It can be managed with group membership as well - add the user to wheel (CentOS, openSUSE), admin (Ubuntu), sudo (Ubuntu) groups
