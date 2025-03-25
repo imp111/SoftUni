@@ -1,0 +1,37 @@
+Network Models:
+	- TCP/IP (4 layers) - Network interface, Internet, Host-to-Host Transport, Application
+	- OSI (7 layers) - Physical, Data-Link, Network, Transport, Session, Presentation, Application
+
+	- Common Protocols for each layer
+		- Application (FTP, SMTP, DNS, Telnet)
+		- Host-to-Host (TCP, UDP)
+		- Internet (IP, ARP, IGMP, ICMP)
+		- Network (Ethernet, Token ring)
+
+
+Network protocols:
+	- IP (Internet Protocol) - addressing and communication between devices
+	- TCP (Transmission Control Protocol) - focuses on transport of data packages
+	- UDP (User Datagram Protocol) - like TCP but connectionless, no error checking
+	- ICMP (Internet Control Message Protocol) - Networking devices are using it (routers, ping is built on top of it)
+
+Port numbers (/etc/services) - used to identify a network service (on top of TCP or UDP):
+	- 0 - 1023 (system ports)
+	- 1024 - 49151 (user ports)
+	- 49152 - 65535 (private ports)
+
+	- Default ports - 22/tcp SSH, 53/udp DNS, 80/tcp HTTP, 110/tcp POP3, 143/tcp IMAP
+
+IP Protocol General Information:
+	- IP Address (IPv4 and IPv6)
+		- Static IP - it is manually entered to a config file
+		- Dynamic IP - it is automatically assigned by the DHCP server and changes (usually when the device is restarted)
+
+	- Network mask (subnet mask) - marks the boarder between two networks or subnets
+	- Gateway address - connects two networks (in home networks it is the router)
+	- Broadcast address - used for communication to all hosts on a network, it is the last address of a subnet
+
+
+Network -> Subnet -> Hosts
+		
+
