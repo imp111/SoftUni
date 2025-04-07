@@ -1,0 +1,30 @@
+Backups types:
+	- Accounts - can be done using all structures regardless of the destination type. This type allows you to copy files/folders from a specific cPanel account.
+	- Directories - you can choose to backup the physical directory using any of the available structures. This type allows you to copy server files/folders (outside of the cpanel account).
+
+Backup structures (storage mechanisms):
+	- incremental - copy only the new and modified files from the last full backup
+	- archived - copy files to uncompressed archived file (.tar)
+	- compressed - copy files to archived compressed file (.tar.gz)
+
+Destination types:
+	- local - locally on the server (supports all features of the accounts backup type and all of the backup structures)
+	- ssh - lets us specify ssh based connection to a remote server or network node where the backup will be sent.
+	- s3 - usually via cloud provider (AWS S3, Google Cloud Storage, etc.)
+
+Jetbackup job contains the following components:
+	- Panel config
+	- Cron jobs
+	- Databases
+	- FTP accounts
+	- Home dir files
+	- DNS zones
+	- SSL certificates
+	- Databases users
+	- Emails
+
+	- Exclude directories from the backup job
+	- Data Sync retries - if the backup job data transfer fails, the data transfer will retry 3 times (this retry limit is hard coded on the Jetbackup 5 engine)
+	- Job Monitor - have the ability to receive an email notification if backup job has not run in X days or has not finished in X days.
+
+
