@@ -735,7 +735,7 @@ Lecture 5: Exception and Error Handling (Handling Errors During the Program Exec
 			- Ensures execution of a given block in all cases regardless of whether the try block raise an exception
 			- Used for execution of cleaning-up code (releasing resources)
 
-[O
+
 		- How Do Exceptions Work?
 
 			try	-	Run this code
@@ -1345,3 +1345,4 @@ Lecture 8: SOLID Principles (Design Principles and Approaches):
 		- Liskov Substitution Principle - children classes should not break the behavior of their parent
 		- Interface Segregation Principle - the library should provide simple interfaces for the client to implement
 		- Dependency Inversion - no class/method should directly depend on concretions (only on abstractions)
+

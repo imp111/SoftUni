@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _08._Military_Elite.Interfaces
+{
+    public enum Corps
+    {
+        Airforces,
+        Marines
+    }
+
+    internal interface ISpecialisedSoldier : IPrivate
+    {
+        Corps Corps { get; }
+    }
+}
